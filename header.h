@@ -24,5 +24,12 @@ typedef struct {
 typedef struct{
     char subChunk2ID[4];
     dword subChumk2Size;
-    byte* data;
 }__attribute__((packed)) DATA_SUB;
+
+typedef struct {
+    RIFF* riff;
+    FMT_SUB* fmtSub;
+    DATA_SUB* dataSub;
+    word* data;
+    dword size; // subChumk2Size just for simplicity
+}__attribute__((packed)) MUSIC_FILE;
