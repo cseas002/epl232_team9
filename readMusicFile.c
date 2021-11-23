@@ -2,7 +2,8 @@
 #include <stdio.h>
 
 int readHeader(MUSIC_FILE* musicFile, char* fileName) {
-    FILE* fp = fopen("./as4-supplementary/tada.wav", "rb");
+    FILE* fp = NULL;
+    if (!(fp = fopen("./as4-supplementary/tada.wav", "rb"))) return EXIT_FAILURE;
     if (!(musicFile -> riff = (RIFF*) malloc(sizeof(RIFF)))) return EXIT_FAILURE;
     fread(musicFile -> riff, sizeof(RIFF), 1, fp);
     if (!(musicFile -> fmtSub = (FMT_SUB*) malloc(sizeof(FMT_SUB)))) return EXIT_FAILURE;
@@ -24,9 +25,8 @@ int printMusicFile(MUSIC_FILE* musicFile) {
 
 int main(int argc, char const *argv[])
 {
-    MUSIC_FILE* musicFile;
+    MUSIC_FILE* musicFile = (MUSIC_FILE*) malloc(sizeof(MUSIC_FILE));
     readHeader(musicFile, " ");
-    return 0;
     printMusicFile(musicFile);
     return 0;
 }
