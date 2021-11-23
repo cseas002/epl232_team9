@@ -19,10 +19,10 @@ typedef struct {
     dword byteRate;
     word blockAlign;
     word bitsPerSample;
-}FMT_SUB;
+}__attribute__((packed)) FMT_SUB;
 
 typedef struct{
     char subChunk2ID[4];
     dword subChumk2Size;
     byte* data;
-}DATA_SUB;
+}__attribute__((packed)) DATA_SUB;
