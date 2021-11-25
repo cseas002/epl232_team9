@@ -41,14 +41,16 @@ int printDataSub(DATA_SUB* dataSub) {
     return EXIT_SUCCESS;
 }
 
-int printMusicFiles(MUSIC_FILE* musicFile, MUSIC_FILE* musicFile1) {
-    if (printRiff(musicFile -> riff) == EXIT_FAILURE) return EXIT_FAILURE;
-    if (printFmtSub(musicFile -> fmtSub) == EXIT_FAILURE) return EXIT_FAILURE;
-    if (printDataSub(musicFile -> dataSub) == EXIT_FAILURE) return EXIT_FAILURE;
-    printf("************************************\n");
-    if (printRiff(musicFile1 -> riff) == EXIT_FAILURE) return EXIT_FAILURE;
-    if (printFmtSub(musicFile1 -> fmtSub) == EXIT_FAILURE) return EXIT_FAILURE;
-    if (printDataSub(musicFile1 -> dataSub) == EXIT_FAILURE) return EXIT_FAILURE;
+int printMusicFiles(MUSIC_FILE** musicFiles, short files) {
+    int i;
+    for (i = 0; i < files; i++) {
+        MUSIC_FILE* musicFile = *(musicFiles + i);
+        if (printRiff(musicFile -> riff) == EXIT_FAILURE) return EXIT_FAILURE;
+        if (printFmtSub(musicFile -> fmtSub) == EXIT_FAILURE) return EXIT_FAILURE;
+        if (printDataSub(musicFile -> dataSub) == EXIT_FAILURE) return EXIT_FAILURE;
+        if (i != files - 1)
+            printf("************************************\n");
+    }
     return EXIT_SUCCESS;
 }
 
@@ -65,7 +67,10 @@ int main()
         printf("Failed to read second music file\n");
         return -1;
     }
-    if (printMusicFiles(musicFile, musicFile1) == EXIT_FAILURE)
+    MUSIC_FILE** musicFiles = (MUSIC_FILE**) malloc (2 * sizeof(MUSIC_FILE*));
+    *musicFiles = musicFile;
+    *(musicFiles + 1) = musicFile1;
+    if (printMusicFiles(musicFiles, 2) == EXIT_FAILURE)
         printf("Failed to print music files\n");
     return 0;
 }

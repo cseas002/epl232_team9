@@ -82,6 +82,7 @@ int createChoppedFile(MUSIC_FILE* choppedMusicFile, short startSecond, short end
     return EXIT_SUCCESS;
 }
 
+#ifdef DEBUG_CHOP
 int main()
 {
     MUSIC_FILE* choppedMusicFile = (MUSIC_FILE*) malloc(sizeof(MUSIC_FILE));
@@ -100,3 +101,4 @@ int main()
     if (createChoppedFile(choppedMusicFile, startSecond, endSecond, fileName) == EXIT_FAILURE) return -1;
     return 0;
 }
+#endif

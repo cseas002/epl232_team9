@@ -32,6 +32,6 @@ typedef struct {
     FMT_SUB* fmtSub;
     DATA_SUB* dataSub;
     byte* data;
-    dword size; // subChumk2Size just for simplicity
+    dword size; // subChunk2Size just for simplicity
 }__attribute__((packed)) MUSIC_FILE;
 #endif
