@@ -11,7 +11,7 @@ int readHeader(MUSIC_FILE* musicFile, char* fileName) {
     if (!(musicFile -> dataSub = (DATA_SUB*) malloc(sizeof(DATA_SUB)))) return EXIT_FAILURE;
     fread(musicFile -> dataSub, sizeof(DATA_SUB), 1, fp);
     musicFile -> size = musicFile -> dataSub -> subChunk2Size;
-    if (!(musicFile -> data = (word*) malloc(musicFile -> size))) return EXIT_FAILURE;
+    if (!(musicFile -> data = (byte*) malloc(musicFile -> size))) return EXIT_FAILURE;
     fread(musicFile -> data, sizeof(musicFile -> size), 1, fp);
     return EXIT_SUCCESS;
 }

@@ -57,9 +57,16 @@ int main()
 {
     MUSIC_FILE* musicFile = (MUSIC_FILE*) malloc(sizeof(MUSIC_FILE));
     MUSIC_FILE* musicFile1 = (MUSIC_FILE*) malloc(sizeof(MUSIC_FILE));
-    readHeader(musicFile, "./as4-supplementary/tada.wav");
-    readHeader(musicFile1, "./as4-supplementary/chord.wav");
-    printMusicFiles(musicFile, musicFile1);
+    if (readHeader(musicFile, "./as4-supplementary/tada.wav") == EXIT_FAILURE) {
+        printf("Failed to read first music file\n");
+        return -1;
+        }
+    if (readHeader(musicFile1, "./as4-supplementary/piano.wav") == EXIT_FAILURE) {
+        printf("Failed to read second music file\n");
+        return -1;
+    }
+    if (printMusicFiles(musicFile, musicFile1) == EXIT_FAILURE)
+        printf("Failed to print music files\n");
     return 0;
 }
 #endif
