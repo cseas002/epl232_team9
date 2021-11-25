@@ -1,5 +1,6 @@
+#ifndef HEADER
+#define HEADER
 #include <stdlib.h>
-
 typedef unsigned char byte;
 typedef unsigned short int word;
 typedef unsigned int dword;
@@ -12,7 +13,7 @@ typedef struct {
 
 typedef struct {
     char subChunk1ID[4];
-    dword subChumk1Size;
+    dword subChunk1Size;
     word audioFormat;
     word numChannels;
     dword sampleRate;
@@ -23,7 +24,7 @@ typedef struct {
 
 typedef struct{
     char subChunk2ID[4];
-    dword subChumk2Size;
+    dword subChunk2Size;
 }__attribute__((packed)) DATA_SUB;
 
 typedef struct {
@@ -33,3 +34,4 @@ typedef struct {
     word* data;
     dword size; // subChumk2Size just for simplicity
 }__attribute__((packed)) MUSIC_FILE;
+#endif
