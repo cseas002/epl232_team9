@@ -62,17 +62,9 @@ int createChoppedFile(MUSIC_FILE* choppedMusicFile, short startSecond, short end
     // we add 44 because that's the header byte size (all chunks size) 
 
     for (i = startLength; i < endLength; i++)
-        *(newData + i - startLength) = *(choppedMusicFile -> data);
+        *(newData + i - startLength) = *(choppedMusicFile -> data + i);
     free(choppedMusicFile -> data);
     choppedMusicFile -> data = newData;
-
-
-    for (i = 0; i < 100; i++)
-        printf("%x\n", *(newData + i));
-
-
-
-
     char* newFileName = (char*) malloc((strlen(fileName) + 29) * sizeof(char));
     // we add 29 because that's the size of ./as4-supplementary/chopped-\0
     strcat(newFileName, "./as4-supplementary/chopped-");

@@ -12,7 +12,7 @@ int readHeader(MUSIC_FILE* musicFile, char* fileName) {
     fread(musicFile -> dataSub, sizeof(DATA_SUB), 1, fp);
     musicFile -> size = musicFile -> dataSub -> subChunk2Size;
     if (!(musicFile -> data = (byte*) malloc(musicFile -> size))) return EXIT_FAILURE;
-    fread(musicFile -> data, sizeof(musicFile -> size), 1, fp);
+    fread(musicFile -> data, sizeof(byte), musicFile -> size, fp);
     return EXIT_SUCCESS;
 }
 
