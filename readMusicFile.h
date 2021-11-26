@@ -3,5 +3,5 @@
 
 #include "header.h"
 #include <stdio.h>
-int readHeader(MUSIC_FILE*, char* fileName);
+int readHeaderAndData(MUSIC_FILE*, char* fileName);
 #endif

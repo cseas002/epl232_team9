@@ -1,5 +1,6 @@
 #include "chop.h"
-#include "writeMusicFile"
+#include "writeMusicFile.h"
+
 bool secondsAreValid(MUSIC_FILE* musicFile, short endSecond){
     // the total time of a wave music file can be calculated using this formula:
     // time = FileLength / ByteRate
@@ -91,7 +92,7 @@ int main()
     // 20 is for "./as4-supplementary/\0"
     strcat(fullFileName, "./as4-supplementary/");
     strcat(fullFileName, fileName);
-    if (readHeader(choppedMusicFile, fullFileName) == EXIT_FAILURE) {
+    if (readHeaderAndData(choppedMusicFile, fullFileName) == EXIT_FAILURE) {
         printf("Failed to read music file\n");
         return -1;
     }

@@ -1,7 +1,7 @@
 #include "header.h"
 #include "readMusicFile.h"
 
-int readHeader(MUSIC_FILE* musicFile, char* fileName) {
+int readHeaderAndData(MUSIC_FILE* musicFile, char* fileName) {
     FILE* fp = NULL;
     if (!(fp = fopen(fileName, "rb"))) return EXIT_FAILURE;
     if (!(musicFile -> riff = (RIFF*) malloc(sizeof(RIFF)))) return EXIT_FAILURE;
@@ -20,7 +20,7 @@ int readHeader(MUSIC_FILE* musicFile, char* fileName) {
 int main()
 {
     MUSIC_FILE* musicFile = (MUSIC_FILE*) malloc(sizeof(MUSIC_FILE));
-    readHeader(musicFile, " ");
+    readHeaderAndData(musicFile, " ");
     printMusicFile(musicFile);
     return 0;
 }

@@ -69,6 +69,7 @@ int reverse(MUSIC_FILE* musicFile, char* fileName) {
     return EXIT_SUCCESS;
 }
 
+#ifdef DEBUG_REVERSE
 int main()
 {
     MUSIC_FILE* musicFile = (MUSIC_FILE*) malloc(sizeof(MUSIC_FILE));
@@ -77,10 +78,11 @@ int main()
     // 20 is for "./as4-supplementary/\0"
     strcat(fullFileName, "./as4-supplementary/");
     strcat(fullFileName, fileName);
-    if (readHeader(musicFile, fullFileName) == EXIT_FAILURE) {
+    if (readHeaderAndData(musicFile, fullFileName) == EXIT_FAILURE) {
         printf("Failed to read music file\n");
         return -1;
     }
     free(fullFileName);
     if (reverse(musicFile, fileName) == EXIT_FAILURE) return -1;
 }
+#endif
