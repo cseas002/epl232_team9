@@ -1,5 +1,5 @@
 #include "chop.h"
-
+#include "writeMusicFile"
 bool secondsAreValid(MUSIC_FILE* musicFile, short endSecond){
     // the total time of a wave music file can be calculated using this formula:
     // time = FileLength / ByteRate

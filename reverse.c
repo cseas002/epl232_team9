@@ -1,6 +1,6 @@
 #include "readMusicFile.h"
 #include <string.h>
-#include "chop.h"
+#include "writeMusicFile.h"
 
 int copyHeader(MUSIC_FILE* target, MUSIC_FILE* source)
 {
@@ -25,13 +25,13 @@ int copyHeader(MUSIC_FILE* target, MUSIC_FILE* source)
 
     strncpy(target -> dataSub -> subChunk2ID, source -> dataSub -> subChunk2ID, 4);
     target -> dataSub -> subChunk2Size = source -> dataSub -> subChunk2Size;
-    
     target -> size = target -> dataSub -> subChunk2Size;
+
     return EXIT_SUCCESS;
 }
 
 int copyReverseData(MUSIC_FILE* target, byte* data) {
-    short size = target -> size;
+    int size = target -> size;
     if (!(target -> data = (byte*) malloc(size * sizeof(byte)))) {
         printf("Cannot allocate space \n");
         return EXIT_FAILURE;
@@ -43,17 +43,6 @@ int copyReverseData(MUSIC_FILE* target, byte* data) {
         *(target -> data + i * 4 + 2) = *(data + size - i * 4 - 2);
         *(target -> data + i * 4 + 3) = *(data + size - i * 4 - 1);
     }
-
-    printf("%d\n", *(target -> data));
-    printf("%d\n", *(target -> data + 1));
-    printf("%d\n", *(target -> data + 2));
-    printf("%d\n", *(target -> data + 3));
-
-    printf("%d\n", *(data + size - 4));
-    printf("%d\n", *(data + size - 3));
-    printf("%d\n", *(data + size - 2));
-    printf("%d\n", *(data + size - 1));
-    printf("%d\n", *(data + size  + 999999009));
     return EXIT_SUCCESS;  
 }
 
