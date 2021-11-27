@@ -1,4 +1,5 @@
-#ifndef STEROTOMONO
+#ifndef STEREOTOMONO
+#define STEREOTOMONO
 #include "header.h"
 #include "readMusicFile.h"
 #include<stdlib.h>
