@@ -1,11 +1,10 @@
 #include "stereoToMono.h"
 
-int copy(MUSIC_FILE  *musicFile, MUSIC_FILE *newFile){
+int copyHeader(MUSIC_FILE  *musicFile, MUSIC_FILE *newFile){
     *newFile->riff = *musicFile->riff;
     *newFile->fmtSub = *musicFile->fmtSub;
     *newFile->dataSub = *musicFile->dataSub;
-    newFile->data = (byte*) malloc(newFile->size);
-    if(!newFile->data) return EXIT_FAILURE;
+    newFile->size = musicFile->size;
     return EXIT_SUCCESS;
 }
 
@@ -17,6 +16,7 @@ int changeHeader(MUSIC_FILE *newFile){
     newFile->fmtSub->byteRate = newFile->fmtSub->sampleRate * newFile->fmtSub->numChannels * newFile->fmtSub->bitsPerSample/8;
     newFile->fmtSub->blockAlign = newFile->fmtSub->numChannels * newFile->fmtSub->bitsPerSample/8;
     newFile->dataSub->subChunk2Size = newFile->size * newFile->fmtSub->numChannels * newFile->fmtSub->bitsPerSample/8;
+    return EXIT_SUCCESS;
 }
 
 int changeData(MUSIC_FILE *musicFile, MUSIC_FILE *newFile){
@@ -28,6 +28,7 @@ int changeData(MUSIC_FILE *musicFile, MUSIC_FILE *newFile){
             newFile->data[i] = musicFile->data[j];
             newFile->data[i+1] = musicFile->data[j+1];
         }
+    return EXIT_SUCCESS;
 }
 
 int saveToFile(MUSIC_FILE *newFile, char *filename){
@@ -43,23 +44,27 @@ int saveToFile(MUSIC_FILE *newFile, char *filename){
     fwrite(newFile->dataSub, sizeof(DATA_SUB), 1, fp);
     fwrite(newFile->data, sizeof(byte), newFile->size, fp);
     fclose(fp);
+    return EXIT_SUCCESS;
 }
 
 int stereoToMono(MUSIC_FILE* musicFile, char* fileName){
     if(!musicFile || !fileName) return EXIT_FAILURE;
     MUSIC_FILE *newFile = (MUSIC_FILE*) malloc(sizeof(MUSIC_FILE));
     if (!newFile) return EXIT_FAILURE;
+    //Header
     newFile->riff = (RIFF*) malloc(sizeof(RIFF));
     newFile->fmtSub = (FMT_SUB*) malloc(sizeof(FMT_SUB));
     newFile->dataSub = (DATA_SUB*) malloc(sizeof(DATA_SUB));
-    newFile->size = musicFile->size;
-    newFile->data = (byte*) malloc(newFile->size);
-    if(!newFile->riff || !newFile->fmtSub || !newFile->dataSub || !newFile->data)
+    if(!newFile->riff || !newFile->fmtSub || !newFile->dataSub || copyHeader(musicFile, newFile) || changeHeader(newFile)) 
         return EXIT_FAILURE;
-    copy(musicFile, newFile);
-    changeHeader(newFile);
-    changeData(musicFile, newFile);
-    saveToFile(newFile, fileName);
+    //Data
+    newFile->data = (byte*) malloc(newFile->size);
+    if(!newFile->data || changeData(musicFile, newFile))
+        return EXIT_FAILURE;
+    //Save to file
+    if(saveToFile(newFile, fileName))
+        return EXIT_FAILURE;
+    return EXIT_SUCCESS;
 }
 
 #ifdef DEBUG
