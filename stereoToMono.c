@@ -1,4 +1,5 @@
 #include "stereoToMono.h"
+#include "writeMusicFile.h"
 
 int copyHeader(MUSIC_FILE  *musicFile, MUSIC_FILE *newFile){
     *newFile->riff = *musicFile->riff;
@@ -39,10 +40,8 @@ int saveToFile(MUSIC_FILE *newFile, char *filename){
     FILE *fp = fopen(newFilename, "wb");
     free(newFilename);
     if(!fp) return EXIT_FAILURE;
-    fwrite(newFile->riff, sizeof(RIFF), 1, fp);
-    fwrite(newFile->fmtSub, sizeof(FMT_SUB), 1, fp);
-    fwrite(newFile->dataSub, sizeof(DATA_SUB), 1, fp);
-    fwrite(newFile->data, sizeof(byte), newFile->size, fp);
+    writeRiff(newFile->riff, fp);
+    writeDataSub(newFile->dataSub, fp);
     fclose(fp);
     return EXIT_SUCCESS;
 }

@@ -33,7 +33,7 @@ int changeVol(MUSIC_FILE* musicFile, char* fileName, short percentageChange) {
 
     return EXIT_SUCCESS;
 }
-
+#ifdef DEBUG
 int main()
 {
     MUSIC_FILE* musicFile = (MUSIC_FILE*) malloc(sizeof(MUSIC_FILE));
@@ -47,5 +47,6 @@ int main()
         return -1;
     }
     free(fullFileName);
-    if (changeVol(musicFile, fileName, 50) == EXIT_FAILURE) return -1;
+    if (changeVol(musicFile, fileName, 200) == EXIT_FAILURE) return -1;
 }
+#endif
