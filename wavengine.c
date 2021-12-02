@@ -34,8 +34,8 @@ int main(int argc, char const *argv[])
                 printf("Too many arguments\n");
                 exit(-1);
             } 
-            else
-                if (mix() == EXIT_FAILURE) exit(-1);
+            // else
+                // if (mix() == EXIT_FAILURE) exit(-1);
     }
         
     else if (strcmp(argv[1], "-chop") == 0) // if the argument is "-chop"
@@ -49,7 +49,7 @@ int main(int argc, char const *argv[])
                 exit(-1);
             } 
             else
-                if (chop(argv[1], (int) argv[2], (int) argv[3]) == EXIT_FAILURE)
+                if (chop(argv[1], atoi(argv[2]), atoi(argv[3]) == EXIT_FAILURE)) // atoi method casts to integer
                     exit(-1);
         }
     else if (strcmp(argv[1], "-reverse") == 0) { // if the argument is "-reverse"

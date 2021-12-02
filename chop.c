@@ -11,7 +11,7 @@ bool secondsAreValid(MUSIC_FILE* musicFile, short endSecond){
     return true;
 }
 
-int createChoppedFile(MUSIC_FILE* choppedMusicFile, short startSecond, short endSecond, char* fileName) {
+int createChoppedFile(MUSIC_FILE* choppedMusicFile, short startSecond, short endSecond, char const *fileName) {
     int byteRate = choppedMusicFile -> fmtSub -> byteRate;
     int newSize = (endSecond - startSecond) * byteRate;
     choppedMusicFile -> size = newSize;
