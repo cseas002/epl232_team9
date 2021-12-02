@@ -6,5 +6,5 @@
 #include <string.h>
 #include <stdio.h>
 
-int mix(MUSIC_FILE* file1, MUSIC_FILE *file2, char* filename1, char *filename2);
+int mix(MUSIC_FILE* file1, MUSIC_FILE *file2, char const *filename1, char const *filename2);
 #endif

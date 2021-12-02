@@ -17,14 +17,17 @@ int changeMixedData(MUSIC_FILE *newFile, MUSIC_FILE *file1, MUSIC_FILE *file2){
 }
 
 int saveMixedFiles(MUSIC_FILE *newFile, char const *filename1, char const *filename2){
-    char *changedN = (char*) malloc(strlen(filename1)+1);
-    changedName(changedN, filename1, "mix-");
-    char *newFilename = (char*) malloc(strlen(filename1)+strlen(filename2)+1);
+    char *changed1 = (char*) malloc(strlen(filename1)+1);
+    if(!changed1) return EXIT_FAILURE;
+    char *changed2 = (char*) malloc(strlen(filename2)+1);
+    if(!changed2) return EXIT_FAILURE;
+    changedName(changed1, filename1, "mix-");
+    changedName(changed2, filename1, "");
+    char *newFilename = (char*) malloc(strlen(changed1)+strlen(changed2)+1);
     if(!newFilename) return EXIT_FAILURE;
-    if(!strcpy(newFilename, "mix-")) return EXIT_FAILURE;
-    if(!strncat(newFilename, filename1, strlen(filename1)-4)) return EXIT_FAILURE;
+    if(!strncat(newFilename, changed1, strlen(changed1)-4)) return EXIT_FAILURE;
     if(!strcat(newFilename, "-")) return EXIT_FAILURE;
-    if(!strcat(newFilename, filename2)) return EXIT_FAILURE;
+    if(!strcat(newFilename, changed2)) return EXIT_FAILURE;
     FILE *fp = fopen(newFilename, "wb");
     free(newFilename);
     if(!fp) return EXIT_FAILURE;
