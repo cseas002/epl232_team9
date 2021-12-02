@@ -40,8 +40,11 @@ int writeDataSub(DATA_SUB* dataSub, FILE* fp){
 
 int changedName(char* newFileName, char const *fileName, char* addition) { // addition = "-mono", "-chop", etc.
     char *changedFilename = (char*) malloc(strlen(fileName)+1);
-    if(strrchr(fileName, '/')) changedFilename = strrchr(fileName, '/');
-    if(changedFilename[0]=='/') changedFilename++;
+    if(strrchr(fileName, '/')){
+        changedFilename = strrchr(fileName, '/');
+        if(changedFilename[0]=='/') changedFilename++;
+    } 
+    else strcpy(changedFilename, fileName);
     if(!newFileName) return EXIT_FAILURE;
     if(!strcpy(newFileName, addition)) return EXIT_FAILURE;
     if(!strcat(newFileName, changedFilename)) return EXIT_FAILURE;
