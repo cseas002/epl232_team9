@@ -38,8 +38,24 @@ int writeDataSub(DATA_SUB* dataSub, FILE* fp){
     return EXIT_SUCCESS;
 }
 
+int writeFile(MUSIC_FILE* musicFile, char const *newFileName) {
+    FILE* fp = NULL;
+    if (!(fp = fopen(newFileName, "wb"))) {
+        printf("Cannot create new file\n");
+        return EXIT_FAILURE;
+    }
+
+    if (writeRiff(musicFile -> riff, fp) == EXIT_FAILURE) return EXIT_FAILURE;
+    fwrite(musicFile -> fmtSub, sizeof(FMT_SUB), 1, fp);
+    if (writeDataSub(musicFile -> dataSub, fp) == EXIT_FAILURE) return EXIT_FAILURE;
+    fwrite(musicFile -> data, sizeof(byte), musicFile -> size, fp);
+    fclose(fp);
+    return EXIT_SUCCESS;
+}
+
 int changedName(char* newFileName, char const *fileName, char* addition) { // addition = "-mono", "-chop", etc.
     char *changedFilename = (char*) malloc(strlen(fileName)+1);
+    char *temp = changedFilename;
     if(strrchr(fileName, '/')){
         changedFilename = strrchr(fileName, '/');
         if(changedFilename[0]=='/') changedFilename++;
@@ -48,5 +64,6 @@ int changedName(char* newFileName, char const *fileName, char* addition) { // ad
     if(!newFileName) return EXIT_FAILURE;
     if(!strcpy(newFileName, addition)) return EXIT_FAILURE;
     if(!strcat(newFileName, changedFilename)) return EXIT_FAILURE;
+    free(temp);
     return EXIT_SUCCESS;
 }

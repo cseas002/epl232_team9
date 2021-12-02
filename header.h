@@ -1,5 +1,6 @@
 #ifndef HEADER
 #define HEADER
+#define SYSTEM_KEY_INTEGER 42069
 #include <stdlib.h>
 typedef unsigned char byte;
 typedef unsigned short int word;

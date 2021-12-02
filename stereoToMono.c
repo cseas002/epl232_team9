@@ -1,6 +1,7 @@
 #include "stereoToMono.h"
 
 int changeHeader(MUSIC_FILE *newFile){
+    printf("%d\n", newFile->dataSub->subChunk2Size);
     newFile->dataSub->subChunk2Size = newFile->dataSub->subChunk2Size/2;
     newFile->size = newFile->size/2;
     newFile->riff->chunkSize = newFile->size+36;
@@ -13,10 +14,10 @@ int changeHeader(MUSIC_FILE *newFile){
 
 int changeData(MUSIC_FILE *musicFile, MUSIC_FILE *newFile){
     if(musicFile->fmtSub->bitsPerSample == 8)
-        for(int i = 0, j=0; i < newFile->size; i++, j+=2)
+        for(long i = 0, j=0; i < newFile->size; i++, j+=2)
             newFile->data[i] = musicFile->data[j];
     else
-        for(int i = 0, j=0; i < newFile->size; i+=2, j+=4){
+        for(long i = 0, j=0; i < newFile->size; i+=2, j+=4){
             newFile->data[i] = musicFile->data[j];
             newFile->data[i+1] = musicFile->data[j+1];
         }
@@ -26,14 +27,7 @@ int changeData(MUSIC_FILE *musicFile, MUSIC_FILE *newFile){
 int saveToFile(MUSIC_FILE *newFile, char const *filename){
     char *newFileName = (char*) malloc(strlen(filename)+6);
     if(changedName(newFileName, filename, "mono-")==EXIT_FAILURE) return EXIT_FAILURE;
-    FILE *fp = fopen(newFileName, "wb");
-    free(newFileName);
-    if(!fp) return EXIT_FAILURE;
-    if(writeRiff(newFile->riff, fp)==EXIT_FAILURE) return EXIT_FAILURE;
-    fwrite(newFile -> fmtSub, sizeof(FMT_SUB), 1, fp);
-    if (writeDataSub(newFile -> dataSub, fp) == EXIT_FAILURE) return EXIT_FAILURE;
-    fwrite(newFile -> data, sizeof(byte), newFile -> size, fp);
-    fclose(fp);
+    writeFile(newFile, newFileName);
     return EXIT_SUCCESS;
 }
 

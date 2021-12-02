@@ -6,6 +6,8 @@
 #include "stereoToMono.h"
 #include "chop.h"
 #include "reverse.h"
+#include "encryption.h"
+#include "decryption.h"
 
 int main(int argc, char const *argv[])
 {
@@ -23,8 +25,8 @@ int main(int argc, char const *argv[])
         }
     else if (strcmp(argv[1], "-mono") == 0) { // if the argument is "-mono"
         for (i = 2; i < argc; i++) 
-            if (stereoToMono(argv[i]) == EXIT_FAILURE) exit(-1);
-    }
+            if (stereoToMono(argv[i]) == EXIT_FAILURE) exit(-1);}
+    
     else if (strcmp(argv[1], "-mix") == 0) { // if the argument is "-mix"
         if (argc < 4){
                 printf("Too few arguments\n");
@@ -34,8 +36,8 @@ int main(int argc, char const *argv[])
                 printf("Too many arguments\n");
                 exit(-1);
             } 
-            // else
-                // if (mix() == EXIT_FAILURE) exit(-1);
+            else
+                if (mix(argv[2], argv[3]) == EXIT_FAILURE) exit(-1);
     }
         
     else if (strcmp(argv[1], "-chop") == 0) // if the argument is "-chop"
@@ -48,14 +50,36 @@ int main(int argc, char const *argv[])
                 printf("Too many arguments\n");
                 exit(-1);
             } 
-            else{
+            else
                 if (chop(argv[2], atoi(argv[3]), atoi(argv[4])) == EXIT_FAILURE) // atoi method casts to integer
                     exit(-1);
-            }
+            
         }
     else if (strcmp(argv[1], "-reverse") == 0) { // if the argument is "-reverse"
         for (i = 2; i < argc; i++) 
             if (reverse(argv[i]) == EXIT_FAILURE) exit(-1);
+    }
+    else if (strcmp(argv[1], "-encodeText") == 0) { // if the argument is "-encodeText"
+    if (argc < 4){
+                printf("Too few arguments\n");
+                exit(-1);
+            }    
+            else if (argc > 4){
+                printf("Too many arguments\n");
+                exit(-1);
+            } 
+            else if (encryption(argv[2], argv[3]) == EXIT_FAILURE) exit(-1);
+    }
+    else if (strcmp(argv[1], "-decodeText") == 0) { // if the argument is "-decodeText"
+    if (argc < 5){
+                printf("Too few arguments\n");
+                exit(-1);
+            }    
+            else if (argc > 5){
+                printf("Too many arguments\n");
+                exit(-1);
+            } 
+            else if (decryption(argv[2], atoi(argv[3]), argv[4]) == EXIT_FAILURE) exit(-1);
     }
     return 0;
 }
