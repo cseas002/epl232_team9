@@ -10,4 +10,6 @@
 bool secondsAreValid(MUSIC_FILE*, short endSecond);
 
 int createChoppedFile(MUSIC_FILE* choppedMusicFile, short startSecond, short endSecond, char* fileName);
+
+int chop(char const *fileName, short startSecond, short endSecond);
 #endif
