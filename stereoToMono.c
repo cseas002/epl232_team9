@@ -24,15 +24,15 @@ int changeData(MUSIC_FILE *musicFile, MUSIC_FILE *newFile){
 }
 
 int saveToFile(MUSIC_FILE *newFile, char const *filename){
-    char *newFilename = (char*) malloc(strlen(filename)+6);
-    if(!newFilename) return EXIT_FAILURE;
-    if(!strcpy(newFilename, "mono-")) return EXIT_FAILURE;
-    if(!strcat(newFilename, filename)) return EXIT_FAILURE;
-    FILE *fp = fopen(newFilename, "wb");
-    free(newFilename);
+    char *newFileName = (char*) malloc(strlen(filename)+6);
+    if(changedName(newFileName, filename, "mono-")==EXIT_FAILURE) return EXIT_FAILURE;
+    FILE *fp = fopen(newFileName, "wb");
+    free(newFileName);
     if(!fp) return EXIT_FAILURE;
-    writeRiff(newFile->riff, fp);
-    writeDataSub(newFile->dataSub, fp);
+    if(writeRiff(newFile->riff, fp)==EXIT_FAILURE) return EXIT_FAILURE;
+    fwrite(newFile -> fmtSub, sizeof(FMT_SUB), 1, fp);
+    if (writeDataSub(newFile -> dataSub, fp) == EXIT_FAILURE) return EXIT_FAILURE;
+    fwrite(newFile -> data, sizeof(byte), newFile -> size, fp);
     fclose(fp);
     return EXIT_SUCCESS;
 }

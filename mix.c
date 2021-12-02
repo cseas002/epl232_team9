@@ -16,7 +16,9 @@ int changeMixedData(MUSIC_FILE *newFile, MUSIC_FILE *file1, MUSIC_FILE *file2){
     return EXIT_SUCCESS;
 }
 
-int saveMixedFiles(MUSIC_FILE *newFile, char *filename1, char *filename2){
+int saveMixedFiles(MUSIC_FILE *newFile, char const *filename1, char const *filename2){
+    char *changedN = (char*) malloc(strlen(filename1)+1);
+    changedName(changedN, filename1, "mix-");
     char *newFilename = (char*) malloc(strlen(filename1)+strlen(filename2)+1);
     if(!newFilename) return EXIT_FAILURE;
     if(!strcpy(newFilename, "mix-")) return EXIT_FAILURE;
@@ -26,13 +28,15 @@ int saveMixedFiles(MUSIC_FILE *newFile, char *filename1, char *filename2){
     FILE *fp = fopen(newFilename, "wb");
     free(newFilename);
     if(!fp) return EXIT_FAILURE;
-    writeRiff(newFile->riff, fp);
-    writeDataSub(newFile->dataSub, fp);
+    if(writeRiff(newFile->riff, fp)==EXIT_FAILURE) return EXIT_FAILURE;
+    fwrite(newFile -> fmtSub, sizeof(FMT_SUB), 1, fp);
+    if (writeDataSub(newFile -> dataSub, fp) == EXIT_FAILURE) return EXIT_FAILURE;
+    fwrite(newFile -> data, sizeof(byte), newFile -> size, fp);
     fclose(fp);
     return EXIT_SUCCESS;
 }
 
-int mix(MUSIC_FILE* file1, MUSIC_FILE *file2, char* filename1, char *filename2){
+int mix(MUSIC_FILE* file1, MUSIC_FILE *file2, char const *filename1, char const *filename2){
     if(!file1 || !file2 || !filename1 || !filename2) return EXIT_FAILURE;
     if(file1->fmtSub->numChannels == 1 || file2->fmtSub->numChannels == 1) return EXIT_FAILURE;
     if(file1->fmtSub->bitsPerSample != file2->fmtSub->bitsPerSample) return EXIT_FAILURE;
