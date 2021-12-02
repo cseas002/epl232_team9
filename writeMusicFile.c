@@ -36,3 +36,7 @@ int writeDataSub(DATA_SUB* dataSub, FILE* fp){
     fwrite(&(dataSub -> subChunk2Size), sizeof(byte), 4, fp); // write sub chunk size
     return EXIT_SUCCESS;
 }
+
+int changedName(char* newFileName, char const *fileName, char* addition) { // addition = "-mono", "-chop", etc.
+
+}

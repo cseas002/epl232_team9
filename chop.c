@@ -47,6 +47,21 @@ int createChoppedFile(MUSIC_FILE* choppedMusicFile, short startSecond, short end
     return EXIT_SUCCESS;
 }
 
+int chop(char const *fileName, short startSecond, short endSecond) {
+    char* newFileName = (char*) malloc(strlen(fileName) + 8 * sizeof(char)); 
+    //chopped-\0 is 8 characters
+    MUSIC_FILE* choppedMusicFile = (MUSIC_FILE*) malloc(sizeof(MUSIC_FILE));
+    if (changedName(newFileName, fileName, "-chopped") == EXIT_FAILURE) return EXIT_FAILURE;
+    if (readHeaderAndData(choppedMusicFile, newFileName) == EXIT_FAILURE) {
+        printf("Failed to read music file\n");
+        return -1;
+    }
+    if (!secondsAreValid(choppedMusicFile, endSecond)) return EXIT_FAILURE;
+    if (createChoppedFile(choppedMusicFile, startSecond, endSecond, fileName) == EXIT_FAILURE) 
+        return EXIT_FAILURE;
+    return EXIT_SUCCESS;
+}
+
 #ifdef DEBUG_CHOP
 int main()
 {

@@ -23,5 +23,18 @@ int main(int argc, char const *argv[])
         for (i = 2; i < argc; i++) {
             stereoToMono(argv[i]);
         }
+    else if (strcmp(argv[1], "-chop") == 0) // if the argument is "-chop"
+        {
+            if (argc < 5){
+                printf("Too few arguments\n");
+                exit(-1);
+            }    
+            else if (argc > 5){
+                printf("Too many arguments\n");
+                exit(-1);
+            } 
+            else
+                
+        }
     return 0;
 }
