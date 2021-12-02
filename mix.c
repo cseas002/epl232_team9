@@ -25,7 +25,7 @@ int saveMixedFiles(MUSIC_FILE *newFile, char const *filename1, char const *filen
     changedName(changed2, filename1, "");
     char *newFilename = (char*) malloc(strlen(changed1)+strlen(changed2)+1);
     if(!newFilename) return EXIT_FAILURE;
-    if(!strncat(newFilename, changed1, strlen(changed1)-4)) return EXIT_FAILURE;
+    if(!strncpy(newFilename, changed1, strlen(changed1)-4)) return EXIT_FAILURE;
     if(!strcat(newFilename, "-")) return EXIT_FAILURE;
     if(!strcat(newFilename, changed2)) return EXIT_FAILURE;
     FILE *fp = fopen(newFilename, "wb");
@@ -59,7 +59,7 @@ int mix(MUSIC_FILE* file1, MUSIC_FILE *file2, char const *filename1, char const 
     return EXIT_SUCCESS;
 }
 
-#ifdef DEBUG
+#ifdef DEBUG_MIX
     int main(){
         char name1[] = "LRMonoPhase4.wav";
         char name2[] = "piano.wav";

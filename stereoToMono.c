@@ -59,11 +59,8 @@ int stereoToMono(char const *fileName){
     return EXIT_SUCCESS;
 }
 
-#ifdef DEBUG
+#ifdef DEBUG_MONO
     int main(){
-        char name[] = "LRMonoPhase4.wav";
-        MUSIC_FILE *musicFile = (MUSIC_FILE*) malloc(sizeof(MUSIC_FILE));
-        readHeaderAndData(musicFile, name);
-        stereoToMono(musicFile, name);
+        
     }
 #endif
