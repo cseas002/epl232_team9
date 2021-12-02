@@ -1,4 +1,4 @@
-#include"header.h"
-#include"readMusicFile.h"
-#include<string.h>
-#include<stdio.h>
+#include "header.h"
+#include "readMusicFile.h"
+#include <string.h>
+#include <stdio.h>

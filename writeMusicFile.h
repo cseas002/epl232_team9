@@ -2,6 +2,7 @@
 #define WRITE_MUSIC_FILE
 
 #include "header.h"
+#include "readMusicFile.h"
 
 int writeRiff(RIFF* riff, FILE* fp);
 
