@@ -1,6 +1,20 @@
 #include "header.h"
 #include "readMusicFile.h"
 
+int copyHeader(MUSIC_FILE  *musicFile, MUSIC_FILE *newFile){
+    if (!((newFile -> riff = (RIFF*) malloc(sizeof(RIFF))) &&
+     (newFile -> fmtSub = (FMT_SUB*) malloc(sizeof(FMT_SUB))) && 
+     (newFile -> dataSub = (DATA_SUB*) malloc(sizeof(DATA_SUB))))) {
+        printf("Cannot allocate space for reverse file\n");
+        return EXIT_FAILURE;
+    }
+    *newFile->riff = *musicFile->riff;
+    *newFile->fmtSub = *musicFile->fmtSub;
+    *newFile->dataSub = *musicFile->dataSub;
+    newFile->size = musicFile->size;
+    return EXIT_SUCCESS;
+}
+
 int readHeaderAndData(MUSIC_FILE* musicFile, char* fileName) {
     FILE* fp = NULL;
     if (!(fp = fopen(fileName, "rb"))) return EXIT_FAILURE;

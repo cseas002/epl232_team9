@@ -2,34 +2,6 @@
 #include <string.h>
 #include "writeMusicFile.h"
 
-int copyHeader(MUSIC_FILE* target, MUSIC_FILE* source)
-{
-    if (!((target -> riff = (RIFF*) malloc(sizeof(RIFF))) &&
-     (target -> fmtSub = (FMT_SUB*) malloc(sizeof(FMT_SUB))) && 
-     (target -> dataSub = (DATA_SUB*) malloc(sizeof(DATA_SUB))))) {
-        printf("Cannot allocate space for reverse file\n");
-        return EXIT_FAILURE;
-    }
-    strncpy(target -> riff -> chunkID , source -> riff -> chunkID, 4);
-    target -> riff -> chunkSize = source -> riff -> chunkSize;
-    strncpy(target -> riff -> format, source -> riff -> format, 4);
-
-    strncpy(target -> fmtSub -> subChunk1ID, source -> fmtSub -> subChunk1ID, 4);
-    target -> fmtSub -> subChunk1Size = source -> fmtSub -> subChunk1Size;
-    target -> fmtSub -> audioFormat = source -> fmtSub -> audioFormat;
-    target -> fmtSub -> numChannels = source -> fmtSub -> numChannels;
-    target -> fmtSub -> sampleRate = source -> fmtSub -> sampleRate;
-    target -> fmtSub -> byteRate = source -> fmtSub -> byteRate;
-    target -> fmtSub -> blockAlign = source -> fmtSub -> blockAlign;
-    target -> fmtSub -> bitsPerSample = source -> fmtSub -> bitsPerSample;
-
-    strncpy(target -> dataSub -> subChunk2ID, source -> dataSub -> subChunk2ID, 4);
-    target -> dataSub -> subChunk2Size = source -> dataSub -> subChunk2Size;
-    target -> size = target -> dataSub -> subChunk2Size;
-
-    return EXIT_SUCCESS;
-}
-
 int copyReverseData(MUSIC_FILE* target, byte* data) {
     int size = target -> size;
     if (!(target -> data = (byte*) malloc(size * sizeof(byte)))) {
@@ -49,7 +21,7 @@ int copyReverseData(MUSIC_FILE* target, byte* data) {
 int reverse(MUSIC_FILE* musicFile, char* fileName) {
     MUSIC_FILE* reverseMusicFile = NULL;
     if (!(reverseMusicFile = (MUSIC_FILE*) malloc(sizeof(MUSIC_FILE)))) return EXIT_FAILURE;
-    if (copyHeader(reverseMusicFile, musicFile) == EXIT_FAILURE) return EXIT_FAILURE;
+    if (copyHeader(musicFile, reverseMusicFile) == EXIT_FAILURE) return EXIT_FAILURE;
     if (copyReverseData(reverseMusicFile, musicFile -> data) == EXIT_FAILURE) return EXIT_FAILURE;
     char* newFileName = (char*) malloc((strlen(fileName) + 29) * sizeof(char));
     // we add 29 because that's the size of ./as4-supplementary/reverse-\0
