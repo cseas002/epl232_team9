@@ -41,37 +41,35 @@ int printDataSub(DATA_SUB* dataSub) {
     return EXIT_SUCCESS;
 }
 
-int printMusicFiles(MUSIC_FILE** musicFiles, short files) {
+// int printMusicFiles(MUSIC_FILE** musicFiles, short files) {
+//     int i;
+//     for (i = 0; i < files; i++) {
+//         MUSIC_FILE* musicFile = *(musicFiles + i);
+//         if (printRiff(musicFile -> riff) == EXIT_FAILURE) return EXIT_FAILURE;
+//         if (printFmtSub(musicFile -> fmtSub) == EXIT_FAILURE) return EXIT_FAILURE;
+//         if (printDataSub(musicFile -> dataSub) == EXIT_FAILURE) return EXIT_FAILURE;
+//         if (i != files - 1)
+//             printf("************************************\n");
+//     }
+//     return EXIT_SUCCESS;
+// }
+
+int printList(char const *fileName) {
     int i;
-    for (i = 0; i < files; i++) {
-        MUSIC_FILE* musicFile = *(musicFiles + i);
-        if (printRiff(musicFile -> riff) == EXIT_FAILURE) return EXIT_FAILURE;
-        if (printFmtSub(musicFile -> fmtSub) == EXIT_FAILURE) return EXIT_FAILURE;
-        if (printDataSub(musicFile -> dataSub) == EXIT_FAILURE) return EXIT_FAILURE;
-        if (i != files - 1)
-            printf("************************************\n");
-    }
+    MUSIC_FILE* musicFile = (MUSIC_FILE*) malloc(sizeof(MUSIC_FILE));
+    if (readHeaderAndData(musicFile, fileName) == EXIT_FAILURE) {
+        printf("Failed to read first music file\n");
+        return EXIT_FAILURE;
+        }
+    if (printRiff(musicFile -> riff) == EXIT_FAILURE) return EXIT_FAILURE;
+    if (printFmtSub(musicFile -> fmtSub) == EXIT_FAILURE) return EXIT_FAILURE;
+    if (printDataSub(musicFile -> dataSub) == EXIT_FAILURE) return EXIT_FAILURE;
     return EXIT_SUCCESS;
 }
 
 #ifdef DEBUGLIST
 int main()
 {
-    MUSIC_FILE* musicFile = (MUSIC_FILE*) malloc(sizeof(MUSIC_FILE));
-    MUSIC_FILE* musicFile1 = (MUSIC_FILE*) malloc(sizeof(MUSIC_FILE));
-    if (readHeaderAndData(musicFile, "./as4-supplementary/tada.wav") == EXIT_FAILURE) {
-        printf("Failed to read first music file\n");
-        return -1;
-        }
-    if (readHeaderAndData(musicFile1, "./as4-supplementary/piano.wav") == EXIT_FAILURE) {
-        printf("Failed to read second music file\n");
-        return -1;
-    }
-    MUSIC_FILE** musicFiles = (MUSIC_FILE**) malloc (2 * sizeof(MUSIC_FILE*));
-    *musicFiles = musicFile;
-    *(musicFiles + 1) = musicFile1;
-    if (printMusicFiles(musicFiles, 2) == EXIT_FAILURE)
-        printf("Failed to print music files\n");
-    return 0;
+ // TODO driver
 }
 #endif

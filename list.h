@@ -30,4 +30,6 @@ int printFmtSub(FMT_SUB*);
 
 int printDataSub(DATA_SUB*);
 
-int printMusicFiles(MUSIC_FILE**, short);
+// int printMusicFiles(MUSIC_FILE**, short);
+
+int printList(char const *fileName);

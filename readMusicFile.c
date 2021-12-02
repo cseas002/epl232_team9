@@ -15,7 +15,7 @@ int copyHeader(MUSIC_FILE  *musicFile, MUSIC_FILE *newFile){
     return EXIT_SUCCESS;
 }
 
-int readHeaderAndData(MUSIC_FILE* musicFile, char* fileName) {
+int readHeaderAndData(MUSIC_FILE* musicFile, char const *fileName) {
     FILE* fp = NULL;
     if (!(fp = fopen(fileName, "rb"))) return EXIT_FAILURE;
     if (!(musicFile -> riff = (RIFF*) malloc(sizeof(RIFF)))) return EXIT_FAILURE;

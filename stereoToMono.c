@@ -1,13 +1,4 @@
 #include "stereoToMono.h"
-#include "writeMusicFile.h"
-
-int copyHeader(MUSIC_FILE  *musicFile, MUSIC_FILE *newFile){
-    *newFile->riff = *musicFile->riff;
-    *newFile->fmtSub = *musicFile->fmtSub;
-    *newFile->dataSub = *musicFile->dataSub;
-    newFile->size = musicFile->size;
-    return EXIT_SUCCESS;
-}
 
 int changeHeader(MUSIC_FILE *newFile){
     newFile->dataSub->subChunk2Size = newFile->dataSub->subChunk2Size/2;
@@ -32,7 +23,7 @@ int changeData(MUSIC_FILE *musicFile, MUSIC_FILE *newFile){
     return EXIT_SUCCESS;
 }
 
-int saveToFile(MUSIC_FILE *newFile, char *filename){
+int saveToFile(MUSIC_FILE *newFile, char const *filename){
     char *newFilename = (char*) malloc(strlen(filename)+6);
     if(!newFilename) return EXIT_FAILURE;
     if(!strcpy(newFilename, "mono-")) return EXIT_FAILURE;
@@ -46,8 +37,10 @@ int saveToFile(MUSIC_FILE *newFile, char *filename){
     return EXIT_SUCCESS;
 }
 
-int stereoToMono(MUSIC_FILE* musicFile, char* fileName){
+int stereoToMono(char const *fileName){
+    MUSIC_FILE* musicFile = (MUSIC_FILE*) malloc(sizeof(MUSIC_FILE));
     if(!musicFile || !fileName) return EXIT_FAILURE;
+    if (readHeaderAndData(musicFile, fileName) == EXIT_FAILURE) return EXIT_FAILURE;
     MUSIC_FILE *newFile = (MUSIC_FILE*) malloc(sizeof(MUSIC_FILE));
     if (!newFile) return EXIT_FAILURE;
     //Header

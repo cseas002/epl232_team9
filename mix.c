@@ -1,6 +1,6 @@
 #include"mix.h"
 
-int changeData(MUSIC_FILE *newFile, MUSIC_FILE *file1, MUSIC_FILE *file2){
+int changeMixedData(MUSIC_FILE *newFile, MUSIC_FILE *file1, MUSIC_FILE *file2){
     if(newFile->fmtSub->bitsPerSample == 8)
         for(int i = 0, j=0; i < newFile->size; j+=2, i+=2){
             newFile->data[i] = file1->data[j];
@@ -16,7 +16,7 @@ int changeData(MUSIC_FILE *newFile, MUSIC_FILE *file1, MUSIC_FILE *file2){
     return EXIT_SUCCESS;
 }
 
-int saveToFile(MUSIC_FILE *newFile, char *filename1, char *filename2){
+int saveMixedFiles(MUSIC_FILE *newFile, char *filename1, char *filename2){
     char *newFilename = (char*) malloc(strlen(filename1)+strlen(filename2)+1);
     if(!newFilename) return EXIT_FAILURE;
     if(!strcpy(newFilename, "mix-")) return EXIT_FAILURE;
@@ -46,9 +46,9 @@ int mix(MUSIC_FILE* file1, MUSIC_FILE *file2, char* filename1, char *filename2){
     newFile->data = (byte*) malloc(newFile->size);
     if(!newFile->data)
         return EXIT_FAILURE;
-    changeData(newFile, file1, file2);
+    changeMixedData(newFile, file1, file2);
     //Save to file
-    saveToFile(newFile, filename1, filename2);
+    saveMixedFiles(newFile, filename1, filename2);
     return EXIT_SUCCESS;
 }
 
