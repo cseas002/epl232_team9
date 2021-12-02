@@ -22,7 +22,7 @@ int saveMixedFiles(MUSIC_FILE *newFile, char const *filename1, char const *filen
     char *changed2 = (char*) malloc(strlen(filename2)+1);
     if(!changed2) return EXIT_FAILURE;
     changedName(changed1, filename1, "mix-");
-    changedName(changed2, filename1, "");
+    changedName(changed2, filename2, "");
     char *newFilename = (char*) malloc(strlen(changed1)+strlen(changed2)+1);
     if(!newFilename) return EXIT_FAILURE;
     if(!strncpy(newFilename, changed1, strlen(changed1)-4)) return EXIT_FAILURE;
@@ -39,8 +39,12 @@ int saveMixedFiles(MUSIC_FILE *newFile, char const *filename1, char const *filen
     return EXIT_SUCCESS;
 }
 
-int mix(MUSIC_FILE* file1, MUSIC_FILE *file2, char const *filename1, char const *filename2){
-    if(!file1 || !file2 || !filename1 || !filename2) return EXIT_FAILURE;
+int mix(char const *filename1, char const *filename2){
+     if(!filename1 || !filename2) return EXIT_FAILURE;
+    MUSIC_FILE *file1 = (MUSIC_FILE*) malloc(sizeof(MUSIC_FILE));
+    readHeaderAndData(file1, filename1);
+    MUSIC_FILE *file2 = (MUSIC_FILE*) malloc(sizeof(MUSIC_FILE));
+    readHeaderAndData(file2, filename2);
     if(file1->fmtSub->numChannels == 1 || file2->fmtSub->numChannels == 1) return EXIT_FAILURE;
     if(file1->fmtSub->bitsPerSample != file2->fmtSub->bitsPerSample) return EXIT_FAILURE;
     //Create new music file
@@ -61,13 +65,9 @@ int mix(MUSIC_FILE* file1, MUSIC_FILE *file2, char const *filename1, char const 
 
 #ifdef DEBUG_MIX
     int main(){
-        char name1[] = "LRMonoPhase4.wav";
-        char name2[] = "piano.wav";
-        MUSIC_FILE *musicFile1 = (MUSIC_FILE*) malloc(sizeof(MUSIC_FILE));
-        readHeaderAndData(musicFile1, name1);
-        MUSIC_FILE *musicFile2 = (MUSIC_FILE*) malloc(sizeof(MUSIC_FILE));
-        readHeaderAndData(musicFile2, name2);
-        mix(musicFile1, musicFile2, name1, name2);
+        char name2[] = "./as4-supplementary/piano.wav";
+        char name1[] = "./as4-supplementary/LRMonoPhase4.wav";
+        mix(name1, name2);
     }
 #endif
 
