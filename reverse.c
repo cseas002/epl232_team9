@@ -44,7 +44,9 @@ int reverse(char const* fileName) {
     //reverse-\0 is 9 characters
     MUSIC_FILE* reverseMusicFile = NULL;
     if (!(reverseMusicFile = (MUSIC_FILE*) malloc(sizeof(MUSIC_FILE)))) return EXIT_FAILURE;
-    if (changedName(newFileName, fileName, "-reverse") == EXIT_FAILURE) return EXIT_FAILURE;
+    printf("%s\n", fileName);
+    if (changedName(newFileName, fileName, "reverse-") == EXIT_FAILURE) return EXIT_FAILURE;
+    printf("%s\n", newFileName);
     if (readHeaderAndData(reverseMusicFile, newFileName) == EXIT_FAILURE) {
         printf("Failed to read music file\n");
         return EXIT_FAILURE;

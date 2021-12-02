@@ -52,7 +52,7 @@ int chop(char const *fileName, short startSecond, short endSecond) {
     //chopped-\0 is 8 characters
     MUSIC_FILE* choppedMusicFile = NULL;
     if (!(choppedMusicFile = (MUSIC_FILE*) malloc(sizeof(MUSIC_FILE)))) return EXIT_FAILURE; 
-    if (changedName(newFileName, fileName, "-chopped") == EXIT_FAILURE) return EXIT_FAILURE;
+    if (changedName(newFileName, fileName, "chopped-") == EXIT_FAILURE) return EXIT_FAILURE;
     if (readHeaderAndData(choppedMusicFile, newFileName) == EXIT_FAILURE) {
         printf("Failed to read music file\n");
         return EXIT_FAILURE;
