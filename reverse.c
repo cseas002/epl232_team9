@@ -16,15 +16,12 @@ int copyReverseData(MUSIC_FILE* target, byte* data) {
     return EXIT_SUCCESS;  
 }
 
-int createReverseFile(MUSIC_FILE* musicFile, char const *fileName) {
+int createReverseFile(MUSIC_FILE* musicFile, char const *newFileName) {
     MUSIC_FILE* reverseMusicFile = NULL;
     if (!(reverseMusicFile = (MUSIC_FILE*) malloc(sizeof(MUSIC_FILE)))) return EXIT_FAILURE;
     if (copyHeader(musicFile, reverseMusicFile) == EXIT_FAILURE) return EXIT_FAILURE;
     if (copyReverseData(reverseMusicFile, musicFile -> data) == EXIT_FAILURE) return EXIT_FAILURE;
-    char* newFileName = (char*) malloc((strlen(fileName) + 29) * sizeof(char));
-    // we add 29 because that's the size of ./as4-supplementary/reverse-\0
-    strcat(newFileName, "./as4-supplementary/reverse-");
-    strcat(newFileName, fileName);
+
     FILE* fp = NULL;
     if (!(fp = fopen(newFileName, "wb"))) {
         printf("Cannot create reverse file\n");
@@ -47,7 +44,7 @@ int reverse(char const* fileName) {
     printf("%s\n", fileName);
     if (changedName(newFileName, fileName, "reverse-") == EXIT_FAILURE) return EXIT_FAILURE;
     printf("%s\n", newFileName);
-    if (readHeaderAndData(reverseMusicFile, newFileName) == EXIT_FAILURE) {
+    if (readHeaderAndData(reverseMusicFile, fileName) == EXIT_FAILURE) {
         printf("Failed to read music file\n");
         return EXIT_FAILURE;
     }

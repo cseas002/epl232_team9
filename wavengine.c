@@ -48,9 +48,10 @@ int main(int argc, char const *argv[])
                 printf("Too many arguments\n");
                 exit(-1);
             } 
-            else
-                if (chop(argv[1], atoi(argv[2]), atoi(argv[3]) == EXIT_FAILURE)) // atoi method casts to integer
+            else{
+                if (chop(argv[2], atoi(argv[3]), atoi(argv[4])) == EXIT_FAILURE) // atoi method casts to integer
                     exit(-1);
+            }
         }
     else if (strcmp(argv[1], "-reverse") == 0) { // if the argument is "-reverse"
         for (i = 2; i < argc; i++) 

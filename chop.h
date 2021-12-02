@@ -7,9 +7,9 @@
 #include <stdbool.h>
 #include <string.h>
 
-bool secondsAreValid(MUSIC_FILE*, short endSecond);
+bool secondsAreValid(MUSIC_FILE*, int endSecond);
 
-int createChoppedFile(MUSIC_FILE* choppedMusicFile, short startSecond, short endSecond, char const *fileName);
+int createChoppedFile(MUSIC_FILE* choppedMusicFile, int startSecond, int endSecond, char const *fileName);
 
-int chop(char const *fileName, short startSecond, short endSecond);
+int chop(char const *fileName, int startSecond, int endSecond);
 #endif
