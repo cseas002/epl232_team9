@@ -8,6 +8,7 @@
 #include "reverse.h"
 #include "encryption.h"
 #include "decryption.h"
+#include "changeSpeed.h"
 
 int main(int argc, char const *argv[])
 {
@@ -80,6 +81,16 @@ int main(int argc, char const *argv[])
                 exit(-1);
             } 
             else if (decryption(argv[2], atoi(argv[3]), argv[4]) == EXIT_FAILURE) exit(-1);
+    }
+    else if (strcmp(argv[1], "-changeSpeed") == 0) { // if the argument is "-changeSpeed"
+        if (argc < 4) {
+            printf("Give the speed change (value from 0 - 100000) and then the wav files to change\n");
+            exit(-1);
+        }
+        char* speedToChange = (char*) argv[2];
+        for (i = 3; i < argc; i++) 
+            if (speedChange(argv[i], speedToChange) == EXIT_FAILURE) exit(-1);
+
     }
     return 0;
 }
