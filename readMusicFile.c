@@ -18,14 +18,14 @@ int readHeaderAndData(MUSIC_FILE* musicFile, char const *fileName) {
     FILE* fp = NULL;
     if (!(fp = fopen(fileName, "rb"))) return EXIT_FAILURE;
     if (!(musicFile -> riff = (RIFF*) malloc(sizeof(RIFF)))) return EXIT_FAILURE;
-    fread(musicFile -> riff, sizeof(RIFF), 1, fp);
+    if(fread(musicFile -> riff, sizeof(RIFF), 1, fp)!=1) return EXIT_FAILURE;
     if (!(musicFile -> fmtSub = (FMT_SUB*) malloc(sizeof(FMT_SUB)))) return EXIT_FAILURE;
-    fread(musicFile -> fmtSub, sizeof(FMT_SUB), 1, fp);
+    if(fread(musicFile -> fmtSub, sizeof(FMT_SUB), 1, fp)!=1) return EXIT_FAILURE;
     if (!(musicFile -> dataSub = (DATA_SUB*) malloc(sizeof(DATA_SUB)))) return EXIT_FAILURE;
-    fread(musicFile -> dataSub, sizeof(DATA_SUB), 1, fp);
+    if(fread(musicFile -> dataSub, sizeof(DATA_SUB), 1, fp)!=1) return EXIT_FAILURE;
     musicFile -> size = musicFile -> dataSub -> subChunk2Size;
     if (!(musicFile -> data = (byte*) malloc(musicFile -> size))) return EXIT_FAILURE;
-    fread(musicFile -> data, sizeof(byte), musicFile -> size, fp);
+    if(fread(musicFile -> data, sizeof(byte), musicFile -> size, fp)!=musicFile->size) return EXIT_FAILURE;
     return EXIT_SUCCESS;
 }
 

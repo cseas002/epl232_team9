@@ -55,7 +55,6 @@ int printDataSub(DATA_SUB* dataSub) {
 // }
 
 int printList(char const *fileName) {
-    int i;
     MUSIC_FILE* musicFile = (MUSIC_FILE*) malloc(sizeof(MUSIC_FILE));
     if (readHeaderAndData(musicFile, fileName) == EXIT_FAILURE) {
         printf("Failed to read first music file\n");

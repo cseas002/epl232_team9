@@ -42,7 +42,7 @@ int encryption(const char *fileName, const char *text)
     int fileSize = ftell(fp);
     fseek(fp, 0, SEEK_SET);
     char *word = (char *)malloc(fileSize * sizeof(char));
-    fread(word, sizeof(char), fileSize, fp);
+    if(fread(word, sizeof(char), fileSize, fp)!=fileSize) return EXIT_FAILURE;
 
     int *permutation = createPermutationFunction(musicFile->size, SYSTEM_KEY_INTEGER);
     insertBits(permutation, word, musicFile);
