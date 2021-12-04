@@ -28,14 +28,7 @@ int saveMixedFiles(MUSIC_FILE *newFile, char const *filename1, char const *filen
     if(!strncpy(newFilename, changed1, strlen(changed1)-4)) return EXIT_FAILURE;
     if(!strcat(newFilename, "-")) return EXIT_FAILURE;
     if(!strcat(newFilename, changed2)) return EXIT_FAILURE;
-    FILE *fp = fopen(newFilename, "wb");
-    free(newFilename);
-    if(!fp) return EXIT_FAILURE;
-    if(writeRiff(newFile->riff, fp)==EXIT_FAILURE) return EXIT_FAILURE;
-    fwrite(newFile -> fmtSub, sizeof(FMT_SUB), 1, fp);
-    if (writeDataSub(newFile -> dataSub, fp) == EXIT_FAILURE) return EXIT_FAILURE;
-    fwrite(newFile -> data, sizeof(byte), newFile -> size, fp);
-    fclose(fp);
+    writeFile(newFile, newFilename);
     return EXIT_SUCCESS;
 }
 

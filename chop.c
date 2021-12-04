@@ -29,16 +29,9 @@ int createChoppedFile(MUSIC_FILE* choppedMusicFile, int startSecond, int endSeco
         *(newData + i - startLength) = *(choppedMusicFile -> data + i);
     free(choppedMusicFile -> data);
     choppedMusicFile -> data = newData;
-    FILE* fp = NULL;
-    if (!(fp = fopen(newFileName, "wb"))) {
-        printf("Cannot create chopped file\n");
-        return EXIT_FAILURE;
-    }
-    if (writeRiff(choppedMusicFile -> riff, fp) == EXIT_FAILURE) return EXIT_FAILURE;
-    fwrite(choppedMusicFile -> fmtSub, sizeof(FMT_SUB), 1, fp); // everything is the same in fmt sub
-    if (writeDataSub(choppedMusicFile -> dataSub, fp) == EXIT_FAILURE) return EXIT_FAILURE;
-    fwrite(choppedMusicFile -> data, sizeof(byte), newSize, fp);
-    fclose(fp);
+    
+    writeFile(choppedMusicFile, newFileName);
+    
     return EXIT_SUCCESS;
 }
 
