@@ -13,7 +13,7 @@ int decryption(const char *fileName, int msgLength, const char *outputFileName)
     }
     int *permutation = createPermutationFunction(musicFile->size, SYSTEM_KEY_INTEGER);
     char *msg = (char *)malloc((msgLength + 1) * sizeof(char));
-    int i, j;
+    int i;
     for (i = 0; i < msgLength + 1; i++)
         msg[i] = 0;
     for (i = 0; i < msgLength * 8; i++)
