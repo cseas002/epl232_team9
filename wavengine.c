@@ -12,8 +12,8 @@ void printWrongInput() {
     printf("This option cuts the given music file and from the start second to the end second\n\n");
     printf("./wavengine -reverse <wave file(s)>\n");
     printf("This option reverses the given music files\n\n");
-    printf("./wavengine -encodeText <wave file> <text to encode>\n");
-    printf("This option encodes the given text to the given wave file\n\n");
+    printf("./wavengine -encodeText <wave file> <input file with text to encode>\n");
+    printf("This option encodes the given text (inside the input file) to the given wave file\n\n");
     printf("./wavengine -decodeText <wave file> <message length> <output file>\n");
     printf("This option decodes the given music file and prints the hidden message with the given length to the output file\n\n");
     printf("./wavenging -changeSpeed <number to be multiplied> <wave file(s)>\n");
@@ -141,6 +141,9 @@ int main(int argc, char const *argv[])
     else  // wrong input or chose -man
         printWrongInput();
     
+    fclose(stdin);
+    fclose(stdout);
+    fclose(stderr);
     return 0;
 }
 

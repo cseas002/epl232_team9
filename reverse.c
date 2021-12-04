@@ -32,6 +32,8 @@ int reverse(char const* fileName) {
     if (copyReverseData(reverseMusicFile, musicFile -> data) == EXIT_FAILURE) return EXIT_FAILURE;
     if (changedName(newFileName, fileName, "reverse-") == EXIT_FAILURE) return EXIT_FAILURE;
     if (writeFile(reverseMusicFile, newFileName) == EXIT_FAILURE) return EXIT_FAILURE;
+    free(newFileName);
+    freeMusicFile(reverseMusicFile);
     freeMusicFile(musicFile);
     return EXIT_SUCCESS;
 }

@@ -9,7 +9,7 @@ void swap(int *num1, int *num2)
 int *createPermutationFunction(int N, unsigned int systemkey)
 {
     int i;
-    int *permutation = (int *)malloc((N * sizeof(int)));
+    int *permutation = (int *) malloc((N * sizeof(int)));
     srand(systemkey);
     for (i = 0; i < N; i++)
         *(permutation + i) = i;

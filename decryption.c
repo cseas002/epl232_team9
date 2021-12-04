@@ -3,16 +3,17 @@
 int decryption(const char *fileName, int msgLength, const char *outputFileName)
 {
     MUSIC_FILE *musicFile = NULL;
-    if (!(musicFile = (MUSIC_FILE *)malloc(sizeof(MUSIC_FILE))))
+    if (!(musicFile = (MUSIC_FILE *) malloc(sizeof(MUSIC_FILE))))
         return EXIT_FAILURE;
 
     if (readHeaderAndData(musicFile, fileName) == EXIT_FAILURE)
     {
         printf("Failed to read music file\n");
+        freeMusicFile(musicFile);
         return EXIT_FAILURE;
     }
     int *permutation = createPermutationFunction(musicFile->size, SYSTEM_KEY_INTEGER);
-    char *msg = (char *)malloc((msgLength + 1) * sizeof(char));
+    char *msg = (char *) malloc((msgLength + 1) * sizeof(char));
     int i;
     for (i = 0; i < msgLength + 1; i++)
         msg[i] = 0;
@@ -27,6 +28,8 @@ int decryption(const char *fileName, int msgLength, const char *outputFileName)
     if (!fp)
         return EXIT_FAILURE;
     fprintf(fp, "%s\n", msg);
+    fclose(fp);
+    free(permutation);
     free(msg);
     freeMusicFile(musicFile);
     return EXIT_SUCCESS;

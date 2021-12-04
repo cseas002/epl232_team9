@@ -1,7 +1,6 @@
 #include "stereoToMono.h"
 
 int changeHeader(MUSIC_FILE *newFile){
-    printf("%d\n", newFile->dataSub->subChunk2Size);
     newFile->dataSub->subChunk2Size = newFile->dataSub->subChunk2Size/2;
     newFile->size = newFile->size/2;
     newFile->riff->chunkSize = newFile->size+36;
@@ -28,6 +27,7 @@ int saveToFile(MUSIC_FILE *newFile, char const *filename){
     char *newFileName = (char*) malloc(strlen(filename)+6);
     if(changedName(newFileName, filename, "mono-")==EXIT_FAILURE) return EXIT_FAILURE;
     writeFile(newFile, newFileName);
+    free(newFileName);
     return EXIT_SUCCESS;
 }
 
@@ -38,10 +38,7 @@ int stereoToMono(char const *fileName){
     MUSIC_FILE *newFile = (MUSIC_FILE*) malloc(sizeof(MUSIC_FILE));
     if (!newFile) return EXIT_FAILURE;
     //Header
-    newFile->riff = (RIFF*) malloc(sizeof(RIFF));
-    newFile->fmtSub = (FMT_SUB*) malloc(sizeof(FMT_SUB));
-    newFile->dataSub = (DATA_SUB*) malloc(sizeof(DATA_SUB));
-    if(!newFile->riff || !newFile->fmtSub || !newFile->dataSub || copyHeader(musicFile, newFile) || changeHeader(newFile)) 
+    if(copyHeader(musicFile, newFile) || changeHeader(newFile)) 
         return EXIT_FAILURE;
     //Data
     newFile->data = (byte*) malloc(newFile->size);
@@ -50,6 +47,9 @@ int stereoToMono(char const *fileName){
     //Save to file
     if(saveToFile(newFile, fileName))
         return EXIT_FAILURE;
+
+    freeMusicFile(newFile);
+    freeMusicFile(musicFile);
     return EXIT_SUCCESS;
 }
 

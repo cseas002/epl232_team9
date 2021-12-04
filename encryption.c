@@ -14,7 +14,7 @@ unsigned short getBit(char const *word, int i)
 int insertBits(int *permutation, char const *word, MUSIC_FILE *musicFile)
 {
     int i;
-    for (i = 0; i < strlen(word) * 8 + 1; i++)
+    for (i = 0; i < strlen(word) * 8; i++)
     {
         unsigned short u = getBit(word, i);
         int x = permutation[i];
@@ -41,16 +41,26 @@ int encryption(const char *fileName, const char *text)
     fseek(fp, 0, SEEK_END);
     int fileSize = ftell(fp);
     fseek(fp, 0, SEEK_SET);
-    char *word = (char *)malloc(fileSize * sizeof(char));
+    char *word = (char *) malloc((fileSize + 1) * sizeof(char));
+    // + 1 for '\0'
     if(fread(word, sizeof(char), fileSize, fp)!=fileSize) return EXIT_FAILURE;
-
+    if (musicFile -> size < strlen(word) * 8) {
+        printf("Wave file size too low to encrypt the given word\n");
+        free(word);
+        freeMusicFile(musicFile);
+        fclose(fp);
+        return EXIT_FAILURE;
+    }
     int *permutation = createPermutationFunction(musicFile->size, SYSTEM_KEY_INTEGER);
     insertBits(permutation, word, musicFile);
+    free(word);
     free(permutation);
     char *newFileName = (char *)malloc((strlen(fileName) + 9) * sizeof(char));
     // "encoded-\0" is 9 bytes
     changedName(newFileName, fileName, "encoded-");
+    fclose(fp);
     writeFile(musicFile, newFileName);
+    free(newFileName);
     freeMusicFile(musicFile);
     return EXIT_SUCCESS;
 }

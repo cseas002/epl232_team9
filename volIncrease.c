@@ -12,7 +12,7 @@ int changeVol(char const *fileName, char* changeStr) {
     // <strlen(changeStr)>-times-volIncreased-\0 is 23 bytes + strlen(changeStr)
     strcpy(volIncreaseStr, changeStr);
     strcat(volIncreaseStr, "-times-vol-increased-");
-    char* newFileName = (char*) malloc(strlen(fileName) + strlen(volIncreaseStr)); 
+    char* newFileName = (char*) malloc(strlen(fileName) + strlen(volIncreaseStr) + 1); 
     MUSIC_FILE* musicFile = NULL;
     if (!(musicFile = (MUSIC_FILE*) malloc(sizeof(MUSIC_FILE)))) return EXIT_FAILURE;
     if (readHeaderAndData(musicFile, fileName) == EXIT_FAILURE) {
