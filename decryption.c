@@ -28,5 +28,6 @@ int decryption(const char *fileName, int msgLength, const char *outputFileName)
         return EXIT_FAILURE;
     fprintf(fp, "%s\n", msg);
     free(msg);
+    freeMusicFile(musicFile);
     return EXIT_SUCCESS;
 }

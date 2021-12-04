@@ -41,19 +41,6 @@ int printDataSub(DATA_SUB* dataSub) {
     return EXIT_SUCCESS;
 }
 
-// int printMusicFiles(MUSIC_FILE** musicFiles, short files) {
-//     int i;
-//     for (i = 0; i < files; i++) {
-//         MUSIC_FILE* musicFile = *(musicFiles + i);
-//         if (printRiff(musicFile -> riff) == EXIT_FAILURE) return EXIT_FAILURE;
-//         if (printFmtSub(musicFile -> fmtSub) == EXIT_FAILURE) return EXIT_FAILURE;
-//         if (printDataSub(musicFile -> dataSub) == EXIT_FAILURE) return EXIT_FAILURE;
-//         if (i != files - 1)
-//             printf("************************************\n");
-//     }
-//     return EXIT_SUCCESS;
-// }
-
 int printList(char const *fileName) {
     MUSIC_FILE* musicFile = (MUSIC_FILE*) malloc(sizeof(MUSIC_FILE));
     if (readHeaderAndData(musicFile, fileName) == EXIT_FAILURE) {
@@ -61,8 +48,16 @@ int printList(char const *fileName) {
         return EXIT_FAILURE;
         }
     if (printRiff(musicFile -> riff) == EXIT_FAILURE) return EXIT_FAILURE;
-    if (printFmtSub(musicFile -> fmtSub) == EXIT_FAILURE) return EXIT_FAILURE;
-    if (printDataSub(musicFile -> dataSub) == EXIT_FAILURE) return EXIT_FAILURE;
+    if (printFmtSub(musicFile -> fmtSub) == EXIT_FAILURE) {
+        free(musicFile -> riff);
+        return EXIT_FAILURE;
+    }
+    if (printDataSub(musicFile -> dataSub) == EXIT_FAILURE) {
+        free(musicFile -> riff);
+        free(musicFile -> fmtSub);
+        return EXIT_FAILURE;
+    }
+    freeMusicFile(musicFile);
     return EXIT_SUCCESS;
 }
 

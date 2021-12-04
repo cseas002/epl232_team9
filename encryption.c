@@ -51,5 +51,6 @@ int encryption(const char *fileName, const char *text)
     // "encoded-\0" is 9 bytes
     changedName(newFileName, fileName, "encoded-");
     writeFile(musicFile, newFileName);
+    freeMusicFile(musicFile);
     return EXIT_SUCCESS;
 }
