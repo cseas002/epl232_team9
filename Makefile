@@ -35,7 +35,17 @@ all :
 # To make all (program + manual) "make doxy"
 doxy:
 	$(DOXYGEN) doxygen.conf &> doxygen.log
-# To clean .o files: "make clean"
+# To clean .o files amd doxygen: "make clean"
 clean:
 	rm -rf *.o doxygen.log html
+# To clean .o files: "make cleano"
+cleano:
+	rm -rf *.o
+# To make the library: "make team9"
+team9:
+	make
+	rm wavengine
+	rm wavengine.o
+	for file in `ls | grep "\.o"`; do ar -cvq epl232_team9.a $$file; done
+	make cleano
 

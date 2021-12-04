@@ -1,5 +1,8 @@
 # epl232_team9
 
+To create the library use the command: "make team9"
+After this, compile the file using the library (gcc -o wavengine wavengine.c epl232_team9.a)
+
 The valid inputs for the program are:
 ./wavengine -list <wave file(s)>
 This option prints the details of the given music file(s)
