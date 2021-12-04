@@ -1,3 +1,11 @@
+/**
+ * @file wavengine.h
+ * @author Christoforos Seas (cseas002@ucy.ac.cy)
+ * @author Lampros Dionysiou (ldiony01@ucy.ac.cy)
+ * @brief 
+ * @version 0.1
+ * @date 2021-11-25 
+ */
 #ifndef WRITE_MUSIC_FILE
 #define WRITE_MUSIC_FILE
 
