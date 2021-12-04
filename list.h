@@ -8,6 +8,8 @@
  * @copyright Copyright (c) 2021 Christoforos Seas
  * 
  */
+#ifndef LIST
+#define LIST
 #include "iolib.h"
 #include "header.h" // this is supplementary but I put it so it's more clear what we use
 
@@ -33,3 +35,4 @@ int printDataSub(DATA_SUB*);
 // int printMusicFiles(MUSIC_FILE**, short);
 
 int printList(char const *fileName);
+#endif
