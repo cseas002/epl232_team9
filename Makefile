@@ -48,4 +48,5 @@ team9:
 	rm wavengine.o
 	for file in `ls | grep "\.o"`; do ar -cvq epl232_team9.a $$file; done
 	make cleano
+	make doxy
 
