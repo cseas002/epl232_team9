@@ -9,7 +9,7 @@
  * will be 2 times slower.
  * e.g.
  * ./wavengine -changeSpeed 2 piano.wav
- * Results: if piano.wav is in the same folder as wavengine, a new file will be created named "5piano.wav" 
+ * Results: if piano.wav is in the same folder as wavengine, a new file will be created named "5-times-speed-changed-piano.wav" 
  * which is piano.wav 5 times faster
  * @version 0.1
  * @date 2021-12-04
@@ -29,8 +29,11 @@ int speedChange(char const* fileName, char* speedChange) {
         printf("The speed must be a value lower than 100000\n");
         return EXIT_FAILURE;
     }
-    char* newFileName = (char*) malloc(strlen(fileName) + 27 * sizeof(char)); 
-    // 99999-times-speed-changed-\0 is 27 characters
+    char* timesChanged = (char*) malloc((strlen(speedChange) + 22) * sizeof(char));
+    // <strlen(speedChange)>-times-speed-changed-\0 is 22 characters + strlen(speedChange)
+    strcpy(timesChanged, speedChange);
+    strcat(timesChanged, "-times-speed-changed-");
+    char* newFileName = (char*) malloc(strlen(fileName) + strlen(timesChanged)); 
     MUSIC_FILE* musicFile = NULL;
     if (!(musicFile = (MUSIC_FILE*) malloc(sizeof(MUSIC_FILE)))) return EXIT_FAILURE;
     if (readHeaderAndData(musicFile, fileName) == EXIT_FAILURE) {
@@ -38,12 +41,12 @@ int speedChange(char const* fileName, char* speedChange) {
         return EXIT_FAILURE;
     }
     musicFile -> fmtSub -> sampleRate *= speedChangeNum; // changing speed
-    // char* timesChanged = ;
-    // speedChange = strcat(speedChange, "-times-speed-changed-");
-    // printf("%s\n\n", fileName);
 
-    if (changedName(newFileName, fileName, speedChange) == EXIT_FAILURE) return EXIT_FAILURE;
+    if (changedName(newFileName, fileName, timesChanged) == EXIT_FAILURE) return EXIT_FAILURE;
     if (writeFile(musicFile, newFileName) == EXIT_FAILURE) return EXIT_FAILURE;
+    free(newFileName);
+    free(timesChanged);
+    freeMusicFile(musicFile);
     return EXIT_SUCCESS;
 }
 

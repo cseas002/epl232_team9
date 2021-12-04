@@ -26,6 +26,7 @@ int readHeaderAndData(MUSIC_FILE* musicFile, char const *fileName) {
     musicFile -> size = musicFile -> dataSub -> subChunk2Size;
     if (!(musicFile -> data = (byte*) malloc(musicFile -> size))) return EXIT_FAILURE;
     if(fread(musicFile -> data, sizeof(byte), musicFile -> size, fp)!=musicFile->size) return EXIT_FAILURE;
+    fclose(fp);
     return EXIT_SUCCESS;
 }
 

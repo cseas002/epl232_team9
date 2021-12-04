@@ -39,15 +39,27 @@ int chop(char const *fileName, int startSecond, int endSecond) {
     char* newFileName = (char*) malloc(strlen(fileName) + 8 * sizeof(char)); 
     //chopped-\0 is 8 characters
     MUSIC_FILE* choppedMusicFile = NULL;
-    if (!(choppedMusicFile = (MUSIC_FILE*) malloc(sizeof(MUSIC_FILE)))) return EXIT_FAILURE; 
-    if (changedName(newFileName, fileName, "chopped-") == EXIT_FAILURE) return EXIT_FAILURE;
-    if (readHeaderAndData(choppedMusicFile, fileName) == EXIT_FAILURE) {
-        printf("Failed to read music file\n");
+    if (!(choppedMusicFile = (MUSIC_FILE*) malloc(sizeof(MUSIC_FILE)))) 
+        return EXIT_FAILURE; 
+    if (changedName(newFileName, fileName, "chopped-") == EXIT_FAILURE) {
+        free(choppedMusicFile);
         return EXIT_FAILURE;
     }
-    if (!secondsAreValid(choppedMusicFile, endSecond)) return EXIT_FAILURE;
-    if (createChoppedFile(choppedMusicFile, startSecond, endSecond, newFileName) == EXIT_FAILURE) 
+    if (readHeaderAndData(choppedMusicFile, fileName) == EXIT_FAILURE) {
+        printf("Failed to read music file\n");
+        free(choppedMusicFile);
         return EXIT_FAILURE;
+    }
+    if (!secondsAreValid(choppedMusicFile, endSecond)) {
+        free(choppedMusicFile);
+        return EXIT_FAILURE;
+    }
+    if (createChoppedFile(choppedMusicFile, startSecond, endSecond, newFileName) == EXIT_FAILURE) {
+        free(choppedMusicFile);
+        return EXIT_FAILURE;
+    }
+    free(newFileName);
+    freeMusicFile(choppedMusicFile);
     return EXIT_SUCCESS;
 }
 

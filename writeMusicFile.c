@@ -36,6 +36,14 @@
 //     return EXIT_SUCCESS;
 // }
 
+void freeMusicFile(MUSIC_FILE* musicFile) {
+    free(musicFile -> riff);
+    free(musicFile -> fmtSub);
+    free(musicFile -> dataSub);
+    free(musicFile -> data);
+    free(musicFile);
+}
+
 int writeFile(MUSIC_FILE* musicFile, char const *newFileName) {
     FILE* fp = NULL;
     if (!(fp = fopen(newFileName, "wb"))) {

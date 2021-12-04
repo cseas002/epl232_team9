@@ -2,15 +2,17 @@
 
 int changeVol(char const *fileName, char* changeStr) {
     float change = atof(changeStr);
-    printf("%f\n", change);
     if (change < 1) {
         printf("The change value must be greater or equal than 1\n");
         return EXIT_FAILURE;
     }
     int i;
     double newValue;
-    char* newFileName = (char*) malloc(strlen(fileName) + 14 * sizeof(char)); 
-    // volIncreased-\0 is 14 characters
+    char* volIncreaseStr = (char*) malloc((strlen(changeStr) + 23) * sizeof(char));
+    // <strlen(changeStr)>-times-volIncreased-\0 is 23 bytes + strlen(changeStr)
+    strcpy(volIncreaseStr, changeStr);
+    strcat(volIncreaseStr, "-times-vol-increased-");
+    char* newFileName = (char*) malloc(strlen(fileName) + strlen(volIncreaseStr)); 
     MUSIC_FILE* musicFile = NULL;
     if (!(musicFile = (MUSIC_FILE*) malloc(sizeof(MUSIC_FILE)))) return EXIT_FAILURE;
     if (readHeaderAndData(musicFile, fileName) == EXIT_FAILURE) {
@@ -25,9 +27,11 @@ int changeVol(char const *fileName, char* changeStr) {
                 newValue = 255;
             *(musicFile -> data + i) = (byte) newValue;
         }
-
-    if (changedName(newFileName, fileName, "volIncreased-") == EXIT_FAILURE) return EXIT_FAILURE;
+    if (changedName(newFileName, fileName, volIncreaseStr) == EXIT_FAILURE) return EXIT_FAILURE;
     if (writeFile(musicFile, newFileName) == EXIT_FAILURE) return EXIT_FAILURE;
+    free(newFileName);
+    free(volIncreaseStr);
+    freeMusicFile(musicFile);
     return EXIT_SUCCESS;
 }
 
