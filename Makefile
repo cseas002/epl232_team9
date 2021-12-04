@@ -38,6 +38,7 @@ doxy:
 # To clean .o files amd doxygen: "make clean"
 clean:
 	rm -rf *.o doxygen.log html
+	rm epl232_team9.a
 # To clean .o files: "make cleano"
 cleano:
 	rm -rf *.o
@@ -49,4 +50,3 @@ team9:
 	for file in `ls | grep "\.o"`; do ar -cvq epl232_team9.a $$file; done
 	make cleano
 	make doxy
-
