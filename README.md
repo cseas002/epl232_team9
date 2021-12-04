@@ -3,7 +3,7 @@
 To create the library use the command: "make team9"
 After this, compile the file using the library (gcc -o wavengine wavengine.c epl232_team9.a)
 
-The valid inputs for the program are:
+The valid for the program inputs are:
 ./wavengine -list <wave file(s)>
 This option prints the details of the given music file(s)
 
@@ -19,8 +19,8 @@ This option cuts the given music file and from the start second to the end secon
 ./wavengine -reverse <wave file(s)>
 This option reverses the given music files
 
-./wavengine -encodeText <wave file> <text to encode>
-This option encodes the given text to the given wave file
+./wavengine -encodeText <wave file> <input file with text to encode>
+This option encodes the given text (inside the input file) to the given wave file
 
 ./wavengine -decodeText <wave file> <message length> <output file>
 This option decodes the given music file and prints the hidden message with the given length to the output file

@@ -25,13 +25,13 @@ void printWrongInput() {
     printf("NOTE: All options do not change the music files, they create new music files (except -list, -encode, -decode)\n");
 }
 
-int main(int argc, char const *argv[])
+int wavengine(int argc, char const *argv[])
 {
     int i;
     if (argc < 3)
     {
         printWrongInput();
-        exit(-1);
+        return EXIT_FAILURE;
     }
     if (strcmp(argv[1], "-list") == 0) // if the argument is "-list"
         for (i = 2; i < argc; i++)
@@ -44,7 +44,7 @@ int main(int argc, char const *argv[])
     { // if the argument is "-mono"
         for (i = 2; i < argc; i++)
             if (stereoToMono(argv[i]) == EXIT_FAILURE)
-                exit(-1);
+                return EXIT_FAILURE;
     }
 
     else if (strcmp(argv[1], "-mix") == 0)
@@ -52,15 +52,15 @@ int main(int argc, char const *argv[])
         if (argc < 4)
         {
             printf("Too few arguments\n");
-            exit(-1);
+            return EXIT_FAILURE;
         }
         else if (argc > 4)
         {
             printf("Too many arguments\n");
-            exit(-1);
+            return EXIT_FAILURE;
         }
         else if (mix(argv[2], argv[3]) == EXIT_FAILURE)
-            exit(-1);
+            return EXIT_FAILURE;
     }
 
     else if (strcmp(argv[1], "-chop") == 0) // if the argument is "-chop"
@@ -68,82 +68,89 @@ int main(int argc, char const *argv[])
         if (argc < 5)
         {
             printf("Too few arguments\n");
-            exit(-1);
+            return EXIT_FAILURE;
         }
         else if (argc > 5)
         {
             printf("Too many arguments\n");
-            exit(-1);
+            return EXIT_FAILURE;
         }
         else if (chop(argv[2], atoi(argv[3]), atoi(argv[4])) == EXIT_FAILURE) // atoi method casts to integer
-            exit(-1);
+            return EXIT_FAILURE;
     }
     else if (strcmp(argv[1], "-reverse") == 0)
     { // if the argument is "-reverse"
         for (i = 2; i < argc; i++)
             if (reverse(argv[i]) == EXIT_FAILURE)
-                exit(-1);
+                return EXIT_FAILURE;
     }
     else if (strcmp(argv[1], "-encodeText") == 0)
     { // if the argument is "-encodeText"
         if (argc < 4)
         {
             printf("Too few arguments\n");
-            exit(-1);
+            return EXIT_FAILURE;
         }
         else if (argc > 4)
         {
             printf("Too many arguments\n");
-            exit(-1);
+            return EXIT_FAILURE;
         }
         else if (encryption(argv[2], argv[3]) == EXIT_FAILURE)
-            exit(-1);
+            return EXIT_FAILURE;
     }
     else if (strcmp(argv[1], "-decodeText") == 0)
     { // if the argument is "-decodeText"
         if (argc < 5)
         {
             printf("Too few arguments\n");
-            exit(-1);
+            return EXIT_FAILURE;
         }
         else if (argc > 5)
         {
             printf("Too many arguments\n");
-            exit(-1);
+            return EXIT_FAILURE;
         }
         else if (decryption(argv[2], atoi(argv[3]), argv[4]) == EXIT_FAILURE)
-            exit(-1);
+            return EXIT_FAILURE;
     }
     else if (strcmp(argv[1], "-changeSpeed") == 0)
     { // if the argument is "-changeSpeed"
         if (argc < 4)
         {
             printf("Give the speed change (value from 0 to 100000, 0 and 100000 not included) and then the wav file(s) to change\n");
-            exit(-1);
+            return EXIT_FAILURE;
         }
         char *speedToChange = (char *)argv[2];
         for (i = 3; i < argc; i++)
             if (speedChange(argv[i], speedToChange) == EXIT_FAILURE)
-                exit(-1);
+                return EXIT_FAILURE;
     }
     else if (strcmp(argv[1], "-volIncrease") == 0) 
     { // if the argument is "-volChange"
         if (argc < 4)
         {
             printf("Give the volume increase (value greater or equal to 1) and then the wav file(s) to change\n");
-            exit(-1);
+            return EXIT_FAILURE;
         }
         char *volToChange = (char *)argv[2];
         for (i = 3; i < argc; i++)
             if (changeVol(argv[i], volToChange) == EXIT_FAILURE)
-                exit(-1);
+                return EXIT_FAILURE;
     }
     else  // wrong input or chose -man
         printWrongInput();
     
+    return EXIT_SUCCESS;
+}
+
+int main(int argc, char const *argv[])
+{
+    int n = wavengine(argc, argv);
     fclose(stdin);
     fclose(stdout);
     fclose(stderr);
-    return 0;
+    return -n; // -1 for EXIT_FAILURE 0 for EXIT_SUCCESS
 }
+
 

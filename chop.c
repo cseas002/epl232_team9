@@ -36,7 +36,7 @@ int createChoppedFile(MUSIC_FILE* choppedMusicFile, int startSecond, int endSeco
 }
 
 int chop(char const *fileName, int startSecond, int endSecond) {
-    char* newFileName = (char*) malloc(strlen(fileName) + 8 * sizeof(char)); 
+    char* newFileName = (char*) malloc(strlen(fileName) + 9 * sizeof(char)); 
     //chopped-\0 is 8 characters
     MUSIC_FILE* choppedMusicFile = NULL;
     if (!(choppedMusicFile = (MUSIC_FILE*) malloc(sizeof(MUSIC_FILE)))) 
