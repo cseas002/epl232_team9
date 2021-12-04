@@ -9,3 +9,4 @@ int createReverseFile(MUSIC_FILE* musicFile, char const *fileName);
 
 int reverse(char const *fileName);
 #endif
+

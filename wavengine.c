@@ -18,7 +18,7 @@ void printWrongInput() {
     printf("This option decodes the given music file and prints the hidden message with the given length to the output file\n\n");
     printf("./wavenging -changeSpeed <number to be multiplied> <wave file(s)>\n");
     printf("This option multiplies the speed of the given music file(s) with the given number\n\n");
-    printf("./wavengine -volChange <number to be multiplied> <wave file(s)>\n");
+    printf("./wavengine -volIncrease <number to be multiplied> <wave file(s)>\n");
     printf("This option multiplies the volume of the given music file(s) by the number given\n\n");
 
     printf("./wavengine -man\nThis options prints this message\n\n");
@@ -126,11 +126,11 @@ int main(int argc, char const *argv[])
             if (speedChange(argv[i], speedToChange) == EXIT_FAILURE)
                 exit(-1);
     }
-    else if (strcmp(argv[1], "-volChange") == 0) 
+    else if (strcmp(argv[1], "-volIncrease") == 0) 
     { // if the argument is "-volChange"
         if (argc < 4)
         {
-            printf("Give the volume change (value greater or equal to 0) and then the wav file(s) to change\n");
+            printf("Give the volume increase (value greater or equal to 1) and then the wav file(s) to change\n");
             exit(-1);
         }
         char *volToChange = (char *)argv[2];
@@ -143,3 +143,4 @@ int main(int argc, char const *argv[])
     
     return 0;
 }
+

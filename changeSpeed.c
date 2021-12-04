@@ -46,3 +46,4 @@ int speedChange(char const* fileName, char* speedChange) {
     if (writeFile(musicFile, newFileName) == EXIT_FAILURE) return EXIT_FAILURE;
     return EXIT_SUCCESS;
 }
+

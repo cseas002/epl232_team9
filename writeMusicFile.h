@@ -33,3 +33,4 @@ int changedName(char* newFileName, char const *fileName, char* addition);
 
 int writeFile(MUSIC_FILE* musicFile, char const *newFileName);
 #endif
+

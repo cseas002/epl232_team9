@@ -11,3 +11,4 @@ int createChoppedFile(MUSIC_FILE* choppedMusicFile, int startSecond, int endSeco
 
 int chop(char const *fileName, int startSecond, int endSecond);
 #endif
+

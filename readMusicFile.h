@@ -5,3 +5,4 @@
 int readHeaderAndData(MUSIC_FILE*, char const *fileName);
 int copyHeader(MUSIC_FILE  *musicFile, MUSIC_FILE *newFile);
 #endif
+
