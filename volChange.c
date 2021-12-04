@@ -1,7 +1,4 @@
-#include "header.h"
-#include <string.h>
-#include "readMusicFile.h"
-#include "writeMusicFile.h"
+#include"volChange.h"
 
 int changeVol(MUSIC_FILE* musicFile, char* fileName, short percentageChange) {
     float change = percentageChange / 100;

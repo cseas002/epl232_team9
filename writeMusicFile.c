@@ -1,7 +1,5 @@
 #include "writeMusicFile.h"
-#include <stdio.h>
-#include <stdlib.h>
-#include <string.h>
+
 
 int writeRiff(RIFF* riff, FILE* fp) {
     fwrite(riff -> chunkID, sizeof(char), 4, fp); // write "RIFF"

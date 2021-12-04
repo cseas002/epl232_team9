@@ -1,8 +1,7 @@
 #ifndef REVERSE
 #define REVERSE
-#include "readMusicFile.h"
-#include <string.h>
-#include "writeMusicFile.h"
+#include "header.h"
+#include"iolib.h"
 
 int copyReverseData(MUSIC_FILE* target, byte* data);
 

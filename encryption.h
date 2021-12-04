@@ -1,6 +1,5 @@
 #ifndef ENCRYPTION
 #define ENCRYPTION
-#include "readMusicFile.h"
-
+#include "cryptography.h"
 int encryption(const char *fileName, const char* text);
 #endif

@@ -1,14 +1,4 @@
-#include "header.h"
-#include <stdio.h>
-#include <string.h>
-#include "list.h"
-#include "mix.h"
-#include "stereoToMono.h"
-#include "chop.h"
-#include "reverse.h"
-#include "encryption.h"
-#include "decryption.h"
-#include "changeSpeed.h"
+#include"wavengine.h"
 
 int main(int argc, char const *argv[])
 {

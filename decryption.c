@@ -1,9 +1,4 @@
-#include "header.h"
-#include "readMusicFile.h"
-#include "permutation.h"
-#include <string.h>
-#include <stdio.h>
-#include "writeMusicFile.h"
+#include"decryption.h"
 
 int decryption(const char *fileName, int msgLength, const char* outputFileName) {
     MUSIC_FILE* musicFile = NULL;

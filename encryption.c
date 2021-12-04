@@ -1,8 +1,5 @@
 #include "encryption.h"
-#include <stdlib.h>
-#include "writeMusicFile.h"
-#include <string.h>
-#include "permutation.h"
+
 
 unsigned short getBit(char const *word, int i) {
     int bytePos = i / 8;

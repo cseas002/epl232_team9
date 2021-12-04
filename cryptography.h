@@ -1,7 +1,7 @@
-#ifndef PERMUTATION
-#define PERMUTATION
-#include <stdlib.h>
+#ifndef CRYPTOGRAPHY
+#define CRYPTOGRAPHY
 #include "header.h"
+#include"iolib.h"
 
 int* createPermutationFunction(int N, unsigned int systemkey);
 

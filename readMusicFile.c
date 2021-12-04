@@ -1,4 +1,3 @@
-#include "header.h"
 #include "readMusicFile.h"
 
 int copyHeader(MUSIC_FILE  *musicFile, MUSIC_FILE *newFile){
