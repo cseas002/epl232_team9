@@ -16,4 +16,6 @@
 #include "encryption.h"
 #include "decryption.h"
 #include "changeSpeed.h"
+#include "volChange.h"
+void printWrongInput();
 #endif

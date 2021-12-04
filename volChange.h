@@ -3,5 +3,5 @@
 #include "header.h"
 #include "iolib.h"
 
-int changeVol(MUSIC_FILE* musicFile, char* fileName, short percentageChange);
+int changeVol(char const *fileName, char* changeStr);
 #endif
