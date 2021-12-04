@@ -20,6 +20,7 @@ int changeVol(char const *fileName, char* changeStr) {
     for (i = 0; i < musicFile -> size; i++)
         {
             newValue = ((double) (*(musicFile -> data + i))) * change;
+            if (newValue > *(musicFile -> data + i)) printf("wtf?\n");
             if (newValue > 255) 
             // if new value is bigger than FF (highest of a byte) 
                 newValue = 255;
