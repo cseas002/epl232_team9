@@ -38,7 +38,10 @@ int copyHeader(MUSIC_FILE  *musicFile, MUSIC_FILE *newFile){
 
 int readHeaderAndData(MUSIC_FILE* musicFile, char const *fileName) {
     FILE* fp = NULL;
-    if (!(fp = fopen(fileName, "rb"))) return EXIT_FAILURE;
+    if (!(fp = fopen(fileName, "rb"))) {
+        printf("Cannot open file\n");
+        return EXIT_FAILURE;
+    }
     if (!(musicFile -> riff = (RIFF*) malloc(sizeof(RIFF)))) {
         fclose(fp);
         return EXIT_FAILURE;

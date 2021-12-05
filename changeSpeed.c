@@ -39,10 +39,17 @@ int speedChange(char const *fileName, char *speedChange)
     // <strlen(speedChange)>-times-speed-changed-\0 is 22 characters + strlen(speedChange)
     strcpy(timesChanged, speedChange);
     strcat(timesChanged, "-times-speed-changed-");
-    char *newFileName = (char *)malloc(strlen(fileName) + 1 + strlen(timesChanged));
-    MUSIC_FILE *musicFile = NULL;
-    if (!(musicFile = (MUSIC_FILE *)malloc(sizeof(MUSIC_FILE))))
+    char *newFileName = NULL;
+    newFileName = (char *)malloc(strlen(fileName) + 1 + strlen(timesChanged));
+    if (!newFileName)
         return EXIT_FAILURE;
+    MUSIC_FILE *musicFile = NULL;
+    musicFile = (MUSIC_FILE *)malloc(sizeof(MUSIC_FILE));
+    if (!musicFile)
+    {
+        free(newFileName);
+        return EXIT_FAILURE;
+    }
     if (readHeaderAndData(musicFile, fileName) == EXIT_FAILURE)
     {
         printf("Failed to read music file\n");
@@ -51,9 +58,18 @@ int speedChange(char const *fileName, char *speedChange)
     musicFile->fmtSub->sampleRate *= speedChangeNum; // changing speed
 
     if (changedName(newFileName, fileName, timesChanged) == EXIT_FAILURE)
+    {
+        freeMusicFile(musicFile);
+        free(timesChanged);
         return EXIT_FAILURE;
+    }
     if (writeFile(musicFile, newFileName) == EXIT_FAILURE)
+    {
+        free(timesChanged);
+        freeMusicFile(musicFile);
         return EXIT_FAILURE;
+    }
+
     free(newFileName);
     free(timesChanged);
     freeMusicFile(musicFile);
