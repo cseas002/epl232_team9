@@ -1,7 +1,9 @@
 /**
  * @file iolib.h
  * @author Lampros Dionysiou (ldiony01@ucy.ac.cy)
- * @brief 
+ * @brief This header file acts as a library for all the programs
+ * needed for reading and writing audio files.
+ * It includes "readMusicFile.h" and "writeMusicFile.h".
  * @version 0.1
  * @date 2021-12-04
  * 

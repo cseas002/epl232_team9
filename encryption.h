@@ -2,7 +2,10 @@
  * @file encryption.h
  * @author Christoforos Seas (cseas002@ucy.ac.cy)
  * @author Lampros Dionysiou (ldiony01@ucy.ac.cy)
- * @brief 
+ * @brief This program encrypts a message into the audio file.
+ * It reads the audio file provided and stores in random samples
+ * a bit of the message. It then saves the output audio file
+ * using the name encoded-<input filename>.wav.
  * @version 0.1
  * @date 2021-12-04
  * 
@@ -23,6 +26,20 @@
 #ifndef ENCRYPTION
 #define ENCRYPTION
 #include "cryptography.h"
+
+/**
+ * @brief Method that encrypts a message into an audio file. It reads
+ * the header and data from an audio file using the filename provided.
+ * Using the rand function it chooses the samples to store the message.
+ * It takes each bit of the message and stores it in the last significant
+ * bit of random samples. It then exports the new audio file with the name
+ * encoded-<input filename>.wav. The audio file sounds the same after
+ * encryption.
+ * 
+ * @param fileName The name of the file to be read.
+ * @param text The message to be encrypted inside the wav file.
+ * @return An exit code.
+ */
 int encryption(const char *fileName, const char* text);
 #endif
 

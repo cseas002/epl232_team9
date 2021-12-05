@@ -3,6 +3,7 @@
  * @author Christoforos Seas (cseas002@ucy.ac.cy)
  * @author Lampros Dionysiou (ldiony01@ucy.ac.cy)
  * @brief 
+ * The interface for the client program.
  * COMPILATION COMMAND: gcc -o wavengine wavengine.c epl232_team9.a
  * EXECUTION COMMAND: (see README.md)
  * @version 0.1
@@ -35,10 +36,18 @@
 #include "volIncrease.h"
 
 /**
- * @brief Method that prints 
+ * @brief Method that prints the available options of the program.
  * 
  */
 void printInfo();
+
+/**
+ * @brief Method that utilizes all the capabiltiies of epl232_team9 library.
+ * 
+ * @param argc Number of arguments.
+ * @param argv The arguments.
+ * @return An exit code.
+ */
 int wavengine(int argc, char const *argv[]);
 #endif
 

@@ -2,7 +2,9 @@
  * @file header.h
  * @author Christoforos Seas (cseas002@ucy.ac.cy)
  * @author Lampros Dionysiou (ldiony01@ucy.ac.cy)
- * @brief 
+ * @brief Header file that includes the structures necessary for the
+ * implementation of the WAV Engine program, some key C libraries and
+ * the constants used by the program.
  * @version 0.1
  * @date 2021-12-04
  * 
@@ -26,10 +28,33 @@
 #include <stdlib.h>
 #include <string.h>
 #include <stdio.h>
+
+/**
+ * @typedef byte
+ * @brief Byte is 8 bits. Used for simplicity. 
+ * 
+ */
 typedef unsigned char byte;
+
+/**
+ * @typedef word
+ * @brief Word is 2 bytes (16 bits). Used for simplicity.
+ * 
+ */
 typedef unsigned short int word;
+
+/**
+ * @typedef dword
+ * @brief Double Word is 4 bytes (32 bits). Used for simplicity.
+ * 
+ */
 typedef unsigned int dword;
 
+/**
+ * @struct RIFF
+ * @brief Riff Chunk Descriptor. The first part of the audio file's header.
+ * 
+ */
 typedef struct {
     char chunkID[4];
     dword chunkSize;
@@ -40,6 +65,11 @@ __attribute__((packed))
 #endif
 RIFF;
 
+/**
+ * @struct FMT_SUB
+ * @brief FMT Sub-Chunk. The second part of the audio file's header.
+ * 
+ */
 typedef struct {
     char subChunk1ID[4];
     dword subChunk1Size;
@@ -55,6 +85,11 @@ __attribute__((packed))
 #endif
 FMT_SUB;
 
+/**
+ * @struct DATA_SUB
+ * @brief Data Sub-Chunk Header. The third part of the audio file's header.
+ * 
+ */
 typedef struct{
     char subChunk2ID[4];
     dword subChunk2Size;
@@ -64,6 +99,11 @@ __attribute__((packed))
 #endif
 DATA_SUB;
 
+/**
+ * @struct MUSIC_FILE
+ * @brief The Audio File containg both header and data.
+ * 
+ */
 typedef struct {
     RIFF* riff;
     FMT_SUB* fmtSub;

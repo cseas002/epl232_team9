@@ -2,7 +2,8 @@
  * @file readMusicFile.h
  * @author Christoforos Seas (cseas002@ucy.ac.cy)
  * @author Lampros Dionysiou (ldiony01@ucy.ac.cy)
- * @brief 
+ * @brief This interface provides the necessary functions to read
+ * the header and data from an input file
  * @version 0.1
  * @date 2021-12-04
  * 
@@ -24,6 +25,15 @@
 #define READ_MUSIC_FILE
 
 #include "header.h"
+
+/**
+ * @brief Method that reads the header and data of a binary wav file and
+ * saves them in a MUSIC_FILE struct. It allocates the necessary space
+ * for the struct.
+ * 
+ * @param fileName The name of the file to be read.
+ * @return An exit code.
+ */
 int readHeaderAndData(MUSIC_FILE*, char const *fileName);
 int copyHeader(MUSIC_FILE  *musicFile, MUSIC_FILE *newFile);
 #endif
