@@ -24,19 +24,6 @@
  * along with this program. If not, see <http://www.gnu.org/licenses/>.
  * 
  */
-
-#ifndef DEBUG_CHANGESPEED
-#ifndef DEBUG_CHOP
-#ifndef DEBUG_CRYPTOGRAPHY
-#ifndef DEBUG_DECRYPTION
-#ifndef DEBUG_ENCRYPTION
-#ifndef DEBUG_LIST
-#ifndef DEBUG_MIX
-#ifndef DEBUG_READ_MUSIC_FILE
-#ifndef DEBUG_REVERSE
-#ifndef DEBUG_MONO
-#ifndef DEBUG_VOL_CHANGE
-#ifndef DEBUG_WRITE_MUSIC_FILE
 #include "wavengine.h"
 
 void printInfo() {
@@ -191,6 +178,18 @@ int wavengine(int argc, char const *argv[])
     return EXIT_SUCCESS;
 }
 
+#ifndef DEBUG_CHANGESPEED
+#ifndef DEBUG_CHOP
+#ifndef DEBUG_CRYPTOGRAPHY
+#ifndef DEBUG_DECRYPTION
+#ifndef DEBUG_ENCRYPTION
+#ifndef DEBUG_LIST
+#ifndef DEBUG_MIX
+#ifndef DEBUG_READ_MUSIC_FILE
+#ifndef DEBUG_REVERSE
+#ifndef DEBUG_MONO
+#ifndef DEBUG_VOL_CHANGE
+#ifndef DEBUG_WRITE_MUSIC_FILE
 int main(int argc, char const *argv[])
 {
     int n = wavengine(argc, argv);
