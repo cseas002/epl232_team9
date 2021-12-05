@@ -74,7 +74,7 @@ int wavengine(int argc, char const *argv[])
     }
     if (argc < 3)
     {
-        printf("Invalid command. Use ./wavengine -man to see the available options.\n");
+        printf("Invalid command. Use ./%s -man to see the available options.\n", argv[0]);
         return EXIT_FAILURE;
     }
     if (strcmp(argv[1], "-list") == 0) // if the argument is "-list"
@@ -184,7 +184,7 @@ int wavengine(int argc, char const *argv[])
     }
     else // wrong input or chose -man
     {
-        printf("Invalid command. Use ./wavengine -man to see the available options.\n");
+        printf("Invalid command. Use ./%s -man to see the available options.\n", argv[0]);
         return EXIT_FAILURE;
     }
     
