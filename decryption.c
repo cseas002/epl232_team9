@@ -75,7 +75,10 @@ int decryption(const char *fileName, int msgLength, const char *outputFileName)
 int main()
 {
     printf("Save the encoded-piano.wav file in this folder in order to work!\n");
-    decryption("encoded-piano.wav", 9, "DEBUG_DECRYPTION.txt");
+    if (decryption("encoded-piano.wav", 9, "DEBUG_DECRYPTION.txt") == EXIT_FAILURE) {
+        printf("Cannot create DEBUG_DECRYPTION.txt\n");
+        exit(-1);
+    }
     printf("Decoding word with 3 characters ...Done!\nCheck the DEBUG_DECRYPTION.txt file!\n");
 }
 #endif

@@ -140,7 +140,10 @@ int encryption(const char *fileName, const char *text)
 int main()
 {
     printf("Save the piano.wav file in the as4-supplementary sub folder and DEBUG_ENCRYPTION.txt file in this folder in order to work!\n");
-    encryption("./as4-supplementary/piano.wav", "DEBUG_ENCRYPTION.txt");
+    if (encryption("./as4-supplementary/piano.wav", "DEBUG_ENCRYPTION.txt") == EXIT_FAILURE) {
+        printf("Cannot read DEBUG_ENCRYPTION.txt\n");
+        exit(-1);
+    }
     printf("Encoding text from DEBUG_ENCRYPTION.txt file ...Done!\n");
 }
 #endif
