@@ -35,7 +35,16 @@ int decryption(const char *fileName, int msgLength, const char *outputFileName)
         return EXIT_FAILURE;
     }
     int *permutation = createPermutationFunction(musicFile->size, SYSTEM_KEY_INTEGER);
+    if(!permutation){
+        freeMusicFile(musicFile);
+        return EXIT_FAILURE;
+    }
     char *msg = (char *) malloc((msgLength + 1) * sizeof(char));
+    if(!msg){
+        freeMusicFile(musicFile);
+        free(permutation);
+        return EXIT_FAILURE;
+    }
     int i;
     for (i = 0; i < msgLength + 1; i++)
         msg[i] = 0;
@@ -48,7 +57,12 @@ int decryption(const char *fileName, int msgLength, const char *outputFileName)
     msg[msgLength] = '\0';
     FILE *fp = fopen(outputFileName, "w");
     if (!fp)
+    {
+        freeMusicFile(musicFile);
+        free(permutation);
+        free(msg);
         return EXIT_FAILURE;
+    }
     fprintf(fp, "%s\n", msg);
     fclose(fp);
     free(permutation);
