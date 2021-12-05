@@ -1,0 +1,4 @@
+<map id="createChoppedFile" name="createChoppedFile">
+<area shape="rect" id="node1" title="Create a Chopped File object from the given start second to the given end second and then save the ou..." alt="" coords="5,5,148,32"/>
+<area shape="rect" id="node2" href="$writeMusicFile_8h.html#ae088b110a0568bad7eb4528f95ecd004" title="Method that creates a new file using the given filename and exports the audio file in binary form." alt="" coords="196,5,275,32"/>
+</map>

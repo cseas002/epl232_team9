@@ -1,0 +1,5 @@
+<map id="saveToFile" name="saveToFile">
+<area shape="rect" id="node1" title=" " alt="" coords="5,31,96,57"/>
+<area shape="rect" id="node2" href="$writeMusicFile_8h.html#af570ad4fd6e4862deaed54606cfa1022" title="Method that removes any prefixes from the given filename and adds the given prefix (indicating the ep..." alt="" coords="144,5,260,32"/>
+<area shape="rect" id="node3" href="$writeMusicFile_8h.html#ae088b110a0568bad7eb4528f95ecd004" title="Method that creates a new file using the given filename and exports the audio file in binary form." alt="" coords="163,56,241,83"/>
+</map>

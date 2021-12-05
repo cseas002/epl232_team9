@@ -1,0 +1,10 @@
+<map id="mix" name="mix">
+<area shape="rect" id="node1" title="This method merges two audio files into one." alt="" coords="5,107,52,133"/>
+<area shape="rect" id="node2" href="$mix_8c.html#afcb074568d0a9fd93b7859cf7dd11d6a" title=" " alt="" coords="108,5,247,32"/>
+<area shape="rect" id="node3" href="$readMusicFile_8h.html#a936782c56fa2886ee7a22a8840d71e2a" title="Function which copies the header from a music file to another." alt="" coords="127,56,227,83"/>
+<area shape="rect" id="node4" href="$writeMusicFile_8h.html#a9c1bb590e4cdc0d742c92ffd7a2547fe" title="Method that frees the memory allocated for the music file&#39;s header and data." alt="" coords="123,107,232,133"/>
+<area shape="rect" id="node5" href="$readMusicFile_8h.html#a6214943f156ee52a7f419b6506e8d666" title="Method that reads the header and data of a binary wav file and saves them in a MUSIC_FILE struct." alt="" coords="100,157,255,184"/>
+<area shape="rect" id="node6" href="$mix_8c.html#a7c640fcc6100ffb7c69953852fd05dd6" title=" " alt="" coords="116,208,239,235"/>
+<area shape="rect" id="node7" href="$writeMusicFile_8h.html#af570ad4fd6e4862deaed54606cfa1022" title="Method that removes any prefixes from the given filename and adds the given prefix (indicating the ep..." alt="" coords="303,183,419,209"/>
+<area shape="rect" id="node8" href="$writeMusicFile_8h.html#ae088b110a0568bad7eb4528f95ecd004" title="Method that creates a new file using the given filename and exports the audio file in binary form." alt="" coords="321,233,400,260"/>
+</map>

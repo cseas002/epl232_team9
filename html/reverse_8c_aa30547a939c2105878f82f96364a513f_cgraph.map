@@ -1,0 +1,9 @@
+<map id="reverse" name="reverse">
+<area shape="rect" id="node1" title="Reverse function that read a wave file and creates a new wave file with data in reverse order." alt="" coords="5,132,76,159"/>
+<area shape="rect" id="node2" href="$writeMusicFile_8h.html#af570ad4fd6e4862deaed54606cfa1022" title="Method that removes any prefixes from the given filename and adds the given prefix (indicating the ep..." alt="" coords="143,5,259,32"/>
+<area shape="rect" id="node3" href="$readMusicFile_8h.html#a936782c56fa2886ee7a22a8840d71e2a" title="Function which copies the header from a music file to another." alt="" coords="151,56,251,83"/>
+<area shape="rect" id="node4" href="$reverse_8c.html#a3261810a96be2b46b3b5fe366496a772" title="Function which copies data in music file in reverse order." alt="" coords="133,107,270,133"/>
+<area shape="rect" id="node5" href="$writeMusicFile_8h.html#a9c1bb590e4cdc0d742c92ffd7a2547fe" title="Method that frees the memory allocated for the music file&#39;s header and data." alt="" coords="147,157,256,184"/>
+<area shape="rect" id="node6" href="$readMusicFile_8h.html#a6214943f156ee52a7f419b6506e8d666" title="Method that reads the header and data of a binary wav file and saves them in a MUSIC_FILE struct." alt="" coords="124,208,279,235"/>
+<area shape="rect" id="node7" href="$writeMusicFile_8h.html#ae088b110a0568bad7eb4528f95ecd004" title="Method that creates a new file using the given filename and exports the audio file in binary form." alt="" coords="162,259,241,285"/>
+</map>

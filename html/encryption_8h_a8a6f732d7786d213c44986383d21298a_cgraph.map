@@ -1,0 +1,11 @@
+<map id="encryption" name="encryption">
+<area shape="rect" id="node1" title="Method that encrypts a message into an audio file." alt="" coords="5,132,96,159"/>
+<area shape="rect" id="node2" href="$writeMusicFile_8h.html#af570ad4fd6e4862deaed54606cfa1022" title="Method that removes any prefixes from the given filename and adds the given prefix (indicating the ep..." alt="" coords="185,5,301,32"/>
+<area shape="rect" id="node3" href="$cryptography_8h.html#ae242f550ea5a82151d415796446f1936" title="Creates a Permutation Function array with random indices from 0 to N&#45;1." alt="" coords="144,56,343,83"/>
+<area shape="rect" id="node5" href="$writeMusicFile_8h.html#a9c1bb590e4cdc0d742c92ffd7a2547fe" title="Method that frees the memory allocated for the music file&#39;s header and data." alt="" coords="189,107,298,133"/>
+<area shape="rect" id="node6" href="$encryption_8c.html#a25671dfbd7fe305608c7bc551c2076f4" title="Insert bits of the message in the least significant bits of random samples." alt="" coords="201,157,285,184"/>
+<area shape="rect" id="node8" href="$readMusicFile_8h.html#a6214943f156ee52a7f419b6506e8d666" title="Method that reads the header and data of a binary wav file and saves them in a MUSIC_FILE struct." alt="" coords="166,208,321,235"/>
+<area shape="rect" id="node9" href="$writeMusicFile_8h.html#ae088b110a0568bad7eb4528f95ecd004" title="Method that creates a new file using the given filename and exports the audio file in binary form." alt="" coords="204,259,283,285"/>
+<area shape="rect" id="node4" href="$cryptography_8c.html#a23afa7b8799c4eb3d8e5cc1cc794969b" title="Swaps two cells in an array." alt="" coords="393,56,449,83"/>
+<area shape="rect" id="node7" href="$encryption_8c.html#ae25b083d7e6cb6ded1ab9a90bed84679" title="Get the Bit in the specific index of the word." alt="" coords="391,157,452,184"/>
+</map>

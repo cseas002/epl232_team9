@@ -1,0 +1,4 @@
+<map id="insertBits" name="insertBits">
+<area shape="rect" id="node1" title="Insert bits of the message in the least significant bits of random samples." alt="" coords="5,5,89,32"/>
+<area shape="rect" id="node2" href="$encryption_8c.html#ae25b083d7e6cb6ded1ab9a90bed84679" title="Get the Bit in the specific index of the word." alt="" coords="137,5,199,32"/>
+</map>
