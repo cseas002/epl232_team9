@@ -24,7 +24,7 @@
 int copyReverseData(MUSIC_FILE* target, byte* data) {
     int size = target -> size;
     if (!(target -> data = (byte*) malloc(size * sizeof(byte)))) {
-        printf("Cannot allocate space \n");
+        printf("Cannot allocate space\n");
         return EXIT_FAILURE;
     }
     int i;

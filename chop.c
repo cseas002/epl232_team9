@@ -65,25 +65,36 @@ int createChoppedFile(MUSIC_FILE* choppedMusicFile, int startSecond, int endSeco
 }
 
 int chop(char const *fileName, int startSecond, int endSecond) {
-    char* newFileName = (char*) malloc(strlen(fileName) + 9 * sizeof(char)); 
+    char* newFileName = NULL;
+    newFileName = (char*) malloc(strlen(fileName) + 9 * sizeof(char)); 
     //chopped-\0 is 8 characters
+    if (!newFileName) {
+        printf("Cannot allocate space for new file name\n");
+        return EXIT_FAILURE;
+    }
     MUSIC_FILE* choppedMusicFile = NULL;
-    if (!(choppedMusicFile = (MUSIC_FILE*) malloc(sizeof(MUSIC_FILE)))) 
+    if (!(choppedMusicFile = (MUSIC_FILE*) malloc(sizeof(MUSIC_FILE)))) { 
+        free(newFileName);
         return EXIT_FAILURE; 
+    }
     if (changedName(newFileName, fileName, "chopped-") == EXIT_FAILURE) {
+        free(newFileName);
         free(choppedMusicFile);
         return EXIT_FAILURE;
     }
     if (readHeaderAndData(choppedMusicFile, fileName) == EXIT_FAILURE) {
         printf("Failed to read music file\n");
+        free(newFileName);
         free(choppedMusicFile);
         return EXIT_FAILURE;
     }
     if (!secondsAreValid(choppedMusicFile, startSecond, endSecond)) {
+        free(newFileName);
         free(choppedMusicFile);
         return EXIT_FAILURE;
     }
     if (createChoppedFile(choppedMusicFile, startSecond, endSecond, newFileName) == EXIT_FAILURE) {
+        free(newFileName);
         free(choppedMusicFile);
         return EXIT_FAILURE;
     }
