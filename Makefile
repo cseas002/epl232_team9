@@ -41,6 +41,8 @@ doxy:
 # To clean .o files amd doxygen: "make clean"
 clean:
 	rm -rf *.o doxygen.log html
+	rm debug_wavengine
+	rm wavengine
 	rm epl232_team9.a
 # To clean .o files: "make cleano"
 cleano:

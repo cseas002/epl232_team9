@@ -37,9 +37,10 @@
 
 /**
  * @brief Method that prints the available options of the program.
+ * @param program the program name (e.g. ./wavengine)
  * 
  */
-void printInfo();
+void printInfo(char const *program);
 
 /**
  * @brief Method that utilizes all the capabiltiies of epl232_team9 library.

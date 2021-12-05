@@ -26,28 +26,28 @@
  */
 #include "wavengine.h"
 
-void printInfo() {
+void printInfo(char const *program) {
     printf("Valid inputs are:\n");
-    printf("./wavengine -list <wave file(s)>\n");
+    printf("%s -list <wave file(s)>\n", program);
     printf("This option prints the details of the given music file(s)\n\n");
-    printf("./wavengine -mono <wave file(s)>\n");
+    printf("%s -mono <wave file(s)>\n", program);
     printf("This option change music file(s) from stereo to mono\n\n");
-    printf("./wavengine -mix <wave file 1> <wave file 2>\n");
+    printf("%s -mix <wave file 1> <wave file 2>\n", program);
     printf("This option mix the two wave files into one\n\n");
-    printf("./wavengine -chop <wave file> <start second> <end second>\n");
+    printf("%s -chop <wave file> <start second> <end second>\n", program);
     printf("This option cuts the given music file and from the start second to the end second\n\n");
-    printf("./wavengine -reverse <wave file(s)>\n");
+    printf("%s -reverse <wave file(s)>\n", program);
     printf("This option reverses the given music files\n\n");
-    printf("./wavengine -encodeText <wave file> <input file with text to encode>\n");
+    printf("%s -encodeText <wave file> <input file with text to encode>\n", program);
     printf("This option encodes the given text (inside the input file) to the given wave file\n\n");
-    printf("./wavengine -decodeText <wave file> <message length> <output file>\n");
+    printf("%s -decodeText <wave file> <message length> <output file>\n", program);
     printf("This option decodes the given music file and prints the hidden message with the given length to the output file\n\n");
-    printf("./wavenging -changeSpeed <number to be multiplied> <wave file(s)>\n");
+    printf("%s -changeSpeed <number to be multiplied> <wave file(s)>\n", program);
     printf("This option multiplies the speed of the given music file(s) with the given number\n\n");
-    printf("./wavengine -volIncrease <number to be multiplied> <wave file(s)>\n");
+    printf("%s -volIncrease <number to be multiplied> <wave file(s)>\n", program);
     printf("This option multiplies the volume of the given music file(s) by the number given\n\n");
 
-    printf("./wavengine -man\nThis options prints this message\n\n");
+    printf("%s -man\nThis options prints this message\n\n", program);
     printf("NOTE: All options do not change the music files, they create new music files (except -list, -decode)\n");
 }
 
@@ -56,12 +56,12 @@ int wavengine(int argc, char const *argv[])
     int i;
     if(argc == 2 && strcmp(argv[1], "-man")==0)
     {
-        printInfo();
+        printInfo(argv[0]);
         return EXIT_SUCCESS;
     }
     if (argc < 3)
     {
-        printf("Invalid command. Use ./%s -man to see the available options.\n", argv[0]);
+        printf("Invalid command. Use %s -man to see the available options.\n", argv[0]);
         return EXIT_FAILURE;
     }
     if (strcmp(argv[1], "-list") == 0) // if the argument is "-list"
@@ -171,7 +171,7 @@ int wavengine(int argc, char const *argv[])
     }
     else // wrong input or chose -man
     {
-        printf("Invalid command. Use ./%s -man to see the available options.\n", argv[0]);
+        printf("Invalid command. Use %s -man to see the available options.\n", argv[0]);
         return EXIT_FAILURE;
     }
     
