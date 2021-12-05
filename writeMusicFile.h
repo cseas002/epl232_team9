@@ -25,10 +25,38 @@
 
 #include "header.h"
 
+/**
+ * @brief Method that removes any prefixes from the given filename
+ * and adds the given prefix (indicating the WAVEngineLib function).
+ * For example if the given filename is ./folder1/folder2/audio.wav
+ * and the prefix is 'mono', the new filename will be mono-audio.wav.
+ * This method DOES NOT allocate memory for the new filename. The caller
+ * of this method should allocate enough memory.
+ * 
+ * @param newFileName The new filename after change.
+ * @param fileName The filename to by changed.
+ * @param addition The new prefix
+ * @return An exit code.
+ */
 int changedName(char* newFileName, char const *fileName, char* addition);
 
+/**
+ * @brief Method that creates a new file using the given filename and
+ * exports the audio file in binary form. If the file already exists,
+ * it will be overwritten.
+ * 
+ * @param musicFile The header and data of the audio file to be written.
+ * @param newFileName The filename of the output file to be created.
+ * @return An exit code.
+ */
 int writeFile(MUSIC_FILE* musicFile, char const *newFileName);
 
+/**
+ * @brief Method that frees the memory allocated for the music file's
+ * header and data.
+ * 
+ * @param musicFile The header and data of the audio file.
+ */
 void freeMusicFile(MUSIC_FILE* musicFile);
 #endif
 

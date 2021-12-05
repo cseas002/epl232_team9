@@ -33,7 +33,12 @@
 #include "decryption.h"
 #include "changeSpeed.h"
 #include "volIncrease.h"
-void printWrongInput();
+
+/**
+ * @brief Method that prints 
+ * 
+ */
+void printInfo();
 int wavengine(int argc, char const *argv[]);
 #endif
 

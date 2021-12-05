@@ -1,6 +1,6 @@
 #include "wavengine.h"
 
-void printWrongInput() {
+void printInfo() {
     printf("Valid inputs are:\n");
     printf("./wavengine -list <wave file(s)>\n");
     printf("This option prints the details of the given music file(s)\n\n");
@@ -28,9 +28,14 @@ void printWrongInput() {
 int wavengine(int argc, char const *argv[])
 {
     int i;
+    if(argc == 2 && strcmp(argv[1], "-man")==0)
+    {
+        printInfo();
+        return EXIT_SUCCESS;
+    }
     if (argc < 3)
     {
-        printWrongInput();
+        printf("Invalid command. Use ./wavengine -man to see the available options.\n");
         return EXIT_FAILURE;
     }
     if (strcmp(argv[1], "-list") == 0) // if the argument is "-list"
@@ -138,8 +143,11 @@ int wavengine(int argc, char const *argv[])
             if (changeVol(argv[i], volToChange) == EXIT_FAILURE)
                 return EXIT_FAILURE;
     }
-    else  // wrong input or chose -man
-        printWrongInput();
+    else // wrong input or chose -man
+    {
+        printf("Invalid command. Use ./wavengine -man to see the available options.\n");
+        return EXIT_FAILURE;
+    }
     
     return EXIT_SUCCESS;
 }

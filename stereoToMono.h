@@ -26,6 +26,15 @@
 #include "header.h"
 #include "iolib.h"
 
+/**
+ * @brief Method that converts an audio file from stero to mono. 
+ * It reads an audio file using the given filename and creates
+ * a new output wav file using the left audio channel.
+ * The name of the output file is mono-<input filename>.wav.
+ * 
+ * @param fileName The filename of the input file
+ * @return An exit code
+ */
 int stereoToMono(char const *fileName);
 #endif
 
