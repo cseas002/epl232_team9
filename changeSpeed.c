@@ -37,3 +37,15 @@ int speedChange(char const *fileName, char *speedChange)
     freeMusicFile(musicFile);
     return EXIT_SUCCESS;
 }
+
+#ifdef DEBUG_CHANGESPEED
+int main()
+{
+    printf("Save the piano.wav file in the as4-supplementary sub folder in order to work!\n");
+    speedChange("./as4-supplementary/piano.wav", "2");
+    printf("Doublying the speed of piano.wav file ...Done!\n");
+    speedChange("./as4-supplementary/piano.wav", "0.5");
+    printf("Halvling the speed of piano.wav file (make it 2 times slower) ...Done!\n");
+    return 0;
+}
+#endif

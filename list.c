@@ -55,9 +55,12 @@ int printList(char const *fileName) {
     return EXIT_SUCCESS;
 }
 
-#ifdef DEBUGLIST
+#ifdef DEBUG_LIST
 int main()
 {
- // TODO driver
+    printf("Save the piano.wav file in the as4-supplementary sub folder in order to work!\n");
+    printf("Details for piano.wav file:\n");
+    printList("./as4-supplementary/piano.wav");
+    return 0;
 }
 #endif

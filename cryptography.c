@@ -44,3 +44,19 @@ int *createPermutationFunction(int N, unsigned int systemkey)
     }
     return permutation;
 }
+
+#ifdef DEBUG_CRYPTOGRAPHY
+int main()
+{
+    printf("Creating permutation array with size 1000 and system key 10...\n");
+    int* permutation = createPermutationFunction(1000, 10);
+    printf("The array is:\n");
+    int i;
+    for (i = 0; i < 1000; i++)
+        printf("%d ", permutation[i]);
+    printf("\nChanging index 0 with 3 ...\nThe new array is\n");
+    swap(&permutation[0], &permutation[3]);
+    for (i = 0; i < 1000; i++)
+        printf("%d ", permutation[i]);
+}
+#endif

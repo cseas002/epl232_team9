@@ -135,3 +135,12 @@ int encryption(const char *fileName, const char *text)
     freeMusicFile(musicFile);
     return EXIT_SUCCESS;
 }
+
+#ifdef DEBUG_ENCRYPTION
+int main()
+{
+    printf("Save the piano.wav file in the as4-supplementary sub folder and DEBUG_ENCRYPTION.txt file in this folder in order to work!\n");
+    encryption("./as4-supplementary/piano.wav", "DEBUG_ENCRYPTION.txt");
+    printf("Encoding text from DEBUG_ENCRYPTION.txt file ...Done!\n");
+}
+#endif

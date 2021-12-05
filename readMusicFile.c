@@ -76,13 +76,14 @@ int readHeaderAndData(MUSIC_FILE* musicFile, char const *fileName) {
     return EXIT_SUCCESS;
 }
 
-#ifdef DEBUG_MUSIC_FILE
+#ifdef DEBUG_READ_MUSIC_FILE
 int main()
 {
+    printf("Save the piano.wav file in the as4-supplementary sub folder in order to work!\n");
     MUSIC_FILE* musicFile = (MUSIC_FILE*) malloc(sizeof(MUSIC_FILE));
-    readHeaderAndData(musicFile, " ");
-    printMusicFile(musicFile);
+    readHeaderAndData("./as4-supplementary/piano.wav", musicFile);
+    printf("Reading data from piano.wav file ...Done!\n");
+    printf("The size of the wave file is %d bytes!\n", musicFile->size);
     return 0;
 }
 #endif
-

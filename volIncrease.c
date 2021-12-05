@@ -38,6 +38,9 @@ int changeVol(char const *fileName, char* changeStr) {
 #ifdef DEBUG_VOL_CHANGE
 int main()
 {
-    
+    printf("Save the piano.wav file in the as4-supplementary sub folder in order to work!\n");
+    changeVol("./as4-supplementary/piano.wav", "2");
+    printf("Doublying the volume of piano.wav file ...Done!\n");
+    return 0;
 }
 #endif

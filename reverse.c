@@ -41,6 +41,9 @@ int reverse(char const* fileName) {
 #ifdef DEBUG_REVERSE
 int main()
 {
-    
+    printf("Save the piano.wav file in the as4-supplementary sub folder in order to work!\n");
+    reverse("./as4-supplementary/piano.wav");
+    printf("Reversing piano.wav ...Done!\n");
+    return 0;
 }
 #endif

@@ -70,3 +70,12 @@ int decryption(const char *fileName, int msgLength, const char *outputFileName)
     freeMusicFile(musicFile);
     return EXIT_SUCCESS;
 }
+
+#ifdef DEBUG_DECRYPTION
+int main()
+{
+    printf("Save the encoded-piano.wav file in this folder in order to work!\n");
+    decryption("encoded-piano.wav", 9, "DEBUG_DECRYPTION.txt");
+    printf("Decoding word with 3 characters ...Done!\nCheck the DEBUG_DECRYPTION.txt file!\n");
+}
+#endif

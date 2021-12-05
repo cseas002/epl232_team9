@@ -74,8 +74,9 @@ int chop(char const *fileName, int startSecond, int endSecond) {
 #ifdef DEBUG_CHOP
 int main()
 {
-    // TODO driver 
-    chop();
+    printf("Save the piano.wav file in the as4-supplementary sub folder in order to work!\n");
+    chop("./as4-supplementary/piano.wav", 2, 4);
+    printf("Chopping piano.wav file from second 2 to 4 ...Done!\n");
+    return 0;
 }
 #endif
-
