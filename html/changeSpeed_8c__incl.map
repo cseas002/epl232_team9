@@ -1,0 +1,11 @@
+<map id="changeSpeed.c" name="changeSpeed.c">
+<area shape="rect" id="node1" title=" " alt="" coords="25,5,145,32"/>
+<area shape="rect" id="node2" href="$changeSpeed_8h.html" title="This program is for speed change option. You can choose a number between (0, 100000) (0 and 100000 ar..." alt="" coords="24,80,145,107"/>
+<area shape="rect" id="node3" href="$header_8h.html" title=" " alt="" coords="96,304,175,331"/>
+<area shape="rect" id="node7" href="$iolib_8h.html" title=" " alt="" coords="104,155,167,181"/>
+<area shape="rect" id="node4" title=" " alt="" coords="5,379,76,405"/>
+<area shape="rect" id="node5" title=" " alt="" coords="100,379,171,405"/>
+<area shape="rect" id="node6" title=" " alt="" coords="195,379,262,405"/>
+<area shape="rect" id="node8" href="$readMusicFile_8h.html" title=" " alt="" coords="73,229,197,256"/>
+<area shape="rect" id="node9" href="$writeMusicFile_8h.html" title=" " alt="" coords="222,229,350,256"/>
+</map>

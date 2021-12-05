@@ -34,7 +34,11 @@ typedef struct {
     char chunkID[4];
     dword chunkSize;
     char format[4];
-} __attribute__((packed)) RIFF;
+} 
+#ifndef DOXYGEN 
+__attribute__((packed)) 
+#endif
+RIFF;
 
 typedef struct {
     char subChunk1ID[4];
@@ -45,12 +49,20 @@ typedef struct {
     dword byteRate;
     word blockAlign;
     word bitsPerSample;
-}__attribute__((packed)) FMT_SUB;
+}
+#ifndef DOXYGEN 
+__attribute__((packed)) 
+#endif
+FMT_SUB;
 
 typedef struct{
     char subChunk2ID[4];
     dword subChunk2Size;
-}__attribute__((packed)) DATA_SUB;
+}
+#ifndef DOXYGEN 
+__attribute__((packed)) 
+#endif
+DATA_SUB;
 
 typedef struct {
     RIFF* riff;
@@ -58,6 +70,10 @@ typedef struct {
     DATA_SUB* dataSub;
     byte* data;
     dword size; // subChunk2Size just for simplicity
-}__attribute__((packed)) MUSIC_FILE;
+}
+#ifndef DOXYGEN 
+__attribute__((packed)) 
+#endif
+MUSIC_FILE;
 #endif
 

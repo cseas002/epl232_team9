@@ -1,0 +1,6 @@
+<map id="stereoToMono.h" name="stereoToMono.h">
+<area shape="rect" id="node1" title="Stereo To Mono Converter. This program reads a binary wav music file and converts its audio to mono...." alt="" coords="65,5,190,32"/>
+<area shape="rect" id="node2" href="$wavengine_8h.html" title="COMPILATION COMMAND: gcc &#45;o wavengine wavengine.c epl232_team9.a EXECUTION COMMAND: (see README...." alt="" coords="5,80,111,107"/>
+<area shape="rect" id="node4" href="$stereoToMono_8c.html" title=" " alt="" coords="135,80,259,107"/>
+<area shape="rect" id="node3" href="$wavengine_8c.html" title=" " alt="" coords="6,155,110,181"/>
+</map>

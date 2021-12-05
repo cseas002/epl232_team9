@@ -1,0 +1,10 @@
+<map id="mix.h" name="mix.h">
+<area shape="rect" id="node1" title="Music files mixing software. This program reads two binary wav music files and merges them into one...." alt="" coords="55,5,114,32"/>
+<area shape="rect" id="node2" href="$header_8h.html" title=" " alt="" coords="96,229,175,256"/>
+<area shape="rect" id="node6" href="$iolib_8h.html" title=" " alt="" coords="104,80,167,107"/>
+<area shape="rect" id="node3" title=" " alt="" coords="5,304,76,331"/>
+<area shape="rect" id="node4" title=" " alt="" coords="100,304,171,331"/>
+<area shape="rect" id="node5" title=" " alt="" coords="195,304,262,331"/>
+<area shape="rect" id="node7" href="$readMusicFile_8h.html" title=" " alt="" coords="73,155,197,181"/>
+<area shape="rect" id="node8" href="$writeMusicFile_8h.html" title=" " alt="" coords="222,155,350,181"/>
+</map>
