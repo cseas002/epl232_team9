@@ -4,7 +4,8 @@
 @author Christoforos Seas (cseas002 = 1028675)
 @author Lampros Dionysiou (ldiony01 - 1043776)
 
-Description ... 
+Description ..
+
 To create the library use the command: "make team9"
 After this, compile the file using the library (gcc -o wavengine wavengine.c epl232_team9.a)
 
@@ -39,6 +40,6 @@ This option multiplies the volume of the given music file(s) by the number given
 ./wavengine -man
 This options prints this message
 
-NOTE: All options do not change the music files, they create new music files (except -list, -encode, -decode)
+NOTE: All options do not change the music files, they create new music files (except -list, -decode)
 
 */

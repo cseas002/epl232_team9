@@ -22,7 +22,7 @@ void printWrongInput() {
     printf("This option multiplies the volume of the given music file(s) by the number given\n\n");
 
     printf("./wavengine -man\nThis options prints this message\n\n");
-    printf("NOTE: All options do not change the music files, they create new music files (except -list, -encode, -decode)\n");
+    printf("NOTE: All options do not change the music files, they create new music files (except -list, -decode)\n");
 }
 
 int wavengine(int argc, char const *argv[])
@@ -150,7 +150,7 @@ int main(int argc, char const *argv[])
     fclose(stdin);
     fclose(stdout);
     fclose(stderr);
-    return -n; // -1 for EXIT_FAILURE 0 for EXIT_SUCCESS
+    return n; // 1 for EXIT_FAILURE 0 for EXIT_SUCCESS
 }
 
 
