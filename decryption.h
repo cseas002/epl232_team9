@@ -2,7 +2,9 @@
  * @file decryption.h
  * @author Christoforos Seas (cseas002@ucy.ac.cy)
  * @author Lampros Dionysiou (ldiony01@ucy.ac.cy)
- * @brief Program used to decrypt the word from an input wave file.
+ * @brief This program decrypts a message from an audio file.
+ * It reads the audio file provided exports the hidden message
+ * in an output file.
  * @version 0.1
  * @date 2021-12-04
  * 
@@ -25,12 +27,16 @@
 #include "cryptography.h"
 
 /**
- * @brief Main function which decrypts the word from the wave file
+ * @brief Method that decrypts a message from an audio file. It reads
+ * the header and data from an audio file using the filename provided.
+ * Using the permutaion function, it gets the least significant bits 
+ * of random samples. Using these bits, it constructs a string bit-by-bit.
+ * It exports the new string in an output file with the name given.
  * 
- * @param fileName the file name
- * @param msgLength the message length
- * @param outputFileName the file which the output will be printed
- * @return int EXIT_SUCCESS or EXIT_FAILURE, whether the program ends successfully or not
+ * @param fileName 
+ * @param msgLength 
+ * @param outputFileName 
+ * @return int 
  */
 int decryption(const char *fileName, int msgLength, const char* outputFileName);
 #endif

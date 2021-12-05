@@ -1,34 +1,34 @@
 <map id="main" name="main">
-<area shape="rect" id="node1" title=" " alt="" coords="5,588,60,615"/>
-<area shape="rect" id="node2" href="$wavengine_8c.html#af58690a7f65697bbf1fa79588ef0dc6c" title=" " alt="" coords="108,588,201,615"/>
-<area shape="rect" id="node3" href="$volIncrease_8h.html#aa54a431842f1c1dc45e767f7111e493c" title=" " alt="" coords="268,563,357,589"/>
-<area shape="rect" id="node8" href="$chop_8h.html#a1d51296739e5704071722c14f094fdc6" title=" " alt="" coords="286,385,339,412"/>
-<area shape="rect" id="node11" href="$decryption_8h.html#a37f5bc2c496d542ee3c92f3b2f77b8d9" title=" " alt="" coords="267,512,358,539"/>
-<area shape="rect" id="node14" href="$encryption_8h.html#a8a6f732d7786d213c44986383d21298a" title=" " alt="" coords="267,208,358,235"/>
-<area shape="rect" id="node17" href="$mix_8h.html#a9365af25477a21196d42143f92fc1701" title=" " alt="" coords="289,613,336,640"/>
-<area shape="rect" id="node21" href="$list_8h.html#a8badf62fbe8deafe3b8ce6e33139c10c" title=" " alt="" coords="275,740,350,767"/>
-<area shape="rect" id="node25" href="$wavengine_8c.html#a24831bc703714494a27e2ea878fb3dac" title=" " alt="" coords="249,664,376,691"/>
-<area shape="rect" id="node26" href="$reverse_8h.html#aa30547a939c2105878f82f96364a513f" title=" " alt="" coords="277,892,348,919"/>
-<area shape="rect" id="node28" href="$changeSpeed_8h.html#a8000ed56d2ea71fcd673feef5b319f81" title=" " alt="" coords="257,461,368,488"/>
-<area shape="rect" id="node29" href="$stereoToMono_8h.html#a5619612f4d0f4206e2137c20a1ebe2d9" title=" " alt="" coords="256,943,369,969"/>
-<area shape="rect" id="node4" href="$writeMusicFile_8h.html#af570ad4fd6e4862deaed54606cfa1022" title=" " alt="" coords="671,512,787,539"/>
-<area shape="rect" id="node5" href="$writeMusicFile_8h.html#a9c1bb590e4cdc0d742c92ffd7a2547fe" title=" " alt="" coords="469,563,578,589"/>
-<area shape="rect" id="node6" href="$readMusicFile_8h.html#a6214943f156ee52a7f419b6506e8d666" title=" " alt="" coords="446,461,601,488"/>
-<area shape="rect" id="node7" href="$writeMusicFile_8h.html#ae088b110a0568bad7eb4528f95ecd004" title=" " alt="" coords="689,613,768,640"/>
-<area shape="rect" id="node9" href="$chop_8c.html#a8944e84ba16382f7171352131d4126be" title=" " alt="" coords="452,360,595,387"/>
-<area shape="rect" id="node10" href="$chop_8c.html#acc6096d3162c69a7ef4f28c454c15216" title=" " alt="" coords="459,157,588,184"/>
-<area shape="rect" id="node12" href="$cryptography_8h.html#ae242f550ea5a82151d415796446f1936" title=" " alt="" coords="424,208,623,235"/>
-<area shape="rect" id="node13" href="$cryptography_8c.html#a23afa7b8799c4eb3d8e5cc1cc794969b" title=" " alt="" coords="701,208,757,235"/>
-<area shape="rect" id="node15" href="$encryption_8c.html#a25671dfbd7fe305608c7bc551c2076f4" title=" " alt="" coords="481,5,565,32"/>
-<area shape="rect" id="node16" href="$encryption_8c.html#ae25b083d7e6cb6ded1ab9a90bed84679" title=" " alt="" coords="698,5,759,32"/>
-<area shape="rect" id="node18" href="$mix_8c.html#afcb074568d0a9fd93b7859cf7dd11d6a" title=" " alt="" coords="454,715,593,741"/>
-<area shape="rect" id="node19" href="$readMusicFile_8h.html#a936782c56fa2886ee7a22a8840d71e2a" title=" " alt="" coords="473,917,573,944"/>
-<area shape="rect" id="node20" href="$mix_8c.html#a7c640fcc6100ffb7c69953852fd05dd6" title=" " alt="" coords="462,613,585,640"/>
-<area shape="rect" id="node22" href="$list_8c.html#acd10167f2326f70b4660d9a12f4c7260" title=" " alt="" coords="470,816,577,843"/>
-<area shape="rect" id="node23" href="$list_8c.html#aa600e496e8d1637b54c8111894bd966b" title="Using &quot;%.*s&quot;, 4 in printf we can print the first 4 characters of a string." alt="" coords="472,867,575,893"/>
-<area shape="rect" id="node24" href="$list_8c.html#abdb54ae7cee5893e24a9775fc31e784c" title="Using &quot;%.*s&quot;, 4 in printf we can print the first 4 characters of a string." alt="" coords="486,765,561,792"/>
-<area shape="rect" id="node27" href="$reverse_8c.html#a3261810a96be2b46b3b5fe366496a772" title=" " alt="" coords="455,1019,592,1045"/>
-<area shape="rect" id="node30" href="$stereoToMono_8c.html#a9b474a9d84eb3d3a7788abe10a920997" title=" " alt="" coords="473,1171,573,1197"/>
-<area shape="rect" id="node31" href="$stereoToMono_8c.html#a27fabf5d089e2ce3e0661f38c1ef9575" title=" " alt="" coords="465,1221,581,1248"/>
-<area shape="rect" id="node32" href="$stereoToMono_8c.html#ace5c972f09e74a6c7d0e58b1b9d37178" title=" " alt="" coords="478,1069,569,1096"/>
+<area shape="rect" id="node1" title=" " alt="" coords="5,537,60,564"/>
+<area shape="rect" id="node2" href="$wavengine_8c.html#af58690a7f65697bbf1fa79588ef0dc6c" title="Method that utilizes all the capabiltiies of epl232_team9 library." alt="" coords="108,537,201,564"/>
+<area shape="rect" id="node3" href="$volIncrease_8h.html#aa54a431842f1c1dc45e767f7111e493c" title=" " alt="" coords="261,512,351,539"/>
+<area shape="rect" id="node8" href="$chop_8h.html#a1d51296739e5704071722c14f094fdc6" title=" " alt="" coords="279,360,333,387"/>
+<area shape="rect" id="node11" href="$decryption_8h.html#a37f5bc2c496d542ee3c92f3b2f77b8d9" title="Method that decrypts a message from an audio file." alt="" coords="261,461,351,488"/>
+<area shape="rect" id="node14" href="$encryption_8h.html#a8a6f732d7786d213c44986383d21298a" title="Method that encrypts a message into an audio file." alt="" coords="261,208,351,235"/>
+<area shape="rect" id="node17" href="$mix_8h.html#a9365af25477a21196d42143f92fc1701" title="This method merges two audio files into one." alt="" coords="283,613,329,640"/>
+<area shape="rect" id="node21" href="$wavengine_8c.html#a2dbaf5580b5305d54cff6848ae7deb30" title="Method that prints the available options of the program." alt="" coords="267,563,345,589"/>
+<area shape="rect" id="node22" href="$list_8h.html#a8badf62fbe8deafe3b8ce6e33139c10c" title=" " alt="" coords="269,715,343,741"/>
+<area shape="rect" id="node26" href="$reverse_8h.html#aa30547a939c2105878f82f96364a513f" title=" " alt="" coords="271,892,341,919"/>
+<area shape="rect" id="node28" href="$changeSpeed_8h.html#a8000ed56d2ea71fcd673feef5b319f81" title=" " alt="" coords="251,411,361,437"/>
+<area shape="rect" id="node29" href="$stereoToMono_8h.html#a5619612f4d0f4206e2137c20a1ebe2d9" title="Method that converts an audio file from stero to mono." alt="" coords="249,943,363,969"/>
+<area shape="rect" id="node4" href="$writeMusicFile_8h.html#af570ad4fd6e4862deaed54606cfa1022" title="Method that removes any prefixes from the given filename and adds the given prefix (indicating the ep..." alt="" coords="657,512,773,539"/>
+<area shape="rect" id="node5" href="$writeMusicFile_8h.html#a9c1bb590e4cdc0d742c92ffd7a2547fe" title="Method that frees the memory allocated for the music file&#39;s header and data." alt="" coords="455,563,565,589"/>
+<area shape="rect" id="node6" href="$readMusicFile_8h.html#a6214943f156ee52a7f419b6506e8d666" title="Method that reads the header and data of a binary wav file and saves them in a MUSIC_FILE struct." alt="" coords="433,461,587,488"/>
+<area shape="rect" id="node7" href="$writeMusicFile_8h.html#ae088b110a0568bad7eb4528f95ecd004" title="Method that creates a new file using the given filename and exports the audio file in binary form." alt="" coords="676,613,755,640"/>
+<area shape="rect" id="node9" href="$chop_8c.html#a8944e84ba16382f7171352131d4126be" title=" " alt="" coords="439,360,581,387"/>
+<area shape="rect" id="node10" href="$chop_8c.html#acc6096d3162c69a7ef4f28c454c15216" title=" " alt="" coords="445,157,575,184"/>
+<area shape="rect" id="node12" href="$cryptography_8h.html#ae242f550ea5a82151d415796446f1936" title="Creates a Permutation Function array with random indices from 0 to N&#45;1." alt="" coords="411,208,609,235"/>
+<area shape="rect" id="node13" href="$cryptography_8c.html#a23afa7b8799c4eb3d8e5cc1cc794969b" title="Swaps two cells in an array." alt="" coords="687,208,743,235"/>
+<area shape="rect" id="node15" href="$encryption_8c.html#a25671dfbd7fe305608c7bc551c2076f4" title="Insert bits of the message in the least significant bits of random samples." alt="" coords="468,5,552,32"/>
+<area shape="rect" id="node16" href="$encryption_8c.html#ae25b083d7e6cb6ded1ab9a90bed84679" title="Get the Bit in the specific index of the word." alt="" coords="685,5,746,32"/>
+<area shape="rect" id="node18" href="$mix_8c.html#afcb074568d0a9fd93b7859cf7dd11d6a" title=" " alt="" coords="441,715,579,741"/>
+<area shape="rect" id="node19" href="$readMusicFile_8h.html#a936782c56fa2886ee7a22a8840d71e2a" title=" " alt="" coords="460,917,560,944"/>
+<area shape="rect" id="node20" href="$mix_8c.html#a7c640fcc6100ffb7c69953852fd05dd6" title=" " alt="" coords="449,613,571,640"/>
+<area shape="rect" id="node23" href="$list_8c.html#acd10167f2326f70b4660d9a12f4c7260" title=" " alt="" coords="457,816,563,843"/>
+<area shape="rect" id="node24" href="$list_8c.html#aa600e496e8d1637b54c8111894bd966b" title="Using &quot;%.*s&quot;, 4 in printf we can print the first 4 characters of a string." alt="" coords="459,867,561,893"/>
+<area shape="rect" id="node25" href="$list_8c.html#abdb54ae7cee5893e24a9775fc31e784c" title="Using &quot;%.*s&quot;, 4 in printf we can print the first 4 characters of a string." alt="" coords="473,765,547,792"/>
+<area shape="rect" id="node27" href="$reverse_8c.html#a3261810a96be2b46b3b5fe366496a772" title=" " alt="" coords="441,1019,579,1045"/>
+<area shape="rect" id="node30" href="$stereoToMono_8c.html#a9b474a9d84eb3d3a7788abe10a920997" title=" " alt="" coords="460,1171,560,1197"/>
+<area shape="rect" id="node31" href="$stereoToMono_8c.html#a27fabf5d089e2ce3e0661f38c1ef9575" title=" " alt="" coords="452,1221,568,1248"/>
+<area shape="rect" id="node32" href="$stereoToMono_8c.html#ace5c972f09e74a6c7d0e58b1b9d37178" title=" " alt="" coords="465,1069,555,1096"/>
 </map>

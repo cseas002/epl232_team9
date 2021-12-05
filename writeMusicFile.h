@@ -2,10 +2,8 @@
  * @file writeMusicFile.h
  * @author Christoforos Seas (cseas002@ucy.ac.cy)
  * @author Lampros Dionysiou (ldiony01@ucy.ac.cy)
- * @brief Program used for writing a music file purposes. This program
- * has functions which are used to change change a name from an input 
- * file to the appropriate output file, writing a music file to a given
- * file name and free allocated memory used to save a music file.
+ * @brief This interface provides the necessary functions to create
+ * an output file and export the audio header and data.
  * @version 0.1
  * @date 2021-11-25 
  * 
@@ -30,7 +28,7 @@
 
 /**
  * @brief Method that removes any prefixes from the given filename
- * and adds the given prefix (indicating the WAVEngineLib function).
+ * and adds the given prefix (indicating the epl232_team9 library function).
  * For example if the given filename is ./folder1/folder2/audio.wav
  * and the prefix is 'mono', the new filename will be mono-audio.wav.
  * This method DOES NOT allocate memory for the new filename. The caller

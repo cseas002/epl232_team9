@@ -1,3 +1,25 @@
+/**
+ * @file decryption.c
+ * @author Christoforos Seas (cseas002@ucy.ac.cy)
+ * @author Lampros Dionysiou (ldiony01@ucy.ac.cy)
+ * @brief The implementation of decryption.h file.
+ * @version 0.1
+ * @date 2021-12-04
+ * 
+ * @copyright Copyright (c) 2021 Christoforos Seas, Lampros Dionysiou.
+ * This file is part of WAV Engine.
+ * WAV Engine is free software: you can redistribute it and/or modify
+ * it under the terms of the GNU General Public License as published by
+ * the Free Software Foundation, either version 3 of the License, or
+ * at your option) any later version.
+ * This program is distributed in the hope that it will be useful,
+ * but WITHOUT ANY WARRANTY; without even the implied warranty of
+ * MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE. See the
+ * GNU General Public License for more details.
+ * Υou should have received a copy of the GNU General Public License
+ * along with this program. If not, see <http://www.gnu.org/licenses/>.
+ * 
+ */
 #include "decryption.h"
 
 int decryption(const char *fileName, int msgLength, const char *outputFileName)
@@ -13,7 +35,16 @@ int decryption(const char *fileName, int msgLength, const char *outputFileName)
         return EXIT_FAILURE;
     }
     int *permutation = createPermutationFunction(musicFile->size, SYSTEM_KEY_INTEGER);
+    if(!permutation){
+        freeMusicFile(musicFile);
+        return EXIT_FAILURE;
+    }
     char *msg = (char *) malloc((msgLength + 1) * sizeof(char));
+    if(!msg){
+        freeMusicFile(musicFile);
+        free(permutation);
+        return EXIT_FAILURE;
+    }
     int i;
     for (i = 0; i < msgLength + 1; i++)
         msg[i] = 0;
@@ -26,7 +57,12 @@ int decryption(const char *fileName, int msgLength, const char *outputFileName)
     msg[msgLength] = '\0';
     FILE *fp = fopen(outputFileName, "w");
     if (!fp)
+    {
+        freeMusicFile(musicFile);
+        free(permutation);
+        free(msg);
         return EXIT_FAILURE;
+    }
     fprintf(fp, "%s\n", msg);
     fclose(fp);
     free(permutation);

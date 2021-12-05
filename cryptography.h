@@ -2,8 +2,8 @@
  * @file cryptography.h
  * @author Christoforos Seas (cseas002@ucy.ac.cy)
  * @author Lampros Dionysiou (ldiony01@ucy.ac.cy)
- * @brief Cryptography is a helping program used for encryption and decryption.
- * It has functions which both programs use.
+ * @brief This program provides some basic functions needed for the
+ * encryption and decryption of data. 
  * @version 0.1
  * @date 2021-12-04
  * 
@@ -27,19 +27,20 @@
 #include "iolib.h"
 
 /**
- * @brief Create a Permutation Function array with given size and system key.
+ * @brief Creates a Permutation Function array with random indices
+ * from 0 to N-1.
  * 
- * @param N size of permutation array
- * @param systemkey the system key
- * @return int* pointer to the array which will be created
+ * @param N The number of audio samples
+ * @param systemkey An encryption key.
+ * @return An array with random indices.
  */
-int *createPermutationFunction(int N, unsigned int systemkey);
+int* createPermutationFunction(int N, unsigned int systemkey);
 
 /**
- * @brief Function which swaps two numbers in an array.
+ * @brief Swaps two cells in an array
  * 
- * @param num1 the first number
- * @param num2 the second number
+ * @param num1 The address of the first cell.
+ * @param num2 The address of the second cell.
  */
-void swap(int *num1, int *num2);
+void swap(int* num1, int* num2);
 #endif

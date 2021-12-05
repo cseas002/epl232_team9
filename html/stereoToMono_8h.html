@@ -56,13 +56,13 @@ Include dependency graph for stereoToMono.h:</div>
 <div class="center"><img src="stereoToMono_8h__incl.png" border="0" usemap="#stereoToMono_8h" alt=""/></div>
 <map name="stereoToMono_8h" id="stereoToMono_8h">
 <area shape="rect" title="Stereo To Mono Converter. This program reads a binary wav music file and converts its audio to mono...." alt="" coords="22,5,147,32"/>
-<area shape="rect" href="header_8h.html" title=" " alt="" coords="96,229,175,256"/>
-<area shape="rect" href="iolib_8h.html" title=" " alt="" coords="104,80,167,107"/>
+<area shape="rect" href="header_8h.html" title="Header file that includes the structures necessary for the implementation of the WAV Engine program,..." alt="" coords="96,229,175,256"/>
+<area shape="rect" href="iolib_8h.html" title="This header file acts as a library for all the programs needed for reading and writing audio files...." alt="" coords="104,80,167,107"/>
 <area shape="rect" title=" " alt="" coords="5,304,76,331"/>
 <area shape="rect" title=" " alt="" coords="100,304,171,331"/>
 <area shape="rect" title=" " alt="" coords="195,304,262,331"/>
-<area shape="rect" href="readMusicFile_8h.html" title=" " alt="" coords="73,155,197,181"/>
-<area shape="rect" href="writeMusicFile_8h.html" title=" " alt="" coords="222,155,350,181"/>
+<area shape="rect" href="readMusicFile_8h.html" title="This interface provides the necessary functions to read the header and data from an input file." alt="" coords="73,155,197,181"/>
+<area shape="rect" href="writeMusicFile_8h.html" title="This interface provides the necessary functions to create an output file and export the audio header ..." alt="" coords="222,155,350,181"/>
 </map>
 </div>
 </div><div class="textblock"><div class="dynheader">
@@ -71,9 +71,9 @@ This graph shows which files directly or indirectly include this file:</div>
 <div class="center"><img src="stereoToMono_8h__dep__incl.png" border="0" usemap="#stereoToMono_8hdep" alt=""/></div>
 <map name="stereoToMono_8hdep" id="stereoToMono_8hdep">
 <area shape="rect" title="Stereo To Mono Converter. This program reads a binary wav music file and converts its audio to mono...." alt="" coords="65,5,190,32"/>
-<area shape="rect" href="wavengine_8h.html" title="COMPILATION COMMAND: gcc &#45;o wavengine wavengine.c epl232_team9.a EXECUTION COMMAND: (see README...." alt="" coords="5,80,111,107"/>
-<area shape="rect" href="stereoToMono_8c.html" title=" " alt="" coords="135,80,259,107"/>
-<area shape="rect" href="wavengine_8c.html" title=" " alt="" coords="6,155,110,181"/>
+<area shape="rect" href="wavengine_8h.html" title="The interface for the client program. COMPILATION COMMAND: gcc &#45;o wavengine wavengine...." alt="" coords="5,80,111,107"/>
+<area shape="rect" href="stereoToMono_8c.html" title="The implementation of stereoToMono.h file." alt="" coords="135,80,259,107"/>
+<area shape="rect" href="wavengine_8c.html" title="This client program utilizes all the capabiltiies of epl232_team9 library. It implements the wavengin..." alt="" coords="6,155,110,181"/>
 </map>
 </div>
 </div>
@@ -82,6 +82,7 @@ This graph shows which files directly or indirectly include this file:</div>
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="func-members"></a>
 Functions</h2></td></tr>
 <tr class="memitem:a5619612f4d0f4206e2137c20a1ebe2d9"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="stereoToMono_8h.html#a5619612f4d0f4206e2137c20a1ebe2d9">stereoToMono</a> (char const *fileName)</td></tr>
+<tr class="memdesc:a5619612f4d0f4206e2137c20a1ebe2d9"><td class="mdescLeft">&#160;</td><td class="mdescRight">Method that converts an audio file from stero to mono.  <a href="stereoToMono_8h.html#a5619612f4d0f4206e2137c20a1ebe2d9">More...</a><br /></td></tr>
 <tr class="separator:a5619612f4d0f4206e2137c20a1ebe2d9"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
@@ -106,42 +107,52 @@ Functions</h2></td></tr>
         </tr>
       </table>
 </div><div class="memdoc">
-<div class="fragment"><div class="line"><a name="l00037"></a><span class="lineno">   37</span>&#160;                                      {</div>
-<div class="line"><a name="l00038"></a><span class="lineno">   38</span>&#160;    <a class="code" href="structMUSIC__FILE.html">MUSIC_FILE</a>* musicFile = (<a class="code" href="structMUSIC__FILE.html">MUSIC_FILE</a>*) malloc(<span class="keyword">sizeof</span>(<a class="code" href="structMUSIC__FILE.html">MUSIC_FILE</a>));</div>
-<div class="line"><a name="l00039"></a><span class="lineno">   39</span>&#160;    <span class="keywordflow">if</span>(!musicFile || !fileName) <span class="keywordflow">return</span> EXIT_FAILURE;</div>
-<div class="line"><a name="l00040"></a><span class="lineno">   40</span>&#160;    <span class="keywordflow">if</span> (<a class="code" href="readMusicFile_8h.html#a6214943f156ee52a7f419b6506e8d666">readHeaderAndData</a>(musicFile, fileName) == EXIT_FAILURE) <span class="keywordflow">return</span> EXIT_FAILURE;</div>
-<div class="line"><a name="l00041"></a><span class="lineno">   41</span>&#160;    <span class="keywordflow">if</span>(musicFile-&gt;<a class="code" href="structMUSIC__FILE.html#aa960fb5282f234531dc741e9e32d46a5">fmtSub</a>-&gt;<a class="code" href="structFMT__SUB.html#aa20887c55c10efda4629e61e65b87ede">numChannels</a> ==1 ){</div>
-<div class="line"><a name="l00042"></a><span class="lineno">   42</span>&#160;        printf(<span class="stringliteral">&quot;WAV File is already Mono.&quot;</span>);</div>
-<div class="line"><a name="l00043"></a><span class="lineno">   43</span>&#160;        <span class="keywordflow">return</span> EXIT_FAILURE;</div>
-<div class="line"><a name="l00044"></a><span class="lineno">   44</span>&#160;    }</div>
-<div class="line"><a name="l00045"></a><span class="lineno">   45</span>&#160;    <a class="code" href="structMUSIC__FILE.html">MUSIC_FILE</a> *newFile = (<a class="code" href="structMUSIC__FILE.html">MUSIC_FILE</a>*) malloc(<span class="keyword">sizeof</span>(<a class="code" href="structMUSIC__FILE.html">MUSIC_FILE</a>));</div>
-<div class="line"><a name="l00046"></a><span class="lineno">   46</span>&#160;    <span class="keywordflow">if</span> (!newFile){</div>
-<div class="line"><a name="l00047"></a><span class="lineno">   47</span>&#160;        <a class="code" href="writeMusicFile_8h.html#a9c1bb590e4cdc0d742c92ffd7a2547fe">freeMusicFile</a>(musicFile);</div>
-<div class="line"><a name="l00048"></a><span class="lineno">   48</span>&#160;        <span class="keywordflow">return</span> EXIT_FAILURE;</div>
-<div class="line"><a name="l00049"></a><span class="lineno">   49</span>&#160;    }</div>
-<div class="line"><a name="l00050"></a><span class="lineno">   50</span>&#160;    <span class="comment">//Header</span></div>
-<div class="line"><a name="l00051"></a><span class="lineno">   51</span>&#160;    <span class="keywordflow">if</span>(<a class="code" href="readMusicFile_8h.html#a936782c56fa2886ee7a22a8840d71e2a">copyHeader</a>(musicFile, newFile) || <a class="code" href="stereoToMono_8c.html#a27fabf5d089e2ce3e0661f38c1ef9575">changeHeader</a>(newFile)) {</div>
-<div class="line"><a name="l00052"></a><span class="lineno">   52</span>&#160;        <a class="code" href="writeMusicFile_8h.html#a9c1bb590e4cdc0d742c92ffd7a2547fe">freeMusicFile</a>(musicFile);</div>
-<div class="line"><a name="l00053"></a><span class="lineno">   53</span>&#160;        <a class="code" href="writeMusicFile_8h.html#a9c1bb590e4cdc0d742c92ffd7a2547fe">freeMusicFile</a>(newFile);</div>
-<div class="line"><a name="l00054"></a><span class="lineno">   54</span>&#160;        <span class="keywordflow">return</span> EXIT_FAILURE;</div>
-<div class="line"><a name="l00055"></a><span class="lineno">   55</span>&#160;    }</div>
-<div class="line"><a name="l00056"></a><span class="lineno">   56</span>&#160;    <span class="comment">//Data</span></div>
-<div class="line"><a name="l00057"></a><span class="lineno">   57</span>&#160;    newFile-&gt;<a class="code" href="structMUSIC__FILE.html#aa0e9041814070cee5386d05a84ed8fcb">data</a> = (<span class="keywordtype">byte</span>*) malloc(newFile-&gt;<a class="code" href="structMUSIC__FILE.html#a2e44ec87ac65d0a535951a402985e5af">size</a>);</div>
-<div class="line"><a name="l00058"></a><span class="lineno">   58</span>&#160;    <span class="keywordflow">if</span>(!newFile-&gt;<a class="code" href="structMUSIC__FILE.html#aa0e9041814070cee5386d05a84ed8fcb">data</a> || <a class="code" href="stereoToMono_8c.html#a9b474a9d84eb3d3a7788abe10a920997">changeData</a>(musicFile, newFile)){</div>
-<div class="line"><a name="l00059"></a><span class="lineno">   59</span>&#160;        <a class="code" href="writeMusicFile_8h.html#a9c1bb590e4cdc0d742c92ffd7a2547fe">freeMusicFile</a>(musicFile);</div>
-<div class="line"><a name="l00060"></a><span class="lineno">   60</span>&#160;        <a class="code" href="writeMusicFile_8h.html#a9c1bb590e4cdc0d742c92ffd7a2547fe">freeMusicFile</a>(newFile);</div>
-<div class="line"><a name="l00061"></a><span class="lineno">   61</span>&#160;        <span class="keywordflow">return</span> EXIT_FAILURE;</div>
-<div class="line"><a name="l00062"></a><span class="lineno">   62</span>&#160;    }</div>
-<div class="line"><a name="l00063"></a><span class="lineno">   63</span>&#160;    <span class="comment">//Save to file</span></div>
-<div class="line"><a name="l00064"></a><span class="lineno">   64</span>&#160;    <span class="keywordflow">if</span>(<a class="code" href="stereoToMono_8c.html#ace5c972f09e74a6c7d0e58b1b9d37178">saveToFile</a>(newFile, fileName)){</div>
-<div class="line"><a name="l00065"></a><span class="lineno">   65</span>&#160;        <a class="code" href="writeMusicFile_8h.html#a9c1bb590e4cdc0d742c92ffd7a2547fe">freeMusicFile</a>(musicFile);</div>
-<div class="line"><a name="l00066"></a><span class="lineno">   66</span>&#160;        <a class="code" href="writeMusicFile_8h.html#a9c1bb590e4cdc0d742c92ffd7a2547fe">freeMusicFile</a>(newFile);</div>
-<div class="line"><a name="l00067"></a><span class="lineno">   67</span>&#160;        <span class="keywordflow">return</span> EXIT_FAILURE;</div>
-<div class="line"><a name="l00068"></a><span class="lineno">   68</span>&#160;    }</div>
-<div class="line"><a name="l00069"></a><span class="lineno">   69</span>&#160;    <a class="code" href="writeMusicFile_8h.html#a9c1bb590e4cdc0d742c92ffd7a2547fe">freeMusicFile</a>(newFile);</div>
-<div class="line"><a name="l00070"></a><span class="lineno">   70</span>&#160;    <a class="code" href="writeMusicFile_8h.html#a9c1bb590e4cdc0d742c92ffd7a2547fe">freeMusicFile</a>(musicFile);</div>
-<div class="line"><a name="l00071"></a><span class="lineno">   71</span>&#160;    <span class="keywordflow">return</span> EXIT_SUCCESS;</div>
-<div class="line"><a name="l00072"></a><span class="lineno">   72</span>&#160;}</div>
+
+<p>Method that converts an audio file from stero to mono. </p>
+<p>It reads an audio file using the given filename and creates a new output wav file using the left audio channel. The name of the output file is mono-&lt;input filename&gt;.wav.</p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">fileName</td><td>The filename of the input file </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>An exit code </dd></dl>
+<div class="fragment"><div class="line"><a name="l00058"></a><span class="lineno">   58</span>&#160;                                      {</div>
+<div class="line"><a name="l00059"></a><span class="lineno">   59</span>&#160;    <a class="code" href="structMUSIC__FILE.html">MUSIC_FILE</a>* musicFile = (<a class="code" href="structMUSIC__FILE.html">MUSIC_FILE</a>*) malloc(<span class="keyword">sizeof</span>(<a class="code" href="structMUSIC__FILE.html">MUSIC_FILE</a>));</div>
+<div class="line"><a name="l00060"></a><span class="lineno">   60</span>&#160;    <span class="keywordflow">if</span>(!musicFile || !fileName) <span class="keywordflow">return</span> EXIT_FAILURE;</div>
+<div class="line"><a name="l00061"></a><span class="lineno">   61</span>&#160;    <span class="keywordflow">if</span> (<a class="code" href="readMusicFile_8h.html#a6214943f156ee52a7f419b6506e8d666">readHeaderAndData</a>(musicFile, fileName) == EXIT_FAILURE) <span class="keywordflow">return</span> EXIT_FAILURE;</div>
+<div class="line"><a name="l00062"></a><span class="lineno">   62</span>&#160;    <span class="keywordflow">if</span>(musicFile-&gt;<a class="code" href="structMUSIC__FILE.html#aa960fb5282f234531dc741e9e32d46a5">fmtSub</a>-&gt;<a class="code" href="structFMT__SUB.html#aa20887c55c10efda4629e61e65b87ede">numChannels</a> ==1 ){</div>
+<div class="line"><a name="l00063"></a><span class="lineno">   63</span>&#160;        printf(<span class="stringliteral">&quot;WAV File is already Mono.&quot;</span>);</div>
+<div class="line"><a name="l00064"></a><span class="lineno">   64</span>&#160;        <span class="keywordflow">return</span> EXIT_FAILURE;</div>
+<div class="line"><a name="l00065"></a><span class="lineno">   65</span>&#160;    }</div>
+<div class="line"><a name="l00066"></a><span class="lineno">   66</span>&#160;    <a class="code" href="structMUSIC__FILE.html">MUSIC_FILE</a> *newFile = (<a class="code" href="structMUSIC__FILE.html">MUSIC_FILE</a>*) malloc(<span class="keyword">sizeof</span>(<a class="code" href="structMUSIC__FILE.html">MUSIC_FILE</a>));</div>
+<div class="line"><a name="l00067"></a><span class="lineno">   67</span>&#160;    <span class="keywordflow">if</span> (!newFile){</div>
+<div class="line"><a name="l00068"></a><span class="lineno">   68</span>&#160;        <a class="code" href="writeMusicFile_8h.html#a9c1bb590e4cdc0d742c92ffd7a2547fe">freeMusicFile</a>(musicFile);</div>
+<div class="line"><a name="l00069"></a><span class="lineno">   69</span>&#160;        <span class="keywordflow">return</span> EXIT_FAILURE;</div>
+<div class="line"><a name="l00070"></a><span class="lineno">   70</span>&#160;    }</div>
+<div class="line"><a name="l00071"></a><span class="lineno">   71</span>&#160;    <span class="comment">//Header</span></div>
+<div class="line"><a name="l00072"></a><span class="lineno">   72</span>&#160;    <span class="keywordflow">if</span>(<a class="code" href="readMusicFile_8h.html#a936782c56fa2886ee7a22a8840d71e2a">copyHeader</a>(musicFile, newFile) || <a class="code" href="stereoToMono_8c.html#a27fabf5d089e2ce3e0661f38c1ef9575">changeHeader</a>(newFile)) {</div>
+<div class="line"><a name="l00073"></a><span class="lineno">   73</span>&#160;        <a class="code" href="writeMusicFile_8h.html#a9c1bb590e4cdc0d742c92ffd7a2547fe">freeMusicFile</a>(musicFile);</div>
+<div class="line"><a name="l00074"></a><span class="lineno">   74</span>&#160;        <a class="code" href="writeMusicFile_8h.html#a9c1bb590e4cdc0d742c92ffd7a2547fe">freeMusicFile</a>(newFile);</div>
+<div class="line"><a name="l00075"></a><span class="lineno">   75</span>&#160;        <span class="keywordflow">return</span> EXIT_FAILURE;</div>
+<div class="line"><a name="l00076"></a><span class="lineno">   76</span>&#160;    }</div>
+<div class="line"><a name="l00077"></a><span class="lineno">   77</span>&#160;    <span class="comment">//Data</span></div>
+<div class="line"><a name="l00078"></a><span class="lineno">   78</span>&#160;    newFile-&gt;<a class="code" href="structMUSIC__FILE.html#aa0e9041814070cee5386d05a84ed8fcb">data</a> = (<span class="keywordtype">byte</span>*) malloc(newFile-&gt;<a class="code" href="structMUSIC__FILE.html#a2e44ec87ac65d0a535951a402985e5af">size</a>);</div>
+<div class="line"><a name="l00079"></a><span class="lineno">   79</span>&#160;    <span class="keywordflow">if</span>(!newFile-&gt;<a class="code" href="structMUSIC__FILE.html#aa0e9041814070cee5386d05a84ed8fcb">data</a> || <a class="code" href="stereoToMono_8c.html#a9b474a9d84eb3d3a7788abe10a920997">changeData</a>(musicFile, newFile)){</div>
+<div class="line"><a name="l00080"></a><span class="lineno">   80</span>&#160;        <a class="code" href="writeMusicFile_8h.html#a9c1bb590e4cdc0d742c92ffd7a2547fe">freeMusicFile</a>(musicFile);</div>
+<div class="line"><a name="l00081"></a><span class="lineno">   81</span>&#160;        <a class="code" href="writeMusicFile_8h.html#a9c1bb590e4cdc0d742c92ffd7a2547fe">freeMusicFile</a>(newFile);</div>
+<div class="line"><a name="l00082"></a><span class="lineno">   82</span>&#160;        <span class="keywordflow">return</span> EXIT_FAILURE;</div>
+<div class="line"><a name="l00083"></a><span class="lineno">   83</span>&#160;    }</div>
+<div class="line"><a name="l00084"></a><span class="lineno">   84</span>&#160;    <span class="comment">//Save to file</span></div>
+<div class="line"><a name="l00085"></a><span class="lineno">   85</span>&#160;    <span class="keywordflow">if</span>(<a class="code" href="stereoToMono_8c.html#ace5c972f09e74a6c7d0e58b1b9d37178">saveToFile</a>(newFile, fileName)){</div>
+<div class="line"><a name="l00086"></a><span class="lineno">   86</span>&#160;        <a class="code" href="writeMusicFile_8h.html#a9c1bb590e4cdc0d742c92ffd7a2547fe">freeMusicFile</a>(musicFile);</div>
+<div class="line"><a name="l00087"></a><span class="lineno">   87</span>&#160;        <a class="code" href="writeMusicFile_8h.html#a9c1bb590e4cdc0d742c92ffd7a2547fe">freeMusicFile</a>(newFile);</div>
+<div class="line"><a name="l00088"></a><span class="lineno">   88</span>&#160;        <span class="keywordflow">return</span> EXIT_FAILURE;</div>
+<div class="line"><a name="l00089"></a><span class="lineno">   89</span>&#160;    }</div>
+<div class="line"><a name="l00090"></a><span class="lineno">   90</span>&#160;    <a class="code" href="writeMusicFile_8h.html#a9c1bb590e4cdc0d742c92ffd7a2547fe">freeMusicFile</a>(newFile);</div>
+<div class="line"><a name="l00091"></a><span class="lineno">   91</span>&#160;    <a class="code" href="writeMusicFile_8h.html#a9c1bb590e4cdc0d742c92ffd7a2547fe">freeMusicFile</a>(musicFile);</div>
+<div class="line"><a name="l00092"></a><span class="lineno">   92</span>&#160;    <span class="keywordflow">return</span> EXIT_SUCCESS;</div>
+<div class="line"><a name="l00093"></a><span class="lineno">   93</span>&#160;}</div>
 </div><!-- fragment -->
 <p class="reference">References <a class="el" href="stereoToMono_8c.html#a9b474a9d84eb3d3a7788abe10a920997">changeData()</a>, <a class="el" href="stereoToMono_8c.html#a27fabf5d089e2ce3e0661f38c1ef9575">changeHeader()</a>, <a class="el" href="readMusicFile_8h.html#a936782c56fa2886ee7a22a8840d71e2a">copyHeader()</a>, <a class="el" href="structMUSIC__FILE.html#aa0e9041814070cee5386d05a84ed8fcb">MUSIC_FILE::data</a>, <a class="el" href="structMUSIC__FILE.html#aa960fb5282f234531dc741e9e32d46a5">MUSIC_FILE::fmtSub</a>, <a class="el" href="writeMusicFile_8h.html#a9c1bb590e4cdc0d742c92ffd7a2547fe">freeMusicFile()</a>, <a class="el" href="structFMT__SUB.html#aa20887c55c10efda4629e61e65b87ede">FMT_SUB::numChannels</a>, <a class="el" href="readMusicFile_8h.html#a6214943f156ee52a7f419b6506e8d666">readHeaderAndData()</a>, <a class="el" href="stereoToMono_8c.html#ace5c972f09e74a6c7d0e58b1b9d37178">saveToFile()</a>, and <a class="el" href="structMUSIC__FILE.html#a2e44ec87ac65d0a535951a402985e5af">MUSIC_FILE::size</a>.</p>
 
@@ -151,32 +162,32 @@ Here is the call graph for this function:</div>
 <div class="dyncontent">
 <div class="center"><img src="stereoToMono_8h_a5619612f4d0f4206e2137c20a1ebe2d9_cgraph.png" border="0" usemap="#stereoToMono_8h_a5619612f4d0f4206e2137c20a1ebe2d9_cgraph" alt=""/></div>
 <map name="stereoToMono_8h_a5619612f4d0f4206e2137c20a1ebe2d9_cgraph" id="stereoToMono_8h_a5619612f4d0f4206e2137c20a1ebe2d9_cgraph">
-<area shape="rect" title=" " alt="" coords="5,132,119,159"/>
+<area shape="rect" title="Method that converts an audio file from stero to mono." alt="" coords="5,132,119,159"/>
 <area shape="rect" href="stereoToMono_8c.html#a9b474a9d84eb3d3a7788abe10a920997" title=" " alt="" coords="194,5,294,32"/>
 <area shape="rect" href="stereoToMono_8c.html#a27fabf5d089e2ce3e0661f38c1ef9575" title=" " alt="" coords="186,56,302,83"/>
 <area shape="rect" href="readMusicFile_8h.html#a936782c56fa2886ee7a22a8840d71e2a" title=" " alt="" coords="194,107,294,133"/>
-<area shape="rect" href="writeMusicFile_8h.html#a9c1bb590e4cdc0d742c92ffd7a2547fe" title=" " alt="" coords="189,157,299,184"/>
-<area shape="rect" href="readMusicFile_8h.html#a6214943f156ee52a7f419b6506e8d666" title=" " alt="" coords="167,208,321,235"/>
+<area shape="rect" href="writeMusicFile_8h.html#a9c1bb590e4cdc0d742c92ffd7a2547fe" title="Method that frees the memory allocated for the music file&#39;s header and data." alt="" coords="189,157,299,184"/>
+<area shape="rect" href="readMusicFile_8h.html#a6214943f156ee52a7f419b6506e8d666" title="Method that reads the header and data of a binary wav file and saves them in a MUSIC_FILE struct." alt="" coords="167,208,321,235"/>
 <area shape="rect" href="stereoToMono_8c.html#ace5c972f09e74a6c7d0e58b1b9d37178" title=" " alt="" coords="199,259,289,285"/>
-<area shape="rect" href="writeMusicFile_8h.html#af570ad4fd6e4862deaed54606cfa1022" title=" " alt="" coords="369,233,485,260"/>
-<area shape="rect" href="writeMusicFile_8h.html#ae088b110a0568bad7eb4528f95ecd004" title=" " alt="" coords="388,284,467,311"/>
+<area shape="rect" href="writeMusicFile_8h.html#af570ad4fd6e4862deaed54606cfa1022" title="Method that removes any prefixes from the given filename and adds the given prefix (indicating the ep..." alt="" coords="369,233,485,260"/>
+<area shape="rect" href="writeMusicFile_8h.html#ae088b110a0568bad7eb4528f95ecd004" title="Method that creates a new file using the given filename and exports the audio file in binary form." alt="" coords="388,284,467,311"/>
 </map>
 </div>
 
 </div>
 </div>
 </div><!-- contents -->
-<div class="ttc" id="astructMUSIC__FILE_html_aa960fb5282f234531dc741e9e32d46a5"><div class="ttname"><a href="structMUSIC__FILE.html#aa960fb5282f234531dc741e9e32d46a5">MUSIC_FILE::fmtSub</a></div><div class="ttdeci">FMT_SUB * fmtSub</div><div class="ttdef"><b>Definition:</b> header.h:69</div></div>
-<div class="ttc" id="areadMusicFile_8h_html_a936782c56fa2886ee7a22a8840d71e2a"><div class="ttname"><a href="readMusicFile_8h.html#a936782c56fa2886ee7a22a8840d71e2a">copyHeader</a></div><div class="ttdeci">int copyHeader(MUSIC_FILE *musicFile, MUSIC_FILE *newFile)</div><div class="ttdef"><b>Definition:</b> readMusicFile.c:3</div></div>
-<div class="ttc" id="astructMUSIC__FILE_html"><div class="ttname"><a href="structMUSIC__FILE.html">MUSIC_FILE</a></div><div class="ttdef"><b>Definition:</b> header.h:67</div></div>
-<div class="ttc" id="astructMUSIC__FILE_html_a2e44ec87ac65d0a535951a402985e5af"><div class="ttname"><a href="structMUSIC__FILE.html#a2e44ec87ac65d0a535951a402985e5af">MUSIC_FILE::size</a></div><div class="ttdeci">dword size</div><div class="ttdef"><b>Definition:</b> header.h:72</div></div>
-<div class="ttc" id="astructFMT__SUB_html_aa20887c55c10efda4629e61e65b87ede"><div class="ttname"><a href="structFMT__SUB.html#aa20887c55c10efda4629e61e65b87ede">FMT_SUB::numChannels</a></div><div class="ttdeci">word numChannels</div><div class="ttdef"><b>Definition:</b> header.h:47</div></div>
-<div class="ttc" id="astereoToMono_8c_html_ace5c972f09e74a6c7d0e58b1b9d37178"><div class="ttname"><a href="stereoToMono_8c.html#ace5c972f09e74a6c7d0e58b1b9d37178">saveToFile</a></div><div class="ttdeci">int saveToFile(MUSIC_FILE *newFile, char const *filename)</div><div class="ttdef"><b>Definition:</b> stereoToMono.c:26</div></div>
-<div class="ttc" id="astereoToMono_8c_html_a9b474a9d84eb3d3a7788abe10a920997"><div class="ttname"><a href="stereoToMono_8c.html#a9b474a9d84eb3d3a7788abe10a920997">changeData</a></div><div class="ttdeci">int changeData(MUSIC_FILE *musicFile, MUSIC_FILE *newFile)</div><div class="ttdef"><b>Definition:</b> stereoToMono.c:14</div></div>
-<div class="ttc" id="areadMusicFile_8h_html_a6214943f156ee52a7f419b6506e8d666"><div class="ttname"><a href="readMusicFile_8h.html#a6214943f156ee52a7f419b6506e8d666">readHeaderAndData</a></div><div class="ttdeci">int readHeaderAndData(MUSIC_FILE *, char const *fileName)</div><div class="ttdef"><b>Definition:</b> readMusicFile.c:17</div></div>
-<div class="ttc" id="astereoToMono_8c_html_a27fabf5d089e2ce3e0661f38c1ef9575"><div class="ttname"><a href="stereoToMono_8c.html#a27fabf5d089e2ce3e0661f38c1ef9575">changeHeader</a></div><div class="ttdeci">int changeHeader(MUSIC_FILE *newFile)</div><div class="ttdef"><b>Definition:</b> stereoToMono.c:3</div></div>
-<div class="ttc" id="astructMUSIC__FILE_html_aa0e9041814070cee5386d05a84ed8fcb"><div class="ttname"><a href="structMUSIC__FILE.html#aa0e9041814070cee5386d05a84ed8fcb">MUSIC_FILE::data</a></div><div class="ttdeci">byte * data</div><div class="ttdef"><b>Definition:</b> header.h:71</div></div>
-<div class="ttc" id="awriteMusicFile_8h_html_a9c1bb590e4cdc0d742c92ffd7a2547fe"><div class="ttname"><a href="writeMusicFile_8h.html#a9c1bb590e4cdc0d742c92ffd7a2547fe">freeMusicFile</a></div><div class="ttdeci">void freeMusicFile(MUSIC_FILE *musicFile)</div><div class="ttdef"><b>Definition:</b> writeMusicFile.c:3</div></div>
+<div class="ttc" id="astructMUSIC__FILE_html_aa960fb5282f234531dc741e9e32d46a5"><div class="ttname"><a href="structMUSIC__FILE.html#aa960fb5282f234531dc741e9e32d46a5">MUSIC_FILE::fmtSub</a></div><div class="ttdeci">FMT_SUB * fmtSub</div><div class="ttdef"><b>Definition:</b> header.h:109</div></div>
+<div class="ttc" id="areadMusicFile_8h_html_a936782c56fa2886ee7a22a8840d71e2a"><div class="ttname"><a href="readMusicFile_8h.html#a936782c56fa2886ee7a22a8840d71e2a">copyHeader</a></div><div class="ttdeci">int copyHeader(MUSIC_FILE *musicFile, MUSIC_FILE *newFile)</div><div class="ttdef"><b>Definition:</b> readMusicFile.c:25</div></div>
+<div class="ttc" id="astructMUSIC__FILE_html"><div class="ttname"><a href="structMUSIC__FILE.html">MUSIC_FILE</a></div><div class="ttdoc">The Audio File containg both header and data.</div><div class="ttdef"><b>Definition:</b> header.h:107</div></div>
+<div class="ttc" id="astructMUSIC__FILE_html_a2e44ec87ac65d0a535951a402985e5af"><div class="ttname"><a href="structMUSIC__FILE.html#a2e44ec87ac65d0a535951a402985e5af">MUSIC_FILE::size</a></div><div class="ttdeci">dword size</div><div class="ttdef"><b>Definition:</b> header.h:112</div></div>
+<div class="ttc" id="astructFMT__SUB_html_aa20887c55c10efda4629e61e65b87ede"><div class="ttname"><a href="structFMT__SUB.html#aa20887c55c10efda4629e61e65b87ede">FMT_SUB::numChannels</a></div><div class="ttdeci">word numChannels</div><div class="ttdef"><b>Definition:</b> header.h:77</div></div>
+<div class="ttc" id="astereoToMono_8c_html_ace5c972f09e74a6c7d0e58b1b9d37178"><div class="ttname"><a href="stereoToMono_8c.html#ace5c972f09e74a6c7d0e58b1b9d37178">saveToFile</a></div><div class="ttdeci">int saveToFile(MUSIC_FILE *newFile, char const *filename)</div><div class="ttdef"><b>Definition:</b> stereoToMono.c:47</div></div>
+<div class="ttc" id="astereoToMono_8c_html_a9b474a9d84eb3d3a7788abe10a920997"><div class="ttname"><a href="stereoToMono_8c.html#a9b474a9d84eb3d3a7788abe10a920997">changeData</a></div><div class="ttdeci">int changeData(MUSIC_FILE *musicFile, MUSIC_FILE *newFile)</div><div class="ttdef"><b>Definition:</b> stereoToMono.c:35</div></div>
+<div class="ttc" id="areadMusicFile_8h_html_a6214943f156ee52a7f419b6506e8d666"><div class="ttname"><a href="readMusicFile_8h.html#a6214943f156ee52a7f419b6506e8d666">readHeaderAndData</a></div><div class="ttdeci">int readHeaderAndData(MUSIC_FILE *, char const *fileName)</div><div class="ttdoc">Method that reads the header and data of a binary wav file and saves them in a MUSIC_FILE struct.</div><div class="ttdef"><b>Definition:</b> readMusicFile.c:39</div></div>
+<div class="ttc" id="astereoToMono_8c_html_a27fabf5d089e2ce3e0661f38c1ef9575"><div class="ttname"><a href="stereoToMono_8c.html#a27fabf5d089e2ce3e0661f38c1ef9575">changeHeader</a></div><div class="ttdeci">int changeHeader(MUSIC_FILE *newFile)</div><div class="ttdef"><b>Definition:</b> stereoToMono.c:24</div></div>
+<div class="ttc" id="astructMUSIC__FILE_html_aa0e9041814070cee5386d05a84ed8fcb"><div class="ttname"><a href="structMUSIC__FILE.html#aa0e9041814070cee5386d05a84ed8fcb">MUSIC_FILE::data</a></div><div class="ttdeci">byte * data</div><div class="ttdef"><b>Definition:</b> header.h:111</div></div>
+<div class="ttc" id="awriteMusicFile_8h_html_a9c1bb590e4cdc0d742c92ffd7a2547fe"><div class="ttname"><a href="writeMusicFile_8h.html#a9c1bb590e4cdc0d742c92ffd7a2547fe">freeMusicFile</a></div><div class="ttdeci">void freeMusicFile(MUSIC_FILE *musicFile)</div><div class="ttdoc">Method that frees the memory allocated for the music file's header and data.</div><div class="ttdef"><b>Definition:</b> writeMusicFile.c:25</div></div>
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>
 Generated by &#160;<a href="http://www.doxygen.org/index.html">

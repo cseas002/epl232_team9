@@ -1,7 +1,7 @@
 <map id="writeMusicFile.c" name="writeMusicFile.c">
-<area shape="rect" id="node1" title=" " alt="" coords="72,5,199,32"/>
-<area shape="rect" id="node2" href="$writeMusicFile_8h.html" title=" " alt="" coords="71,80,199,107"/>
-<area shape="rect" id="node3" href="$header_8h.html" title=" " alt="" coords="96,155,175,181"/>
+<area shape="rect" id="node1" title="The implementation of writeMusicFile.h file." alt="" coords="72,5,199,32"/>
+<area shape="rect" id="node2" href="$writeMusicFile_8h.html" title="This interface provides the necessary functions to create an output file and export the audio header ..." alt="" coords="71,80,199,107"/>
+<area shape="rect" id="node3" href="$header_8h.html" title="Header file that includes the structures necessary for the implementation of the WAV Engine program,..." alt="" coords="96,155,175,181"/>
 <area shape="rect" id="node4" title=" " alt="" coords="5,229,76,256"/>
 <area shape="rect" id="node5" title=" " alt="" coords="100,229,171,256"/>
 <area shape="rect" id="node6" title=" " alt="" coords="195,229,262,256"/>

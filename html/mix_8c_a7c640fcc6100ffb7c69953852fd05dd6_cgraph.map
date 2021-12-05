@@ -1,5 +1,5 @@
 <map id="saveMixedFiles" name="saveMixedFiles">
 <area shape="rect" id="node1" title=" " alt="" coords="5,31,128,57"/>
-<area shape="rect" id="node2" href="$writeMusicFile_8h.html#af570ad4fd6e4862deaed54606cfa1022" title=" " alt="" coords="176,5,292,32"/>
-<area shape="rect" id="node3" href="$writeMusicFile_8h.html#ae088b110a0568bad7eb4528f95ecd004" title=" " alt="" coords="195,56,273,83"/>
+<area shape="rect" id="node2" href="$writeMusicFile_8h.html#af570ad4fd6e4862deaed54606cfa1022" title="Method that removes any prefixes from the given filename and adds the given prefix (indicating the ep..." alt="" coords="176,5,292,32"/>
+<area shape="rect" id="node3" href="$writeMusicFile_8h.html#ae088b110a0568bad7eb4528f95ecd004" title="Method that creates a new file using the given filename and exports the audio file in binary form." alt="" coords="195,56,273,83"/>
 </map>

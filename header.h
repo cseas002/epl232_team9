@@ -2,9 +2,9 @@
  * @file header.h
  * @author Christoforos Seas (cseas002@ucy.ac.cy)
  * @author Lampros Dionysiou (ldiony01@ucy.ac.cy)
- * @brief This header file contains the structures and types of data which
- * are used from other programs. It also contains the system key number
- * which is used for encryption and decryption purposes.
+ * @brief Header file that includes the structures necessary for the
+ * implementation of the WAV Engine program, some key C libraries and
+ * the constants used by the program.
  * @version 0.1
  * @date 2021-12-04
  * 
@@ -28,12 +28,31 @@
 #include <stdlib.h>
 #include <string.h>
 #include <stdio.h>
+
+/**
+ * @typedef byte
+ * @brief Byte is 8 bits. Used for simplicity. 
+ * 
+ */
 typedef unsigned char byte;
+
+/**
+ * @typedef word
+ * @brief Word is 2 bytes (16 bits). Used for simplicity.
+ * 
+ */
 typedef unsigned short int word;
+
+/**
+ * @typedef dword
+ * @brief Double Word is 4 bytes (32 bits). Used for simplicity.
+ * 
+ */
 typedef unsigned int dword;
 
 /**
- * @brief RIFF structure
+ * @struct RIFF
+ * @brief Riff Chunk Descriptor. The first part of the audio file's header.
  * 
  */
 typedef struct {
@@ -47,7 +66,8 @@ __attribute__((packed))
 RIFF;
 
 /**
- * @brief FMT_SUB structure
+ * @struct FMT_SUB
+ * @brief FMT Sub-Chunk. The second part of the audio file's header.
  * 
  */
 typedef struct {
@@ -66,7 +86,8 @@ __attribute__((packed))
 FMT_SUB;
 
 /**
- * @brief DATA_SUB structure
+ * @struct DATA_SUB
+ * @brief Data Sub-Chunk Header. The third part of the audio file's header.
  * 
  */
 typedef struct{
@@ -79,11 +100,8 @@ __attribute__((packed))
 DATA_SUB;
 
 /**
- * @brief Complete music file structure.
- * This structure contains all other header structures and an 
- * array of bytes which is the data of the music file. It also
- * contains a dword named size, which is the amount of bytes 
- * in the data array.
+ * @struct MUSIC_FILE
+ * @brief The Audio File containg both header and data.
  * 
  */
 typedef struct {

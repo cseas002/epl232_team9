@@ -28,11 +28,16 @@
 #include "iolib.h"
 
 /**
- * @brief This function mix the two filenames
+ * @brief This method merges two audio files into one. It reads the header
+ * and data from both files. It creates a new audio file using the left
+ * channel of the first file and the right channel of the second one. The 
+ * size of the new audio file is the size of the smaller file.
+ * If the two files do not have the same number of bits per sample or either
+ * of those is mono, then the function terminates.
  * 
- * @param filename1 the first file name
- * @param filename2 the second file name
- * @return int EXIT_SUCCESS or EXIT_FAILURE, whether the program ends successfully or not
+ * @param filename1 The name of the first file (left channel).
+ * @param filename2 The name of the second file (right channel).
+ * @return An exit code.
  */
 int mix(char const *filename1, char const *filename2);
 #endif
