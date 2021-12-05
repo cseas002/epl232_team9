@@ -93,7 +93,8 @@ int stereoToMono(char const *fileName){
 }
 
 #ifdef DEBUG_MONO
-    int main(){
-        
+int main(){
+    char name2[] = "./as4-supplementary/piano.wav";
+    stereoToMono(name2);
     }
 #endif
