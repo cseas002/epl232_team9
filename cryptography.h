@@ -2,7 +2,8 @@
  * @file cryptography.h
  * @author Christoforos Seas (cseas002@ucy.ac.cy)
  * @author Lampros Dionysiou (ldiony01@ucy.ac.cy)
- * @brief 
+ * @brief This program provides some basic functions needed for the
+ * encryption and decryption of data. 
  * @version 0.1
  * @date 2021-12-04
  * 
@@ -25,8 +26,22 @@
 #include "header.h"
 #include"iolib.h"
 
+/**
+ * @brief Creates a Permutation Function array with random indices
+ * from 0 to N-1.
+ * 
+ * @param N The number of audio samples
+ * @param systemkey An encryption key.
+ * @return An array with random indices.
+ */
 int* createPermutationFunction(int N, unsigned int systemkey);
 
+/**
+ * @brief Swaps two cells in an array
+ * 
+ * @param num1 The address of the first cell.
+ * @param num2 The address of the second cell.
+ */
 void swap(int* num1, int* num2);
 #endif
 
