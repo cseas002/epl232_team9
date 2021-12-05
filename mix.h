@@ -1,8 +1,8 @@
 /**
  * @file mix.h
  * @author Lampros Dionysiou (ldiony01@ucy.ac.cy)
- * @brief Music files mixing software. This program reads two binary wav 
- * music files and merges them into one. The new music files has the left
+ * @brief Audio files mixing software. This program reads two binary wav 
+ * music files and merges them into one. The new music file has the left
  * audio channel of the first file and the right channel of the second one.
  * The output music file is named mix-<first file name>-<second file name>.wav.
  * @version 0.1
