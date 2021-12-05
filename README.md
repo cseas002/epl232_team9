@@ -35,3 +35,9 @@ This option multiplies the volume of the given music file(s) by the number given
 This options prints this message
 
 NOTE: All options do not change the music files, they create new music files (except -list, -encode, -decode)
+
+To debug the c files, type the command "make debug_<c file>" where <c file> is the c file you want to debug 
+WITHOUT THE EXTENTION
+e.g. 
+make debug_list
+This command debugs list.c

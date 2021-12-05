@@ -81,7 +81,7 @@ int main()
 {
     printf("Save the piano.wav file in the as4-supplementary sub folder in order to work!\n");
     MUSIC_FILE* musicFile = (MUSIC_FILE*) malloc(sizeof(MUSIC_FILE));
-    readHeaderAndData("./as4-supplementary/piano.wav", musicFile);
+    readHeaderAndData(musicFile, "./as4-supplementary/piano.wav");
     printf("Reading data from piano.wav file ...Done!\n");
     printf("The size of the wave file is %d bytes!\n", musicFile->size);
     return 0;

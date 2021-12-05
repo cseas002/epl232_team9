@@ -89,14 +89,15 @@ int changedName(char *newFileName, char const *fileName, char *addition)
 }
 
 #ifdef DEBUG_WRITE_MUSIC_FILE
+#include "readMusicFile.h"
 int main()
 {
     printf("Save the piano.wav file in the as4-supplementary sub folder in order to work!\n");
     MUSIC_FILE* musicFile = (MUSIC_FILE*) malloc(sizeof(MUSIC_FILE));
-    readHeaderAndData("./as4-supplementary/piano.wav", musicFile);
+    readHeaderAndData(musicFile, "./as4-supplementary/piano.wav");
     printf("Reading data from piano.wav file ...Done!\n");
-    writeFile(musicFile, "DEBUG_WRITE_FILE_PIANO.txt");
-    printf("Writing the file in DEBUG_WRITE_FILE_PIANO.txt file ...Done!\n");
+    writeFile(musicFile, "DEBUG_WRITE_FILE_PIANO.wav");
+    printf("Writing the file in DEBUG_WRITE_FILE_PIANO.wav file ...Done!\n");
     return 0;
 }
 #endif

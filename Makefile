@@ -4,6 +4,9 @@
 # 'make doxy' build project manual in doxygen
 # 'make all' build project + manual
 # 'make clean' removes all .o, executable and doxy log
+# 'make cleano' removes all .o files
+# 'make team9' makes the library epl232_team9.a containing all .o files
+# 'make debug_<c file to debug> debugs the c file (give the c file without .c extention)
 ###############################################
 PROJ = wavengine # the name of the project
 CC = gcc # name of compiler
@@ -50,3 +53,52 @@ team9:
 	for file in `ls | grep "\.o"`; do ar -cvq epl232_team9.a $$file; done
 	make cleano
 	make doxy
+# DEBUGGING MAKE COMMANDS:
+debug_list:
+	for file in `ls | grep "\.c$$"`; do gcc -c -DDEBUG_LIST $$file; done
+	$(CC)  -o debug_wavengine $(OBJS) $(LFLAGS)
+	./debug_wavengine
+debug_changeSpeed:
+	for file in `ls | grep "\.c$$"`; do gcc -c -DDEBUG_CHANGESPEED $$file; done
+	$(CC)  -o debug_wavengine $(OBJS) $(LFLAGS)
+	./debug_wavengine
+debug_chop:
+	for file in `ls | grep "\.c$$"`; do gcc -c -DDEBUG_CHOP $$file; done
+	$(CC)  -o debug_wavengine $(OBJS) $(LFLAGS)
+	./debug_wavengine
+debug_cryptography:
+	for file in `ls | grep "\.c$$"`; do gcc -c -DDEBUG_CRYPTOGRAPHY $$file; done
+	$(CC)  -o debug_wavengine $(OBJS) $(LFLAGS)
+	./debug_wavengine
+debug_decryption:
+	for file in `ls | grep "\.c$$"`; do gcc -c -DDEBUG_DECRYPTION $$file; done
+	$(CC)  -o debug_wavengine $(OBJS) $(LFLAGS)
+	./debug_wavengine
+debug_encryption:
+	for file in `ls | grep "\.c$$"`; do gcc -c -DDEBUG_ENCRYPTION $$file; done
+	$(CC)  -o debug_wavengine $(OBJS) $(LFLAGS)
+	./debug_wavengine
+debug_mix:
+	for file in `ls | grep "\.c$$"`; do gcc -c -DDEBUG_MIX $$file; done
+	$(CC)  -o debug_wavengine $(OBJS) $(LFLAGS)
+	./debug_wavengine
+debug_readMusicFile:
+	for file in `ls | grep "\.c$$"`; do gcc -c -DDEBUG_READ_MUSIC_FILE $$file; done
+	$(CC)  -o debug_wavengine $(OBJS) $(LFLAGS)
+	./debug_wavengine
+debug_writeMusicFile:
+	for file in `ls | grep "\.c$$"`; do gcc -c -DDEBUG_WRITE_MUSIC_FILE $$file; done
+	$(CC)  -o debug_wavengine $(OBJS) $(LFLAGS)
+	./debug_wavengine
+debug_reverse:
+	for file in `ls | grep "\.c$$"`; do gcc -c -DDEBUG_REVERSE $$file; done
+	$(CC)  -o debug_wavengine $(OBJS) $(LFLAGS)
+	./debug_wavengine
+debug_stereoToMono:
+	for file in `ls | grep "\.c$$"`; do gcc -c -DDEBUG_MONO $$file; done
+	$(CC)  -o debug_wavengine $(OBJS) $(LFLAGS)
+	./debug_wavengine
+debug_volIncrease:
+	for file in `ls | grep "\.c$$"`; do gcc -c -DDEBUG_VOL_CHANGE $$file; done
+	$(CC)  -o debug_wavengine $(OBJS) $(LFLAGS)
+	./debug_wavengine

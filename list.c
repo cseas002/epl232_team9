@@ -56,7 +56,7 @@ int printList(char const *fileName) {
 }
 
 #ifdef DEBUG_LIST
-int main()
+int main(int argc, char const *argv[])
 {
     printf("Save the piano.wav file in the as4-supplementary sub folder in order to work!\n");
     printf("Details for piano.wav file:\n");
