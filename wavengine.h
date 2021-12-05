@@ -35,10 +35,20 @@
 #include "volIncrease.h"
 
 /**
- * @brief Method that prints 
+ * @brief Method that prints information regarding the use of the wavengine
+ * program.
  * 
  */
 void printInfo();
+
+/**
+ * @brief Main function of wavengine. This function reads the user's input and do what 
+ * the user chose. 
+ * 
+ * @param argc the amount of arguments
+ * @param argv the arguments
+ * @return int EXIT_SUCCESS or EXIT_FAILURE, whether the program ends successfully or not
+ */
 int wavengine(int argc, char const *argv[]);
 #endif
 

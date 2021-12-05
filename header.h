@@ -2,7 +2,9 @@
  * @file header.h
  * @author Christoforos Seas (cseas002@ucy.ac.cy)
  * @author Lampros Dionysiou (ldiony01@ucy.ac.cy)
- * @brief 
+ * @brief This header file contains the structures and types of data which
+ * are used from other programs. It also contains the system key number
+ * which is used for encryption and decryption purposes.
  * @version 0.1
  * @date 2021-12-04
  * 
@@ -30,6 +32,10 @@ typedef unsigned char byte;
 typedef unsigned short int word;
 typedef unsigned int dword;
 
+/**
+ * @brief RIFF structure
+ * 
+ */
 typedef struct {
     char chunkID[4];
     dword chunkSize;
@@ -40,6 +46,10 @@ __attribute__((packed))
 #endif
 RIFF;
 
+/**
+ * @brief FMT_SUB structure
+ * 
+ */
 typedef struct {
     char subChunk1ID[4];
     dword subChunk1Size;
@@ -55,6 +65,10 @@ __attribute__((packed))
 #endif
 FMT_SUB;
 
+/**
+ * @brief DATA_SUB structure
+ * 
+ */
 typedef struct{
     char subChunk2ID[4];
     dword subChunk2Size;
@@ -64,6 +78,14 @@ __attribute__((packed))
 #endif
 DATA_SUB;
 
+/**
+ * @brief Complete music file structure.
+ * This structure contains all other header structures and an 
+ * array of bytes which is the data of the music file. It also
+ * contains a dword named size, which is the amount of bytes 
+ * in the data array.
+ * 
+ */
 typedef struct {
     RIFF* riff;
     FMT_SUB* fmtSub;

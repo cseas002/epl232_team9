@@ -2,7 +2,10 @@
  * @file writeMusicFile.h
  * @author Christoforos Seas (cseas002@ucy.ac.cy)
  * @author Lampros Dionysiou (ldiony01@ucy.ac.cy)
- * @brief 
+ * @brief Program used for writing a music file purposes. This program
+ * has functions which are used to change change a name from an input 
+ * file to the appropriate output file, writing a music file to a given
+ * file name and free allocated memory used to save a music file.
  * @version 0.1
  * @date 2021-11-25 
  * 

@@ -2,7 +2,9 @@
  * @file readMusicFile.h
  * @author Christoforos Seas (cseas002@ucy.ac.cy)
  * @author Lampros Dionysiou (ldiony01@ucy.ac.cy)
- * @brief 
+ * @brief Program used for reading a music file purposes. This program
+ * contains functions which can read a music file and copy the header
+ * of a given music file to another.
  * @version 0.1
  * @date 2021-12-04
  * 
@@ -22,9 +24,24 @@
  */
 #ifndef READ_MUSIC_FILE
 #define READ_MUSIC_FILE
-
 #include "header.h"
+
+/**
+ * @brief Function which reads the header and data from a given wave file
+ * and saves it in a MUSIC_FILE structure.
+ * 
+ * @param fileName the wave file
+ * @return int EXIT_SUCCESS or EXIT_FAILURE, whether the program ends successfully or not
+ */
 int readHeaderAndData(MUSIC_FILE*, char const *fileName);
+
+/**
+ * @brief Function which copies the header from a music file to another.
+ * 
+ * @param musicFile the music file which contains the header that will be copied
+ * @param newFile the new music file which needs the copied header
+ * @return int EXIT_SUCCESS or EXIT_FAILURE, whether the program ends successfully or not
+ */
 int copyHeader(MUSIC_FILE  *musicFile, MUSIC_FILE *newFile);
 #endif
 

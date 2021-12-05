@@ -1,7 +1,7 @@
 /**
  * @file reverse.h
  * @author Christoforos Seas (cseas002@ucy.ac.cy)
- * @brief 
+ * @brief Program which reverses the wave file data. 
  * @version 0.1
  * @date 2021-12-04
  * 
@@ -24,10 +24,31 @@
 #include "header.h"
 #include"iolib.h"
 
+/**
+ * @brief Function which copies data in music file in reverse order.
+ * 
+ * @param target the music file with the reversed data
+ * @param data the data array 
+ * @return int EXIT_SUCCESS or EXIT_FAILURE, whether the program ends successfully or not
+ */
 int copyReverseData(MUSIC_FILE* target, byte* data);
 
+/**
+ * @brief Create a Reverse File music file function with given wave file.
+ * 
+ * @param musicFile the music file that we want to save the reverse data
+ * @param fileName the wave file
+ * @return int EXIT_SUCCESS or EXIT_FAILURE, whether the program ends successfully or not
+ */
 int createReverseFile(MUSIC_FILE* musicFile, char const *fileName);
 
+/**
+ * @brief Reverse function that read a wave file and creates a new wave file with data in 
+ * reverse order.
+ * 
+ * @param fileName the wave file
+ * @return int EXIT_SUCCESS or EXIT_FAILURE, whether the program ends successfully or not
+ */
 int reverse(char const *fileName);
 #endif
 

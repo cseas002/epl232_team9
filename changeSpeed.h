@@ -14,7 +14,7 @@
  * @version 0.1
  * @date 2021-12-04
  * 
- * @copyright Copyright (c) 2021 Christoforos Seas.
+ * @copyright Copyright (c) 2021 Christoforos Seas, Lampros Dionysiou.
  * This file is part of WAV Engine.
  * WAV Engine is free software: you can redistribute it and/or modify
  * it under the terms of the GNU General Public License as published by
@@ -27,11 +27,23 @@
  * Υou should have received a copy of the GNU General Public License
  * along with this program. If not, see <http://www.gnu.org/licenses/>.
  * 
+ * 
  */
 #ifndef CHANGE_SPEED
 #define CHANGE_SPEED
 #include "header.h"
 #include "iolib.h"
 
+/**
+ * @brief speedChange function is a function which creates a new 
+ * music file, which is x times faster than the original, where
+ * x is a number from 0 to 100000 (0 and 100000 not included).
+ * 
+ * @param fileName the fileName with the wave file
+ * @param speedChange the speed change (how many times faster the new
+ * music file will be)
+ * @return int EXIT_SUCCESS or EXIT_FAILURE, whether the program succeeds
+ * or not
+ */
 int speedChange(char const *fileName, char *speedChange);
 #endif

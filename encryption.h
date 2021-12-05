@@ -2,7 +2,7 @@
  * @file encryption.h
  * @author Christoforos Seas (cseas002@ucy.ac.cy)
  * @author Lampros Dionysiou (ldiony01@ucy.ac.cy)
- * @brief 
+ * @brief Program used to encrypt a text to a wave file.
  * @version 0.1
  * @date 2021-12-04
  * 
@@ -23,6 +23,14 @@
 #ifndef ENCRYPTION
 #define ENCRYPTION
 #include "cryptography.h"
+
+/**
+ * @brief Main function which encodes a text to the wave file
+ * 
+ * @param fileName the file name
+ * @param text the text to encode
+ * @return int EXIT_SUCCESS or EXIT_FAILURE, whether the program ends successfully or not
+ */
 int encryption(const char *fileName, const char* text);
 #endif
 

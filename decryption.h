@@ -2,7 +2,7 @@
  * @file decryption.h
  * @author Christoforos Seas (cseas002@ucy.ac.cy)
  * @author Lampros Dionysiou (ldiony01@ucy.ac.cy)
- * @brief 
+ * @brief Program used to decrypt the word from an input wave file.
  * @version 0.1
  * @date 2021-12-04
  * 
@@ -23,6 +23,15 @@
 #ifndef DECRYPTION
 #define DECRYPTION
 #include "cryptography.h"
+
+/**
+ * @brief Main function which decrypts the word from the wave file
+ * 
+ * @param fileName the file name
+ * @param msgLength the message length
+ * @param outputFileName the file which the output will be printed
+ * @return int EXIT_SUCCESS or EXIT_FAILURE, whether the program ends successfully or not
+ */
 int decryption(const char *fileName, int msgLength, const char* outputFileName);
 #endif
 

@@ -1,7 +1,8 @@
 /**
  * @file list.h
  * @author Christoforos Seas (cseas002@ucy.ac.cy)
- * @brief 
+ * @brief This is a program which prints the details of given wave
+ * files. 
  * @version 0.1
  * @date 2021-11-25
  * 
@@ -25,26 +26,34 @@
 #include "header.h" // this is supplementary but I put it so it's more clear what we use
 
 /**
- * @brief 
+ * @brief Function which prints the RIFF chunk details of a wave file.
  * Using "%.*s", 4 in printf we can print the first 4 characters of a string
  * 
- * @param riff 
- * @return int 
+ * @param riff the RIFF structure of a given music file
+ * @return int EXIT_SUCCESS or EXIT_FAILURE, whether the program ends successfully or not
  */
 int printRiff(RIFF*);
 
 /**
- * @brief 
- * Using "%.*s", 4 in printf we can print the first 4 characters of a string
- * @param fmtSub 
- * @return int 
+ * @brief Function which prints the fmt subchunk details of a wave file.
+ * @param fmtSub the FMT_SUB structure of a given music file
+ * @return int EXIT_SUCCESS or EXIT_FAILURE, whether the program ends successfully or not
  */
 int printFmtSub(FMT_SUB*);
 
+/**
+ * @brief Function which prints the data subchunk details of a wave file.
+ * @param fmtSub the FMT_SUB structure of a given music file
+ * @return int EXIT_SUCCESS or EXIT_FAILURE, whether the program ends successfully or not
+ */
 int printDataSub(DATA_SUB*);
 
-// int printMusicFiles(MUSIC_FILE**, short);
-
+/**
+ * @brief Function which prints the details of a wave file.
+ * 
+ * @param fileName the file name
+ * @return int EXIT_SUCCESS or EXIT_FAILURE, whether the program ends successfully or not
+ */
 int printList(char const *fileName);
 #endif
 

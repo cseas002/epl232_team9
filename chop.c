@@ -1,8 +1,16 @@
 #include "chop.h"
 
-bool secondsAreValid(MUSIC_FILE* musicFile, int endSecond){
+bool secondsAreValid(MUSIC_FILE* musicFile, int startSecond, int endSecond){
     // the total time of a wave music file can be calculated using this formula:
     // time = FileLength / ByteRate
+    if (startSecond >= endSecond) {
+        printf("The starting second cannot be greater or equal to the end second\n");
+        return false;
+    }
+    if (startSecond < 0) {
+        printf("The starting second cannot be a negative number\n");
+        return false;
+    }
     if (endSecond > musicFile -> size / musicFile -> fmtSub -> byteRate) {
         printf("The file is shorter than %d seconds\n", endSecond);
         return false;
@@ -50,7 +58,7 @@ int chop(char const *fileName, int startSecond, int endSecond) {
         free(choppedMusicFile);
         return EXIT_FAILURE;
     }
-    if (!secondsAreValid(choppedMusicFile, endSecond)) {
+    if (!secondsAreValid(choppedMusicFile, startSecond, endSecond)) {
         free(choppedMusicFile);
         return EXIT_FAILURE;
     }

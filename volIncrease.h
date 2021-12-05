@@ -26,5 +26,13 @@
 #include "header.h"
 #include "iolib.h"
 
+/**
+ * @brief Function which increases the volume of a given wave file x times, where
+ * x is a number the client chooses.
+ * 
+ * @param fileName the wave file
+ * @param changeStr how much will the volume increase (times the volume will be multiplied)
+ * @return int EXIT_SUCCESS or EXIT_FAILURE, whether the program ends successfully or not
+ */
 int changeVol(char const *fileName, char* changeStr);
 #endif

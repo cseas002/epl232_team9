@@ -28,11 +28,11 @@
 #include "iolib.h"
 
 /**
- * @brief This method 
+ * @brief This function mix the two filenames
  * 
- * @param filename1 
- * @param filename2 
- * @return int 
+ * @param filename1 the first file name
+ * @param filename2 the second file name
+ * @return int EXIT_SUCCESS or EXIT_FAILURE, whether the program ends successfully or not
  */
 int mix(char const *filename1, char const *filename2);
 #endif

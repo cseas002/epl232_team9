@@ -1,7 +1,8 @@
 /**
  * @file iolib.h
  * @author Lampros Dionysiou (ldiony01@ucy.ac.cy)
- * @brief 
+ * @brief This is a header file which contains the header files
+ * which are used for input / output purposes.
  * @version 0.1
  * @date 2021-12-04
  * 
