@@ -55,50 +55,50 @@ team9:
 	make doxy
 # DEBUGGING MAKE COMMANDS:
 debug_list:
-	for file in `ls | grep "\.c$$"`; do gcc -c -DDEBUG_LIST $$file; done
+	for file in `ls | grep "\.c$$"`; do gcc -std=c99 -Wall -O -Wuninitialized -Wunreachable-code -pedantic -c -DDEBUG_LIST $$file; done
 	$(CC)  -o debug_wavengine $(OBJS) $(LFLAGS)
 	./debug_wavengine
 debug_changeSpeed:
-	for file in `ls | grep "\.c$$"`; do gcc -c -DDEBUG_CHANGESPEED $$file; done
+	for file in `ls | grep "\.c$$"`; do gcc -std=c99 -Wall -O -Wuninitialized -Wunreachable-code -pedantic -c -DDEBUG_CHANGESPEED $$file; done
 	$(CC)  -o debug_wavengine $(OBJS) $(LFLAGS)
 	./debug_wavengine
 debug_chop:
-	for file in `ls | grep "\.c$$"`; do gcc -c -DDEBUG_CHOP $$file; done
+	for file in `ls | grep "\.c$$"`; do gcc -std=c99 -Wall -O -Wuninitialized -Wunreachable-code -pedantic -c -DDEBUG_CHOP $$file; done
 	$(CC)  -o debug_wavengine $(OBJS) $(LFLAGS)
 	./debug_wavengine
 debug_cryptography:
-	for file in `ls | grep "\.c$$"`; do gcc -c -DDEBUG_CRYPTOGRAPHY $$file; done
+	for file in `ls | grep "\.c$$"`; do gcc -std=c99 -Wall -O -Wuninitialized -Wunreachable-code -pedantic -c -DDEBUG_CRYPTOGRAPHY $$file; done
 	$(CC)  -o debug_wavengine $(OBJS) $(LFLAGS)
 	./debug_wavengine
 debug_decryption:
-	for file in `ls | grep "\.c$$"`; do gcc -c -DDEBUG_DECRYPTION $$file; done
+	for file in `ls | grep "\.c$$"`; do gcc -std=c99 -Wall -O -Wuninitialized -Wunreachable-code -pedantic -c -DDEBUG_DECRYPTION $$file; done
 	$(CC)  -o debug_wavengine $(OBJS) $(LFLAGS)
 	./debug_wavengine
 debug_encryption:
-	for file in `ls | grep "\.c$$"`; do gcc -c -DDEBUG_ENCRYPTION $$file; done
+	for file in `ls | grep "\.c$$"`; do gcc -std=c99 -Wall -O -Wuninitialized -Wunreachable-code -pedantic -c -DDEBUG_ENCRYPTION $$file; done
 	$(CC)  -o debug_wavengine $(OBJS) $(LFLAGS)
 	./debug_wavengine
 debug_mix:
-	for file in `ls | grep "\.c$$"`; do gcc -c -DDEBUG_MIX $$file; done
+	for file in `ls | grep "\.c$$"`; do gcc -std=c99 -Wall -O -Wuninitialized -Wunreachable-code -pedantic -c -DDEBUG_MIX $$file; done
 	$(CC)  -o debug_wavengine $(OBJS) $(LFLAGS)
 	./debug_wavengine
 debug_readMusicFile:
-	for file in `ls | grep "\.c$$"`; do gcc -c -DDEBUG_READ_MUSIC_FILE $$file; done
+	for file in `ls | grep "\.c$$"`; do gcc -std=c99 -Wall -O -Wuninitialized -Wunreachable-code -pedantic -c -DDEBUG_READ_MUSIC_FILE $$file; done
 	$(CC)  -o debug_wavengine $(OBJS) $(LFLAGS)
 	./debug_wavengine
 debug_writeMusicFile:
-	for file in `ls | grep "\.c$$"`; do gcc -c -DDEBUG_WRITE_MUSIC_FILE $$file; done
+	for file in `ls | grep "\.c$$"`; do gcc -std=c99 -Wall -O -Wuninitialized -Wunreachable-code -pedantic -c -DDEBUG_WRITE_MUSIC_FILE $$file; done
 	$(CC)  -o debug_wavengine $(OBJS) $(LFLAGS)
 	./debug_wavengine
 debug_reverse:
-	for file in `ls | grep "\.c$$"`; do gcc -c -DDEBUG_REVERSE $$file; done
+	for file in `ls | grep "\.c$$"`; do gcc -std=c99 -Wall -O -Wuninitialized -Wunreachable-code -pedantic -c -DDEBUG_REVERSE $$file; done
 	$(CC)  -o debug_wavengine $(OBJS) $(LFLAGS)
 	./debug_wavengine
 debug_stereoToMono:
-	for file in `ls | grep "\.c$$"`; do gcc -c -DDEBUG_MONO $$file; done
+	for file in `ls | grep "\.c$$"`; do gcc -std=c99 -Wall -O -Wuninitialized -Wunreachable-code -pedantic -c -DDEBUG_MONO $$file; done
 	$(CC)  -o debug_wavengine $(OBJS) $(LFLAGS)
 	./debug_wavengine
 debug_volIncrease:
-	for file in `ls | grep "\.c$$"`; do gcc -c -DDEBUG_VOL_CHANGE $$file; done
+	for file in `ls | grep "\.c$$"`; do gcc -std=c99 -Wall -O -Wuninitialized -Wunreachable-code -pedantic -c -DDEBUG_VOL_CHANGE $$file; done
 	$(CC)  -o debug_wavengine $(OBJS) $(LFLAGS)
 	./debug_wavengine
