@@ -1,10 +1,10 @@
 <map id="reverse.h" name="reverse.h">
 <area shape="rect" id="node1" title=" " alt="" coords="43,5,126,32"/>
-<area shape="rect" id="node2" href="$header_8h.html" title=" " alt="" coords="96,229,175,256"/>
-<area shape="rect" id="node6" href="$iolib_8h.html" title=" " alt="" coords="104,80,167,107"/>
+<area shape="rect" id="node2" href="$header_8h.html" title="Header file that includes the structures necessary for the implementation of the WAV Engine program,..." alt="" coords="96,229,175,256"/>
+<area shape="rect" id="node6" href="$iolib_8h.html" title="This header file acts as a library for all the programs needed for reading and writing audio files...." alt="" coords="104,80,167,107"/>
 <area shape="rect" id="node3" title=" " alt="" coords="5,304,76,331"/>
 <area shape="rect" id="node4" title=" " alt="" coords="100,304,171,331"/>
 <area shape="rect" id="node5" title=" " alt="" coords="195,304,262,331"/>
-<area shape="rect" id="node7" href="$readMusicFile_8h.html" title=" " alt="" coords="73,155,197,181"/>
-<area shape="rect" id="node8" href="$writeMusicFile_8h.html" title=" " alt="" coords="222,155,350,181"/>
+<area shape="rect" id="node7" href="$readMusicFile_8h.html" title="This interface provides the necessary functions to read the header and data from an input file." alt="" coords="73,155,197,181"/>
+<area shape="rect" id="node8" href="$writeMusicFile_8h.html" title="This interface provides the necessary functions to create an output file and export the audio header ..." alt="" coords="222,155,350,181"/>
 </map>

@@ -1,7 +1,7 @@
 <map id="decryption" name="decryption">
-<area shape="rect" id="node1" title=" " alt="" coords="5,56,96,83"/>
-<area shape="rect" id="node2" href="$cryptography_8h.html#ae242f550ea5a82151d415796446f1936" title=" " alt="" coords="144,5,343,32"/>
-<area shape="rect" id="node4" href="$writeMusicFile_8h.html#a9c1bb590e4cdc0d742c92ffd7a2547fe" title=" " alt="" coords="189,56,298,83"/>
-<area shape="rect" id="node5" href="$readMusicFile_8h.html#a6214943f156ee52a7f419b6506e8d666" title=" " alt="" coords="166,107,321,133"/>
-<area shape="rect" id="node3" href="$cryptography_8c.html#a23afa7b8799c4eb3d8e5cc1cc794969b" title=" " alt="" coords="391,5,447,32"/>
+<area shape="rect" id="node1" title="Method that decrypts a message from an audio file." alt="" coords="5,56,96,83"/>
+<area shape="rect" id="node2" href="$cryptography_8h.html#ae242f550ea5a82151d415796446f1936" title="Creates a Permutation Function array with random indices from 0 to N&#45;1." alt="" coords="144,5,343,32"/>
+<area shape="rect" id="node4" href="$writeMusicFile_8h.html#a9c1bb590e4cdc0d742c92ffd7a2547fe" title="Method that frees the memory allocated for the music file&#39;s header and data." alt="" coords="189,56,298,83"/>
+<area shape="rect" id="node5" href="$readMusicFile_8h.html#a6214943f156ee52a7f419b6506e8d666" title="Method that reads the header and data of a binary wav file and saves them in a MUSIC_FILE struct." alt="" coords="166,107,321,133"/>
+<area shape="rect" id="node3" href="$cryptography_8c.html#a23afa7b8799c4eb3d8e5cc1cc794969b" title="Swaps two cells in an array." alt="" coords="391,5,447,32"/>
 </map>

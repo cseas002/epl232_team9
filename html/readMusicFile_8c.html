@@ -45,15 +45,18 @@ $(function() {
 <div class="title">readMusicFile.c File Reference</div>  </div>
 </div><!--header-->
 <div class="contents">
+
+<p>The implementation of <a class="el" href="readMusicFile_8h.html" title="This interface provides the necessary functions to read the header and data from an input file.">readMusicFile.h</a> file.  
+<a href="#details">More...</a></p>
 <div class="textblock"><code>#include &quot;<a class="el" href="readMusicFile_8h_source.html">readMusicFile.h</a>&quot;</code><br />
 </div><div class="textblock"><div class="dynheader">
 Include dependency graph for readMusicFile.c:</div>
 <div class="dyncontent">
 <div class="center"><img src="readMusicFile_8c__incl.png" border="0" usemap="#readMusicFile_8c" alt=""/></div>
 <map name="readMusicFile_8c" id="readMusicFile_8c">
-<area shape="rect" title=" " alt="" coords="74,5,197,32"/>
-<area shape="rect" href="readMusicFile_8h.html" title=" " alt="" coords="73,80,197,107"/>
-<area shape="rect" href="header_8h.html" title=" " alt="" coords="96,155,175,181"/>
+<area shape="rect" title="The implementation of readMusicFile.h file." alt="" coords="74,5,197,32"/>
+<area shape="rect" href="readMusicFile_8h.html" title="This interface provides the necessary functions to read the header and data from an input file." alt="" coords="73,80,197,107"/>
+<area shape="rect" href="header_8h.html" title="Header file that includes the structures necessary for the implementation of the WAV Engine program,..." alt="" coords="96,155,175,181"/>
 <area shape="rect" title=" " alt="" coords="5,229,76,256"/>
 <area shape="rect" title=" " alt="" coords="100,229,171,256"/>
 <area shape="rect" title=" " alt="" coords="195,229,262,256"/>
@@ -65,9 +68,18 @@ Functions</h2></td></tr>
 <tr class="memitem:a936782c56fa2886ee7a22a8840d71e2a"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="readMusicFile_8c.html#a936782c56fa2886ee7a22a8840d71e2a">copyHeader</a> (<a class="el" href="structMUSIC__FILE.html">MUSIC_FILE</a> *musicFile, <a class="el" href="structMUSIC__FILE.html">MUSIC_FILE</a> *newFile)</td></tr>
 <tr class="separator:a936782c56fa2886ee7a22a8840d71e2a"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a3a9f45cde838b0832d7df22a7c4ef71c"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="readMusicFile_8c.html#a3a9f45cde838b0832d7df22a7c4ef71c">readHeaderAndData</a> (<a class="el" href="structMUSIC__FILE.html">MUSIC_FILE</a> *musicFile, char const *fileName)</td></tr>
+<tr class="memdesc:a3a9f45cde838b0832d7df22a7c4ef71c"><td class="mdescLeft">&#160;</td><td class="mdescRight">Method that reads the header and data of a binary wav file and saves them in a <a class="el" href="structMUSIC__FILE.html" title="The Audio File containg both header and data.">MUSIC_FILE</a> struct.  <a href="readMusicFile_8c.html#a3a9f45cde838b0832d7df22a7c4ef71c">More...</a><br /></td></tr>
 <tr class="separator:a3a9f45cde838b0832d7df22a7c4ef71c"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
-<h2 class="groupheader">Function Documentation</h2>
+<a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
+<div class="textblock"><p>The implementation of <a class="el" href="readMusicFile_8h.html" title="This interface provides the necessary functions to read the header and data from an input file.">readMusicFile.h</a> file. </p>
+<dl class="section author"><dt>Author</dt><dd>Christoforos Seas (<a href="#" onclick="location.href='mai'+'lto:'+'cse'+'as'+'002'+'@u'+'cy.'+'ac'+'.cy'; return false;">cseas<span style="display: none;">.nosp@m.</span>002@<span style="display: none;">.nosp@m.</span>ucy.a<span style="display: none;">.nosp@m.</span>c.cy</a>) </dd>
+<dd>
+Lampros Dionysiou (<a href="#" onclick="location.href='mai'+'lto:'+'ldi'+'on'+'y01'+'@u'+'cy.'+'ac'+'.cy'; return false;">ldion<span style="display: none;">.nosp@m.</span>y01@<span style="display: none;">.nosp@m.</span>ucy.a<span style="display: none;">.nosp@m.</span>c.cy</a>) </dd></dl>
+<dl class="section version"><dt>Version</dt><dd>0.1 </dd></dl>
+<dl class="section date"><dt>Date</dt><dd>2021-12-04</dd></dl>
+<dl class="section copyright"><dt>Copyright</dt><dd>Copyright (c) 2021 Christoforos Seas, Lampros Dionysiou. This file is part of WAV Engine. WAV Engine is free software: you can redistribute it and/or modify it under the terms of the GNU General Public License as published by the Free Software Foundation, either version 3 of the License, or at your option) any later version. This program is distributed in the hope that it will be useful, but WITHOUT ANY WARRANTY; without even the implied warranty of MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE. See the GNU General Public License for more details. Υou should have received a copy of the GNU General Public License along with this program. If not, see <a href="http://www.gnu.org/licenses/">http://www.gnu.org/licenses/</a>. </dd></dl>
+</div><h2 class="groupheader">Function Documentation</h2>
 <a id="a936782c56fa2886ee7a22a8840d71e2a"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#a936782c56fa2886ee7a22a8840d71e2a">&#9670;&nbsp;</a></span>copyHeader()</h2>
 
@@ -93,19 +105,19 @@ Functions</h2></td></tr>
         </tr>
       </table>
 </div><div class="memdoc">
-<div class="fragment"><div class="line"><a name="l00003"></a><span class="lineno">    3</span>&#160;                                                           {</div>
-<div class="line"><a name="l00004"></a><span class="lineno">    4</span>&#160;    <span class="keywordflow">if</span> (!((newFile -&gt; riff = (<a class="code" href="structRIFF.html">RIFF</a>*) malloc(<span class="keyword">sizeof</span>(<a class="code" href="structRIFF.html">RIFF</a>))) &amp;&amp;</div>
-<div class="line"><a name="l00005"></a><span class="lineno">    5</span>&#160;     (newFile -&gt; fmtSub = (<a class="code" href="structFMT__SUB.html">FMT_SUB</a>*) malloc(<span class="keyword">sizeof</span>(<a class="code" href="structFMT__SUB.html">FMT_SUB</a>))) &amp;&amp; </div>
-<div class="line"><a name="l00006"></a><span class="lineno">    6</span>&#160;     (newFile -&gt; dataSub = (<a class="code" href="structDATA__SUB.html">DATA_SUB</a>*) malloc(<span class="keyword">sizeof</span>(<a class="code" href="structDATA__SUB.html">DATA_SUB</a>))))) {</div>
-<div class="line"><a name="l00007"></a><span class="lineno">    7</span>&#160;        printf(<span class="stringliteral">&quot;Cannot allocate space for reverse file\n&quot;</span>);</div>
-<div class="line"><a name="l00008"></a><span class="lineno">    8</span>&#160;        <span class="keywordflow">return</span> EXIT_FAILURE;</div>
-<div class="line"><a name="l00009"></a><span class="lineno">    9</span>&#160;    }</div>
-<div class="line"><a name="l00010"></a><span class="lineno">   10</span>&#160;    *newFile-&gt;<a class="code" href="structMUSIC__FILE.html#a1b93c23ca4c33fa5188fd54336e734b0">riff</a> = *musicFile-&gt;<a class="code" href="structMUSIC__FILE.html#a1b93c23ca4c33fa5188fd54336e734b0">riff</a>;</div>
-<div class="line"><a name="l00011"></a><span class="lineno">   11</span>&#160;    *newFile-&gt;<a class="code" href="structMUSIC__FILE.html#aa960fb5282f234531dc741e9e32d46a5">fmtSub</a> = *musicFile-&gt;<a class="code" href="structMUSIC__FILE.html#aa960fb5282f234531dc741e9e32d46a5">fmtSub</a>;</div>
-<div class="line"><a name="l00012"></a><span class="lineno">   12</span>&#160;    *newFile-&gt;<a class="code" href="structMUSIC__FILE.html#a71d5562fb93525aa5c0a807a94e53e5c">dataSub</a> = *musicFile-&gt;<a class="code" href="structMUSIC__FILE.html#a71d5562fb93525aa5c0a807a94e53e5c">dataSub</a>;</div>
-<div class="line"><a name="l00013"></a><span class="lineno">   13</span>&#160;    newFile-&gt;<a class="code" href="structMUSIC__FILE.html#a2e44ec87ac65d0a535951a402985e5af">size</a> = musicFile-&gt;<a class="code" href="structMUSIC__FILE.html#a2e44ec87ac65d0a535951a402985e5af">size</a>;</div>
-<div class="line"><a name="l00014"></a><span class="lineno">   14</span>&#160;    <span class="keywordflow">return</span> EXIT_SUCCESS;</div>
-<div class="line"><a name="l00015"></a><span class="lineno">   15</span>&#160;}</div>
+<div class="fragment"><div class="line"><a name="l00025"></a><span class="lineno">   25</span>&#160;                                                           {</div>
+<div class="line"><a name="l00026"></a><span class="lineno">   26</span>&#160;    <span class="keywordflow">if</span> (!((newFile -&gt; riff = (<a class="code" href="structRIFF.html">RIFF</a>*) malloc(<span class="keyword">sizeof</span>(<a class="code" href="structRIFF.html">RIFF</a>))) &amp;&amp;</div>
+<div class="line"><a name="l00027"></a><span class="lineno">   27</span>&#160;     (newFile -&gt; fmtSub = (<a class="code" href="structFMT__SUB.html">FMT_SUB</a>*) malloc(<span class="keyword">sizeof</span>(<a class="code" href="structFMT__SUB.html">FMT_SUB</a>))) &amp;&amp; </div>
+<div class="line"><a name="l00028"></a><span class="lineno">   28</span>&#160;     (newFile -&gt; dataSub = (<a class="code" href="structDATA__SUB.html">DATA_SUB</a>*) malloc(<span class="keyword">sizeof</span>(<a class="code" href="structDATA__SUB.html">DATA_SUB</a>))))) {</div>
+<div class="line"><a name="l00029"></a><span class="lineno">   29</span>&#160;        printf(<span class="stringliteral">&quot;Cannot allocate space for reverse file\n&quot;</span>);</div>
+<div class="line"><a name="l00030"></a><span class="lineno">   30</span>&#160;        <span class="keywordflow">return</span> EXIT_FAILURE;</div>
+<div class="line"><a name="l00031"></a><span class="lineno">   31</span>&#160;    }</div>
+<div class="line"><a name="l00032"></a><span class="lineno">   32</span>&#160;    *newFile-&gt;<a class="code" href="structMUSIC__FILE.html#a1b93c23ca4c33fa5188fd54336e734b0">riff</a> = *musicFile-&gt;<a class="code" href="structMUSIC__FILE.html#a1b93c23ca4c33fa5188fd54336e734b0">riff</a>;</div>
+<div class="line"><a name="l00033"></a><span class="lineno">   33</span>&#160;    *newFile-&gt;<a class="code" href="structMUSIC__FILE.html#aa960fb5282f234531dc741e9e32d46a5">fmtSub</a> = *musicFile-&gt;<a class="code" href="structMUSIC__FILE.html#aa960fb5282f234531dc741e9e32d46a5">fmtSub</a>;</div>
+<div class="line"><a name="l00034"></a><span class="lineno">   34</span>&#160;    *newFile-&gt;<a class="code" href="structMUSIC__FILE.html#a71d5562fb93525aa5c0a807a94e53e5c">dataSub</a> = *musicFile-&gt;<a class="code" href="structMUSIC__FILE.html#a71d5562fb93525aa5c0a807a94e53e5c">dataSub</a>;</div>
+<div class="line"><a name="l00035"></a><span class="lineno">   35</span>&#160;    newFile-&gt;<a class="code" href="structMUSIC__FILE.html#a2e44ec87ac65d0a535951a402985e5af">size</a> = musicFile-&gt;<a class="code" href="structMUSIC__FILE.html#a2e44ec87ac65d0a535951a402985e5af">size</a>;</div>
+<div class="line"><a name="l00036"></a><span class="lineno">   36</span>&#160;    <span class="keywordflow">return</span> EXIT_SUCCESS;</div>
+<div class="line"><a name="l00037"></a><span class="lineno">   37</span>&#160;}</div>
 </div><!-- fragment -->
 <p class="reference">References <a class="el" href="structMUSIC__FILE.html#a71d5562fb93525aa5c0a807a94e53e5c">MUSIC_FILE::dataSub</a>, <a class="el" href="structMUSIC__FILE.html#aa960fb5282f234531dc741e9e32d46a5">MUSIC_FILE::fmtSub</a>, <a class="el" href="structMUSIC__FILE.html#a1b93c23ca4c33fa5188fd54336e734b0">MUSIC_FILE::riff</a>, and <a class="el" href="structMUSIC__FILE.html#a2e44ec87ac65d0a535951a402985e5af">MUSIC_FILE::size</a>.</p>
 
@@ -123,7 +135,7 @@ Functions</h2></td></tr>
           <td class="memname">int readHeaderAndData </td>
           <td>(</td>
           <td class="paramtype"><a class="el" href="structMUSIC__FILE.html">MUSIC_FILE</a> *&#160;</td>
-          <td class="paramname"><em>musicFile</em>, </td>
+          <td class="paramname">, </td>
         </tr>
         <tr>
           <td class="paramkey"></td>
@@ -138,45 +150,55 @@ Functions</h2></td></tr>
         </tr>
       </table>
 </div><div class="memdoc">
-<div class="fragment"><div class="line"><a name="l00017"></a><span class="lineno">   17</span>&#160;                                                                   {</div>
-<div class="line"><a name="l00018"></a><span class="lineno">   18</span>&#160;    FILE* fp = NULL;</div>
-<div class="line"><a name="l00019"></a><span class="lineno">   19</span>&#160;    <span class="keywordflow">if</span> (!(fp = fopen(fileName, <span class="stringliteral">&quot;rb&quot;</span>))) <span class="keywordflow">return</span> EXIT_FAILURE;</div>
-<div class="line"><a name="l00020"></a><span class="lineno">   20</span>&#160;    <span class="keywordflow">if</span> (!(musicFile -&gt; riff = (<a class="code" href="structRIFF.html">RIFF</a>*) malloc(<span class="keyword">sizeof</span>(<a class="code" href="structRIFF.html">RIFF</a>)))) {</div>
-<div class="line"><a name="l00021"></a><span class="lineno">   21</span>&#160;        fclose(fp);</div>
-<div class="line"><a name="l00022"></a><span class="lineno">   22</span>&#160;        <span class="keywordflow">return</span> EXIT_FAILURE;</div>
-<div class="line"><a name="l00023"></a><span class="lineno">   23</span>&#160;    }</div>
-<div class="line"><a name="l00024"></a><span class="lineno">   24</span>&#160;    <span class="keywordflow">if</span>(fread(musicFile -&gt; riff, <span class="keyword">sizeof</span>(<a class="code" href="structRIFF.html">RIFF</a>), 1, fp)!=1){</div>
-<div class="line"><a name="l00025"></a><span class="lineno">   25</span>&#160;        fclose(fp);</div>
-<div class="line"><a name="l00026"></a><span class="lineno">   26</span>&#160;        <span class="keywordflow">return</span> EXIT_FAILURE;</div>
-<div class="line"><a name="l00027"></a><span class="lineno">   27</span>&#160;    }</div>
-<div class="line"><a name="l00028"></a><span class="lineno">   28</span>&#160;    <span class="keywordflow">if</span> (!(musicFile -&gt; fmtSub = (<a class="code" href="structFMT__SUB.html">FMT_SUB</a>*) malloc(<span class="keyword">sizeof</span>(<a class="code" href="structFMT__SUB.html">FMT_SUB</a>)))){</div>
-<div class="line"><a name="l00029"></a><span class="lineno">   29</span>&#160;        fclose(fp);</div>
-<div class="line"><a name="l00030"></a><span class="lineno">   30</span>&#160;        <span class="keywordflow">return</span> EXIT_FAILURE;</div>
-<div class="line"><a name="l00031"></a><span class="lineno">   31</span>&#160;    }</div>
-<div class="line"><a name="l00032"></a><span class="lineno">   32</span>&#160;    <span class="keywordflow">if</span>(fread(musicFile -&gt; fmtSub, <span class="keyword">sizeof</span>(<a class="code" href="structFMT__SUB.html">FMT_SUB</a>), 1, fp)!=1){</div>
-<div class="line"><a name="l00033"></a><span class="lineno">   33</span>&#160;        fclose(fp);</div>
-<div class="line"><a name="l00034"></a><span class="lineno">   34</span>&#160;        <span class="keywordflow">return</span> EXIT_FAILURE;</div>
-<div class="line"><a name="l00035"></a><span class="lineno">   35</span>&#160;    }</div>
-<div class="line"><a name="l00036"></a><span class="lineno">   36</span>&#160;    <span class="keywordflow">if</span> (!(musicFile -&gt; dataSub = (<a class="code" href="structDATA__SUB.html">DATA_SUB</a>*) malloc(<span class="keyword">sizeof</span>(<a class="code" href="structDATA__SUB.html">DATA_SUB</a>)))){</div>
-<div class="line"><a name="l00037"></a><span class="lineno">   37</span>&#160;        fclose(fp);</div>
-<div class="line"><a name="l00038"></a><span class="lineno">   38</span>&#160;        <span class="keywordflow">return</span> EXIT_FAILURE;</div>
-<div class="line"><a name="l00039"></a><span class="lineno">   39</span>&#160;    }</div>
-<div class="line"><a name="l00040"></a><span class="lineno">   40</span>&#160;    <span class="keywordflow">if</span>(fread(musicFile -&gt; dataSub, <span class="keyword">sizeof</span>(<a class="code" href="structDATA__SUB.html">DATA_SUB</a>), 1, fp)!=1){</div>
-<div class="line"><a name="l00041"></a><span class="lineno">   41</span>&#160;        fclose(fp);</div>
-<div class="line"><a name="l00042"></a><span class="lineno">   42</span>&#160;        <span class="keywordflow">return</span> EXIT_FAILURE;</div>
-<div class="line"><a name="l00043"></a><span class="lineno">   43</span>&#160;    }</div>
-<div class="line"><a name="l00044"></a><span class="lineno">   44</span>&#160;    musicFile -&gt; size = musicFile -&gt; dataSub -&gt; subChunk2Size;</div>
-<div class="line"><a name="l00045"></a><span class="lineno">   45</span>&#160;    <span class="keywordflow">if</span> (!(musicFile -&gt; data = (<span class="keywordtype">byte</span>*) malloc(musicFile -&gt; size))){</div>
-<div class="line"><a name="l00046"></a><span class="lineno">   46</span>&#160;        fclose(fp);</div>
-<div class="line"><a name="l00047"></a><span class="lineno">   47</span>&#160;        <span class="keywordflow">return</span> EXIT_FAILURE;</div>
-<div class="line"><a name="l00048"></a><span class="lineno">   48</span>&#160;    }</div>
-<div class="line"><a name="l00049"></a><span class="lineno">   49</span>&#160;    <span class="keywordflow">if</span>(fread(musicFile -&gt; data, <span class="keyword">sizeof</span>(<span class="keywordtype">byte</span>), musicFile -&gt; size, fp)!=musicFile-&gt;<a class="code" href="structMUSIC__FILE.html#a2e44ec87ac65d0a535951a402985e5af">size</a>){</div>
-<div class="line"><a name="l00050"></a><span class="lineno">   50</span>&#160;        fclose(fp);</div>
-<div class="line"><a name="l00051"></a><span class="lineno">   51</span>&#160;        <span class="keywordflow">return</span> EXIT_FAILURE;</div>
-<div class="line"><a name="l00052"></a><span class="lineno">   52</span>&#160;    }</div>
-<div class="line"><a name="l00053"></a><span class="lineno">   53</span>&#160;    fclose(fp);</div>
-<div class="line"><a name="l00054"></a><span class="lineno">   54</span>&#160;    <span class="keywordflow">return</span> EXIT_SUCCESS;</div>
-<div class="line"><a name="l00055"></a><span class="lineno">   55</span>&#160;}</div>
+
+<p>Method that reads the header and data of a binary wav file and saves them in a <a class="el" href="structMUSIC__FILE.html" title="The Audio File containg both header and data.">MUSIC_FILE</a> struct. </p>
+<p>It allocates the necessary space for the struct.</p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">fileName</td><td>The name of the file to be read. </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>An exit code. </dd></dl>
+<div class="fragment"><div class="line"><a name="l00039"></a><span class="lineno">   39</span>&#160;                                                                   {</div>
+<div class="line"><a name="l00040"></a><span class="lineno">   40</span>&#160;    FILE* fp = NULL;</div>
+<div class="line"><a name="l00041"></a><span class="lineno">   41</span>&#160;    <span class="keywordflow">if</span> (!(fp = fopen(fileName, <span class="stringliteral">&quot;rb&quot;</span>))) <span class="keywordflow">return</span> EXIT_FAILURE;</div>
+<div class="line"><a name="l00042"></a><span class="lineno">   42</span>&#160;    <span class="keywordflow">if</span> (!(musicFile -&gt; riff = (<a class="code" href="structRIFF.html">RIFF</a>*) malloc(<span class="keyword">sizeof</span>(<a class="code" href="structRIFF.html">RIFF</a>)))) {</div>
+<div class="line"><a name="l00043"></a><span class="lineno">   43</span>&#160;        fclose(fp);</div>
+<div class="line"><a name="l00044"></a><span class="lineno">   44</span>&#160;        <span class="keywordflow">return</span> EXIT_FAILURE;</div>
+<div class="line"><a name="l00045"></a><span class="lineno">   45</span>&#160;    }</div>
+<div class="line"><a name="l00046"></a><span class="lineno">   46</span>&#160;    <span class="keywordflow">if</span>(fread(musicFile -&gt; riff, <span class="keyword">sizeof</span>(<a class="code" href="structRIFF.html">RIFF</a>), 1, fp)!=1){</div>
+<div class="line"><a name="l00047"></a><span class="lineno">   47</span>&#160;        fclose(fp);</div>
+<div class="line"><a name="l00048"></a><span class="lineno">   48</span>&#160;        <span class="keywordflow">return</span> EXIT_FAILURE;</div>
+<div class="line"><a name="l00049"></a><span class="lineno">   49</span>&#160;    }</div>
+<div class="line"><a name="l00050"></a><span class="lineno">   50</span>&#160;    <span class="keywordflow">if</span> (!(musicFile -&gt; fmtSub = (<a class="code" href="structFMT__SUB.html">FMT_SUB</a>*) malloc(<span class="keyword">sizeof</span>(<a class="code" href="structFMT__SUB.html">FMT_SUB</a>)))){</div>
+<div class="line"><a name="l00051"></a><span class="lineno">   51</span>&#160;        fclose(fp);</div>
+<div class="line"><a name="l00052"></a><span class="lineno">   52</span>&#160;        <span class="keywordflow">return</span> EXIT_FAILURE;</div>
+<div class="line"><a name="l00053"></a><span class="lineno">   53</span>&#160;    }</div>
+<div class="line"><a name="l00054"></a><span class="lineno">   54</span>&#160;    <span class="keywordflow">if</span>(fread(musicFile -&gt; fmtSub, <span class="keyword">sizeof</span>(<a class="code" href="structFMT__SUB.html">FMT_SUB</a>), 1, fp)!=1){</div>
+<div class="line"><a name="l00055"></a><span class="lineno">   55</span>&#160;        fclose(fp);</div>
+<div class="line"><a name="l00056"></a><span class="lineno">   56</span>&#160;        <span class="keywordflow">return</span> EXIT_FAILURE;</div>
+<div class="line"><a name="l00057"></a><span class="lineno">   57</span>&#160;    }</div>
+<div class="line"><a name="l00058"></a><span class="lineno">   58</span>&#160;    <span class="keywordflow">if</span> (!(musicFile -&gt; dataSub = (<a class="code" href="structDATA__SUB.html">DATA_SUB</a>*) malloc(<span class="keyword">sizeof</span>(<a class="code" href="structDATA__SUB.html">DATA_SUB</a>)))){</div>
+<div class="line"><a name="l00059"></a><span class="lineno">   59</span>&#160;        fclose(fp);</div>
+<div class="line"><a name="l00060"></a><span class="lineno">   60</span>&#160;        <span class="keywordflow">return</span> EXIT_FAILURE;</div>
+<div class="line"><a name="l00061"></a><span class="lineno">   61</span>&#160;    }</div>
+<div class="line"><a name="l00062"></a><span class="lineno">   62</span>&#160;    <span class="keywordflow">if</span>(fread(musicFile -&gt; dataSub, <span class="keyword">sizeof</span>(<a class="code" href="structDATA__SUB.html">DATA_SUB</a>), 1, fp)!=1){</div>
+<div class="line"><a name="l00063"></a><span class="lineno">   63</span>&#160;        fclose(fp);</div>
+<div class="line"><a name="l00064"></a><span class="lineno">   64</span>&#160;        <span class="keywordflow">return</span> EXIT_FAILURE;</div>
+<div class="line"><a name="l00065"></a><span class="lineno">   65</span>&#160;    }</div>
+<div class="line"><a name="l00066"></a><span class="lineno">   66</span>&#160;    musicFile -&gt; size = musicFile -&gt; dataSub -&gt; subChunk2Size;</div>
+<div class="line"><a name="l00067"></a><span class="lineno">   67</span>&#160;    <span class="keywordflow">if</span> (!(musicFile -&gt; data = (<span class="keywordtype">byte</span>*) malloc(musicFile -&gt; size))){</div>
+<div class="line"><a name="l00068"></a><span class="lineno">   68</span>&#160;        fclose(fp);</div>
+<div class="line"><a name="l00069"></a><span class="lineno">   69</span>&#160;        <span class="keywordflow">return</span> EXIT_FAILURE;</div>
+<div class="line"><a name="l00070"></a><span class="lineno">   70</span>&#160;    }</div>
+<div class="line"><a name="l00071"></a><span class="lineno">   71</span>&#160;    <span class="keywordflow">if</span>(fread(musicFile -&gt; data, <span class="keyword">sizeof</span>(<span class="keywordtype">byte</span>), musicFile -&gt; size, fp)!=musicFile-&gt;<a class="code" href="structMUSIC__FILE.html#a2e44ec87ac65d0a535951a402985e5af">size</a>){</div>
+<div class="line"><a name="l00072"></a><span class="lineno">   72</span>&#160;        fclose(fp);</div>
+<div class="line"><a name="l00073"></a><span class="lineno">   73</span>&#160;        <span class="keywordflow">return</span> EXIT_FAILURE;</div>
+<div class="line"><a name="l00074"></a><span class="lineno">   74</span>&#160;    }</div>
+<div class="line"><a name="l00075"></a><span class="lineno">   75</span>&#160;    fclose(fp);</div>
+<div class="line"><a name="l00076"></a><span class="lineno">   76</span>&#160;    <span class="keywordflow">return</span> EXIT_SUCCESS;</div>
+<div class="line"><a name="l00077"></a><span class="lineno">   77</span>&#160;}</div>
 </div><!-- fragment -->
 <p class="reference">References <a class="el" href="structMUSIC__FILE.html#a2e44ec87ac65d0a535951a402985e5af">MUSIC_FILE::size</a>.</p>
 
@@ -185,13 +207,13 @@ Functions</h2></td></tr>
 </div>
 </div>
 </div><!-- contents -->
-<div class="ttc" id="astructMUSIC__FILE_html_aa960fb5282f234531dc741e9e32d46a5"><div class="ttname"><a href="structMUSIC__FILE.html#aa960fb5282f234531dc741e9e32d46a5">MUSIC_FILE::fmtSub</a></div><div class="ttdeci">FMT_SUB * fmtSub</div><div class="ttdef"><b>Definition:</b> header.h:69</div></div>
-<div class="ttc" id="astructMUSIC__FILE_html_a71d5562fb93525aa5c0a807a94e53e5c"><div class="ttname"><a href="structMUSIC__FILE.html#a71d5562fb93525aa5c0a807a94e53e5c">MUSIC_FILE::dataSub</a></div><div class="ttdeci">DATA_SUB * dataSub</div><div class="ttdef"><b>Definition:</b> header.h:70</div></div>
-<div class="ttc" id="astructFMT__SUB_html"><div class="ttname"><a href="structFMT__SUB.html">FMT_SUB</a></div><div class="ttdef"><b>Definition:</b> header.h:43</div></div>
-<div class="ttc" id="astructRIFF_html"><div class="ttname"><a href="structRIFF.html">RIFF</a></div><div class="ttdef"><b>Definition:</b> header.h:33</div></div>
-<div class="ttc" id="astructMUSIC__FILE_html_a2e44ec87ac65d0a535951a402985e5af"><div class="ttname"><a href="structMUSIC__FILE.html#a2e44ec87ac65d0a535951a402985e5af">MUSIC_FILE::size</a></div><div class="ttdeci">dword size</div><div class="ttdef"><b>Definition:</b> header.h:72</div></div>
-<div class="ttc" id="astructMUSIC__FILE_html_a1b93c23ca4c33fa5188fd54336e734b0"><div class="ttname"><a href="structMUSIC__FILE.html#a1b93c23ca4c33fa5188fd54336e734b0">MUSIC_FILE::riff</a></div><div class="ttdeci">RIFF * riff</div><div class="ttdef"><b>Definition:</b> header.h:68</div></div>
-<div class="ttc" id="astructDATA__SUB_html"><div class="ttname"><a href="structDATA__SUB.html">DATA_SUB</a></div><div class="ttdef"><b>Definition:</b> header.h:58</div></div>
+<div class="ttc" id="astructMUSIC__FILE_html_aa960fb5282f234531dc741e9e32d46a5"><div class="ttname"><a href="structMUSIC__FILE.html#aa960fb5282f234531dc741e9e32d46a5">MUSIC_FILE::fmtSub</a></div><div class="ttdeci">FMT_SUB * fmtSub</div><div class="ttdef"><b>Definition:</b> header.h:109</div></div>
+<div class="ttc" id="astructMUSIC__FILE_html_a71d5562fb93525aa5c0a807a94e53e5c"><div class="ttname"><a href="structMUSIC__FILE.html#a71d5562fb93525aa5c0a807a94e53e5c">MUSIC_FILE::dataSub</a></div><div class="ttdeci">DATA_SUB * dataSub</div><div class="ttdef"><b>Definition:</b> header.h:110</div></div>
+<div class="ttc" id="astructFMT__SUB_html"><div class="ttname"><a href="structFMT__SUB.html">FMT_SUB</a></div><div class="ttdoc">FMT Sub-Chunk. The second part of the audio file's header.</div><div class="ttdef"><b>Definition:</b> header.h:73</div></div>
+<div class="ttc" id="astructRIFF_html"><div class="ttname"><a href="structRIFF.html">RIFF</a></div><div class="ttdoc">Riff Chunk Descriptor. The first part of the audio file's header.</div><div class="ttdef"><b>Definition:</b> header.h:58</div></div>
+<div class="ttc" id="astructMUSIC__FILE_html_a2e44ec87ac65d0a535951a402985e5af"><div class="ttname"><a href="structMUSIC__FILE.html#a2e44ec87ac65d0a535951a402985e5af">MUSIC_FILE::size</a></div><div class="ttdeci">dword size</div><div class="ttdef"><b>Definition:</b> header.h:112</div></div>
+<div class="ttc" id="astructMUSIC__FILE_html_a1b93c23ca4c33fa5188fd54336e734b0"><div class="ttname"><a href="structMUSIC__FILE.html#a1b93c23ca4c33fa5188fd54336e734b0">MUSIC_FILE::riff</a></div><div class="ttdeci">RIFF * riff</div><div class="ttdef"><b>Definition:</b> header.h:108</div></div>
+<div class="ttc" id="astructDATA__SUB_html"><div class="ttname"><a href="structDATA__SUB.html">DATA_SUB</a></div><div class="ttdoc">Data Sub-Chunk Header. The third part of the audio file's header.</div><div class="ttdef"><b>Definition:</b> header.h:93</div></div>
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>
 Generated by &#160;<a href="http://www.doxygen.org/index.html">

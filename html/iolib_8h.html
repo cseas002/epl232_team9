@@ -43,6 +43,9 @@ $(function() {
 <div class="title">iolib.h File Reference</div>  </div>
 </div><!--header-->
 <div class="contents">
+
+<p>This header file acts as a library for all the programs needed for reading and writing audio files. It includes "readMusicFile.h" and "writeMusicFile.h".  
+<a href="#details">More...</a></p>
 <div class="textblock"><code>#include &quot;<a class="el" href="readMusicFile_8h_source.html">readMusicFile.h</a>&quot;</code><br />
 <code>#include &quot;<a class="el" href="writeMusicFile_8h_source.html">writeMusicFile.h</a>&quot;</code><br />
 </div><div class="textblock"><div class="dynheader">
@@ -50,10 +53,10 @@ Include dependency graph for iolib.h:</div>
 <div class="dyncontent">
 <div class="center"><img src="iolib_8h__incl.png" border="0" usemap="#iolib_8h" alt=""/></div>
 <map name="iolib_8h" id="iolib_8h">
-<area shape="rect" title=" " alt="" coords="111,5,173,32"/>
-<area shape="rect" href="readMusicFile_8h.html" title=" " alt="" coords="5,80,129,107"/>
-<area shape="rect" href="writeMusicFile_8h.html" title=" " alt="" coords="154,80,282,107"/>
-<area shape="rect" href="header_8h.html" title=" " alt="" coords="103,155,181,181"/>
+<area shape="rect" title="This header file acts as a library for all the programs needed for reading and writing audio files...." alt="" coords="111,5,173,32"/>
+<area shape="rect" href="readMusicFile_8h.html" title="This interface provides the necessary functions to read the header and data from an input file." alt="" coords="5,80,129,107"/>
+<area shape="rect" href="writeMusicFile_8h.html" title="This interface provides the necessary functions to create an output file and export the audio header ..." alt="" coords="154,80,282,107"/>
+<area shape="rect" href="header_8h.html" title="Header file that includes the structures necessary for the implementation of the WAV Engine program,..." alt="" coords="103,155,181,181"/>
 <area shape="rect" title=" " alt="" coords="12,229,83,256"/>
 <area shape="rect" title=" " alt="" coords="107,229,177,256"/>
 <area shape="rect" title=" " alt="" coords="202,229,269,256"/>
@@ -64,35 +67,36 @@ This graph shows which files directly or indirectly include this file:</div>
 <div class="dyncontent">
 <div class="center"><img src="iolib_8h__dep__incl.png" border="0" usemap="#iolib_8hdep" alt=""/></div>
 <map name="iolib_8hdep" id="iolib_8hdep">
-<area shape="rect" title=" " alt="" coords="793,5,856,32"/>
+<area shape="rect" title="This header file acts as a library for all the programs needed for reading and writing audio files...." alt="" coords="793,5,856,32"/>
 <area shape="rect" href="changeSpeed_8h.html" title="This program is for speed change option. You can choose a number between (0, 100000) (0 and 100000 ar..." alt="" coords="820,80,941,107"/>
 <area shape="rect" href="chop_8h.html" title=" " alt="" coords="996,80,1061,107"/>
-<area shape="rect" href="cryptography_8h.html" title=" " alt="" coords="200,80,319,107"/>
+<area shape="rect" href="cryptography_8h.html" title="This program provides some basic functions needed for the encryption and decryption of data." alt="" coords="200,80,319,107"/>
 <area shape="rect" href="list_8h.html" title=" " alt="" coords="741,80,796,107"/>
-<area shape="rect" href="mix_8h.html" title="Music files mixing software. This program reads two binary wav music files and merges them into one...." alt="" coords="453,80,511,107"/>
+<area shape="rect" href="mix_8h.html" title="Audio files mixing software. This program reads two binary wav music files and merges them into one...." alt="" coords="453,80,511,107"/>
 <area shape="rect" href="reverse_8h.html" title=" " alt="" coords="614,80,697,107"/>
 <area shape="rect" href="stereoToMono_8h.html" title="Stereo To Mono Converter. This program reads a binary wav music file and converts its audio to mono...." alt="" coords="1154,80,1279,107"/>
 <area shape="rect" href="volIncrease_8h.html" title="Volume Increase program. With given number, it creates a new file named volIncreased&#45;&lt;given file name..." alt="" coords="1313,80,1422,107"/>
-<area shape="rect" href="wavengine_8h.html" title="COMPILATION COMMAND: gcc &#45;o wavengine wavengine.c epl232_team9.a EXECUTION COMMAND: (see README...." alt="" coords="653,229,759,256"/>
+<area shape="rect" href="wavengine_8h.html" title="The interface for the client program. COMPILATION COMMAND: gcc &#45;o wavengine wavengine...." alt="" coords="653,229,759,256"/>
 <area shape="rect" href="changeSpeed_8c.html" title=" " alt="" coords="821,155,941,181"/>
-<area shape="rect" href="wavengine_8c.html" title=" " alt="" coords="654,304,758,331"/>
+<area shape="rect" href="wavengine_8c.html" title="This client program utilizes all the capabiltiies of epl232_team9 library. It implements the wavengin..." alt="" coords="654,304,758,331"/>
 <area shape="rect" href="chop_8c.html" title=" " alt="" coords="1066,155,1130,181"/>
-<area shape="rect" href="decryption_8h.html" title=" " alt="" coords="275,155,377,181"/>
-<area shape="rect" href="encryption_8h.html" title=" " alt="" coords="5,155,108,181"/>
-<area shape="rect" href="cryptography_8c.html" title=" " alt="" coords="133,155,250,181"/>
-<area shape="rect" href="decryption_8c.html" title=" " alt="" coords="275,229,377,256"/>
-<area shape="rect" href="encryption_8c.html" title=" " alt="" coords="5,229,108,256"/>
+<area shape="rect" href="decryption_8h.html" title="This program decrypts a message from an audio file. It reads the audio file provided exports the hidd..." alt="" coords="275,155,377,181"/>
+<area shape="rect" href="encryption_8h.html" title="This program encrypts a message into the audio file. It reads the audio file provided and stores in r..." alt="" coords="5,155,108,181"/>
+<area shape="rect" href="cryptography_8c.html" title="The implementation of cryptography.h file." alt="" coords="133,155,250,181"/>
+<area shape="rect" href="decryption_8c.html" title="The implementation of decryption.h file." alt="" coords="275,229,377,256"/>
+<area shape="rect" href="encryption_8c.html" title="The implementation of encryption.h file." alt="" coords="5,229,108,256"/>
 <area shape="rect" href="list_8c.html" title=" " alt="" coords="743,155,797,181"/>
-<area shape="rect" href="mix_8c.html" title=" " alt="" coords="453,155,511,181"/>
+<area shape="rect" href="mix_8c.html" title="The implemenation of mix.h file." alt="" coords="453,155,511,181"/>
 <area shape="rect" href="reverse_8c.html" title=" " alt="" coords="535,155,618,181"/>
-<area shape="rect" href="stereoToMono_8c.html" title=" " alt="" coords="1155,155,1279,181"/>
+<area shape="rect" href="stereoToMono_8c.html" title="The implementation of stereoToMono.h file." alt="" coords="1155,155,1279,181"/>
 <area shape="rect" href="volIncrease_8c.html" title=" " alt="" coords="1405,155,1513,181"/>
 </map>
 </div>
 </div>
 <p><a href="iolib_8h_source.html">Go to the source code of this file.</a></p>
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
-<div class="textblock"><dl class="section author"><dt>Author</dt><dd>Lampros Dionysiou (<a href="#" onclick="location.href='mai'+'lto:'+'ldi'+'on'+'y01'+'@u'+'cy.'+'ac'+'.cy'; return false;">ldion<span style="display: none;">.nosp@m.</span>y01@<span style="display: none;">.nosp@m.</span>ucy.a<span style="display: none;">.nosp@m.</span>c.cy</a>) </dd></dl>
+<div class="textblock"><p>This header file acts as a library for all the programs needed for reading and writing audio files. It includes "readMusicFile.h" and "writeMusicFile.h". </p>
+<dl class="section author"><dt>Author</dt><dd>Lampros Dionysiou (<a href="#" onclick="location.href='mai'+'lto:'+'ldi'+'on'+'y01'+'@u'+'cy.'+'ac'+'.cy'; return false;">ldion<span style="display: none;">.nosp@m.</span>y01@<span style="display: none;">.nosp@m.</span>ucy.a<span style="display: none;">.nosp@m.</span>c.cy</a>) </dd></dl>
 <dl class="section version"><dt>Version</dt><dd>0.1 </dd></dl>
 <dl class="section date"><dt>Date</dt><dd>2021-12-04</dd></dl>
 <dl class="section copyright"><dt>Copyright</dt><dd>Copyright (c) 2021 Lampros Dionysiou. This file is part of WAV Engine. WAV Engine is free software: you can redistribute it and/or modify it under the terms of the GNU General Public License as published by the Free Software Foundation, either version 3 of the License, or at your option) any later version. This program is distributed in the hope that it will be useful, but WITHOUT ANY WARRANTY; without even the implied warranty of MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE. See the GNU General Public License for more details. Υou should have received a copy of the GNU General Public License along with this program. If not, see <a href="http://www.gnu.org/licenses/">http://www.gnu.org/licenses/</a>. </dd></dl>

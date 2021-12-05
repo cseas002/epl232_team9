@@ -1,30 +1,30 @@
 <map id="header.h" name="header.h">
-<area shape="rect" id="node1" title=" " alt="" coords="783,5,861,32"/>
+<area shape="rect" id="node1" title="Header file that includes the structures necessary for the implementation of the WAV Engine program,..." alt="" coords="783,5,861,32"/>
 <area shape="rect" id="node2" href="$changeSpeed_8h.html" title="This program is for speed change option. You can choose a number between (0, 100000) (0 and 100000 ar..." alt="" coords="835,229,956,256"/>
-<area shape="rect" id="node6" href="$readMusicFile_8h.html" title=" " alt="" coords="685,80,809,107"/>
+<area shape="rect" id="node6" href="$readMusicFile_8h.html" title="This interface provides the necessary functions to read the header and data from an input file." alt="" coords="685,80,809,107"/>
 <area shape="rect" id="node8" href="$chop_8h.html" title=" " alt="" coords="1008,229,1073,256"/>
-<area shape="rect" id="node10" href="$cryptography_8h.html" title=" " alt="" coords="267,229,385,256"/>
+<area shape="rect" id="node10" href="$cryptography_8h.html" title="This program provides some basic functions needed for the encryption and decryption of data." alt="" coords="267,229,385,256"/>
 <area shape="rect" id="node16" href="$list_8h.html" title=" " alt="" coords="711,229,765,256"/>
-<area shape="rect" id="node18" href="$mix_8h.html" title="Music files mixing software. This program reads two binary wav music files and merges them into one...." alt="" coords="453,229,511,256"/>
+<area shape="rect" id="node18" href="$mix_8h.html" title="Audio files mixing software. This program reads two binary wav music files and merges them into one...." alt="" coords="453,229,511,256"/>
 <area shape="rect" id="node20" href="$reverse_8h.html" title=" " alt="" coords="569,229,651,256"/>
 <area shape="rect" id="node22" href="$stereoToMono_8h.html" title="Stereo To Mono Converter. This program reads a binary wav music file and converts its audio to mono...." alt="" coords="1106,229,1231,256"/>
 <area shape="rect" id="node24" href="$volIncrease_8h.html" title="Volume Increase program. With given number, it creates a new file named volIncreased&#45;&lt;given file name..." alt="" coords="1290,229,1399,256"/>
-<area shape="rect" id="node27" href="$writeMusicFile_8h.html" title=" " alt="" coords="834,80,962,107"/>
-<area shape="rect" id="node3" href="$wavengine_8h.html" title="COMPILATION COMMAND: gcc &#45;o wavengine wavengine.c epl232_team9.a EXECUTION COMMAND: (see README...." alt="" coords="653,379,759,405"/>
+<area shape="rect" id="node27" href="$writeMusicFile_8h.html" title="This interface provides the necessary functions to create an output file and export the audio header ..." alt="" coords="834,80,962,107"/>
+<area shape="rect" id="node3" href="$wavengine_8h.html" title="The interface for the client program. COMPILATION COMMAND: gcc &#45;o wavengine wavengine...." alt="" coords="653,379,759,405"/>
 <area shape="rect" id="node5" href="$changeSpeed_8c.html" title=" " alt="" coords="821,304,941,331"/>
-<area shape="rect" id="node4" href="$wavengine_8c.html" title=" " alt="" coords="654,453,758,480"/>
-<area shape="rect" id="node7" href="$iolib_8h.html" title=" " alt="" coords="791,155,853,181"/>
-<area shape="rect" id="node26" href="$readMusicFile_8c.html" title=" " alt="" coords="643,155,766,181"/>
+<area shape="rect" id="node4" href="$wavengine_8c.html" title="This client program utilizes all the capabiltiies of epl232_team9 library. It implements the wavengin..." alt="" coords="654,453,758,480"/>
+<area shape="rect" id="node7" href="$iolib_8h.html" title="This header file acts as a library for all the programs needed for reading and writing audio files...." alt="" coords="791,155,853,181"/>
+<area shape="rect" id="node26" href="$readMusicFile_8c.html" title="The implementation of readMusicFile.h file." alt="" coords="643,155,766,181"/>
 <area shape="rect" id="node9" href="$chop_8c.html" title=" " alt="" coords="1066,304,1130,331"/>
-<area shape="rect" id="node11" href="$decryption_8h.html" title=" " alt="" coords="275,304,377,331"/>
-<area shape="rect" id="node13" href="$encryption_8h.html" title=" " alt="" coords="5,304,108,331"/>
-<area shape="rect" id="node15" href="$cryptography_8c.html" title=" " alt="" coords="133,304,250,331"/>
-<area shape="rect" id="node12" href="$decryption_8c.html" title=" " alt="" coords="275,379,377,405"/>
-<area shape="rect" id="node14" href="$encryption_8c.html" title=" " alt="" coords="5,379,108,405"/>
+<area shape="rect" id="node11" href="$decryption_8h.html" title="This program decrypts a message from an audio file. It reads the audio file provided exports the hidd..." alt="" coords="275,304,377,331"/>
+<area shape="rect" id="node13" href="$encryption_8h.html" title="This program encrypts a message into the audio file. It reads the audio file provided and stores in r..." alt="" coords="5,304,108,331"/>
+<area shape="rect" id="node15" href="$cryptography_8c.html" title="The implementation of cryptography.h file." alt="" coords="133,304,250,331"/>
+<area shape="rect" id="node12" href="$decryption_8c.html" title="The implementation of decryption.h file." alt="" coords="275,379,377,405"/>
+<area shape="rect" id="node14" href="$encryption_8c.html" title="The implementation of encryption.h file." alt="" coords="5,379,108,405"/>
 <area shape="rect" id="node17" href="$list_8c.html" title=" " alt="" coords="743,304,797,331"/>
-<area shape="rect" id="node19" href="$mix_8c.html" title=" " alt="" coords="453,304,511,331"/>
+<area shape="rect" id="node19" href="$mix_8c.html" title="The implemenation of mix.h file." alt="" coords="453,304,511,331"/>
 <area shape="rect" id="node21" href="$reverse_8c.html" title=" " alt="" coords="535,304,618,331"/>
-<area shape="rect" id="node23" href="$stereoToMono_8c.html" title=" " alt="" coords="1155,304,1279,331"/>
+<area shape="rect" id="node23" href="$stereoToMono_8c.html" title="The implementation of stereoToMono.h file." alt="" coords="1155,304,1279,331"/>
 <area shape="rect" id="node25" href="$volIncrease_8c.html" title=" " alt="" coords="1405,304,1513,331"/>
-<area shape="rect" id="node28" href="$writeMusicFile_8c.html" title=" " alt="" coords="877,155,1004,181"/>
+<area shape="rect" id="node28" href="$writeMusicFile_8c.html" title="The implementation of writeMusicFile.h file." alt="" coords="877,155,1004,181"/>
 </map>
