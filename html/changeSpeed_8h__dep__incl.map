@@ -1,6 +1,0 @@
-<map id="changeSpeed.h" name="changeSpeed.h">
-<area shape="rect" id="node1" title="This program is for speed change option. You can choose a number between (0, 100000) (0 and 100000 ar..." alt="" coords="65,5,187,32"/>
-<area shape="rect" id="node2" href="$wavengine_8h.html" title="The interface for the client program. COMPILATION COMMAND: gcc &#45;o wavengine wavengine...." alt="" coords="5,80,111,107"/>
-<area shape="rect" id="node4" href="$changeSpeed_8c.html" title=" " alt="" coords="135,80,255,107"/>
-<area shape="rect" id="node3" href="$wavengine_8c.html" title="This client program utilizes all the capabiltiies of epl232_team9 library. It implements the wavengin..." alt="" coords="6,155,110,181"/>
-</map>

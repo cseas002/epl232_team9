@@ -1,9 +1,0 @@
-<map id="chop" name="chop">
-<area shape="rect" id="node1" title=" " alt="" coords="5,107,59,133"/>
-<area shape="rect" id="node2" href="$writeMusicFile_8h.html#af570ad4fd6e4862deaed54606cfa1022" title="Method that removes any prefixes from the given filename and adds the given prefix (indicating the ep..." alt="" coords="126,5,242,32"/>
-<area shape="rect" id="node3" href="$chop_8c.html#a8944e84ba16382f7171352131d4126be" title=" " alt="" coords="113,56,255,83"/>
-<area shape="rect" id="node5" href="$writeMusicFile_8h.html#a9c1bb590e4cdc0d742c92ffd7a2547fe" title="Method that frees the memory allocated for the music file&#39;s header and data." alt="" coords="129,107,239,133"/>
-<area shape="rect" id="node6" href="$readMusicFile_8h.html#a6214943f156ee52a7f419b6506e8d666" title="Method that reads the header and data of a binary wav file and saves them in a MUSIC_FILE struct." alt="" coords="107,157,261,184"/>
-<area shape="rect" id="node7" href="$chop_8c.html#acc6096d3162c69a7ef4f28c454c15216" title=" " alt="" coords="119,208,249,235"/>
-<area shape="rect" id="node4" href="$writeMusicFile_8h.html#ae088b110a0568bad7eb4528f95ecd004" title="Method that creates a new file using the given filename and exports the audio file in binary form." alt="" coords="309,56,388,83"/>
-</map>

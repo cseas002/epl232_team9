@@ -1,4 +1,0 @@
-<map id="wavengine.h" name="wavengine.h">
-<area shape="rect" id="node1" title="The interface for the client program. COMPILATION COMMAND: gcc &#45;o wavengine wavengine...." alt="" coords="5,5,111,32"/>
-<area shape="rect" id="node2" href="$wavengine_8c.html" title="This client program utilizes all the capabiltiies of epl232_team9 library. It implements the wavengin..." alt="" coords="6,80,110,107"/>
-</map>

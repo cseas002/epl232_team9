@@ -1,6 +1,0 @@
-<map id="MUSIC_FILE" name="MUSIC_FILE">
-<area shape="rect" id="node1" title="The Audio File containg both header and data." alt="" coords="73,95,172,121"/>
-<area shape="rect" id="node2" href="$structRIFF.html" title="Riff Chunk Descriptor. The first part of the audio file&#39;s header." alt="" coords="5,5,56,32"/>
-<area shape="rect" id="node3" href="$structFMT__SUB.html" title="FMT Sub&#45;Chunk. The second part of the audio file&#39;s header." alt="" coords="81,5,165,32"/>
-<area shape="rect" id="node4" href="$structDATA__SUB.html" title="Data Sub&#45;Chunk Header. The third part of the audio file&#39;s header." alt="" coords="189,5,280,32"/>
-</map>
