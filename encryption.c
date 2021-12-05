@@ -78,6 +78,7 @@ int encryption(const char *fileName, const char *text)
     FILE *fp = fopen(text, "r");
     if (!fp)
     {
+        printf("Failed to read input file\n");
         freeMusicFile(musicFile);
         return EXIT_FAILURE;
     }
@@ -87,12 +88,14 @@ int encryption(const char *fileName, const char *text)
     char *word = (char *)malloc((fileSize + 1) * sizeof(char));
     if(!word)
     {
+        printf("Failed to allocate memory\n");
         freeMusicFile(musicFile);
         return EXIT_FAILURE;
     }
     // + 1 for '\0'
     if (fread(word, sizeof(char), fileSize, fp) != fileSize)
     {
+        printf("Failed to read input file\n");
         freeMusicFile(musicFile);
         free(word);
         return EXIT_FAILURE;
@@ -107,9 +110,11 @@ int encryption(const char *fileName, const char *text)
     }
     int *permutation = createPermutationFunction(musicFile->size, SYSTEM_KEY_INTEGER);
     if(!permutation){
+        printf("Failed to initialize permutation array\n");
         free(word);
         freeMusicFile(musicFile);
         fclose(fp);
+        return EXIT_FAILURE;
     }
     insertBits(permutation, word, musicFile);
     free(word);
@@ -118,19 +123,27 @@ int encryption(const char *fileName, const char *text)
     // "encoded-\0" is 9 bytes
     if(!newFileName)
     {
+        printf("Error while creating the output file\n");
         fclose(fp);
         freeMusicFile(musicFile);
         return EXIT_FAILURE;
     }
     if(changedName(newFileName, fileName, "encoded-") == EXIT_FAILURE)
     {
+        printf("Error while creating the output file\n");
         fclose(fp);
         free(newFileName);
         freeMusicFile(musicFile);
         return EXIT_FAILURE;
     }
     fclose(fp);
-    writeFile(musicFile, newFileName);
+    if(writeFile(musicFile, newFileName) == EXIT_FAILURE)
+    {
+        printf("Error while saving the output file\n");
+        free(newFileName);
+        freeMusicFile(musicFile);
+        return EXIT_FAILURE;
+    }
     free(newFileName);
     freeMusicFile(musicFile);
     return EXIT_SUCCESS;

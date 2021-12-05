@@ -57,19 +57,29 @@ int saveToFile(MUSIC_FILE *newFile, char const *filename){
 
 int stereoToMono(char const *fileName){
     MUSIC_FILE* musicFile = (MUSIC_FILE*) malloc(sizeof(MUSIC_FILE));
-    if(!musicFile || !fileName) return EXIT_FAILURE;
-    if (readHeaderAndData(musicFile, fileName) == EXIT_FAILURE) return EXIT_FAILURE;
+    if(!musicFile || !fileName) 
+    {
+        printf("Failed to read music file.\n");
+        return EXIT_FAILURE;
+    }
+    if (readHeaderAndData(musicFile, fileName) == EXIT_FAILURE) 
+    {
+        printf("Failed to read music file.\n");
+        return EXIT_FAILURE;
+    }
     if(musicFile->fmtSub->numChannels ==1 ){
         printf("WAV File is already Mono.");
         return EXIT_FAILURE;
     }
     MUSIC_FILE *newFile = (MUSIC_FILE*) malloc(sizeof(MUSIC_FILE));
     if (!newFile){
+        printf("Failed to allocate memory for the new audio file.\n");
         freeMusicFile(musicFile);
         return EXIT_FAILURE;
     }
     //Header
     if(copyHeader(musicFile, newFile) || changeHeader(newFile)) {
+        printf("Failed to create the new audio file.\n");
         freeMusicFile(musicFile);
         freeMusicFile(newFile);
         return EXIT_FAILURE;
@@ -77,12 +87,14 @@ int stereoToMono(char const *fileName){
     //Data
     newFile->data = (byte*) malloc(newFile->size);
     if(!newFile->data || changeData(musicFile, newFile)){
+        printf("Failed to create the new audio file.\n");
         freeMusicFile(musicFile);
         freeMusicFile(newFile);
         return EXIT_FAILURE;
     }
     //Save to file
     if(saveToFile(newFile, fileName)){
+        printf("Failed to save the new audio file.\n");
         freeMusicFile(musicFile);
         freeMusicFile(newFile);
         return EXIT_FAILURE;

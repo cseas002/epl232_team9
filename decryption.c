@@ -26,21 +26,25 @@ int decryption(const char *fileName, int msgLength, const char *outputFileName)
 {
     MUSIC_FILE *musicFile = NULL;
     if (!(musicFile = (MUSIC_FILE *) malloc(sizeof(MUSIC_FILE))))
+    {
+        printf("Failed to read music file.\n");
         return EXIT_FAILURE;
-
+    }
     if (readHeaderAndData(musicFile, fileName) == EXIT_FAILURE)
     {
-        printf("Failed to read music file\n");
+        printf("Failed to read music file.\n");
         freeMusicFile(musicFile);
         return EXIT_FAILURE;
     }
     int *permutation = createPermutationFunction(musicFile->size, SYSTEM_KEY_INTEGER);
     if(!permutation){
+        printf("Failed to create the permutation array.\n");
         freeMusicFile(musicFile);
         return EXIT_FAILURE;
     }
     char *msg = (char *) malloc((msgLength + 1) * sizeof(char));
     if(!msg){
+        printf("Failed to allocate memory for the message.\n");
         freeMusicFile(musicFile);
         free(permutation);
         return EXIT_FAILURE;
@@ -58,6 +62,7 @@ int decryption(const char *fileName, int msgLength, const char *outputFileName)
     FILE *fp = fopen(outputFileName, "w");
     if (!fp)
     {
+        printf("Failed to create the output file.\n");
         freeMusicFile(musicFile);
         free(permutation);
         free(msg);

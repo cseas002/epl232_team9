@@ -84,11 +84,19 @@ int mix(char const *filename1, char const *filename2)
     MUSIC_FILE *file1 = (MUSIC_FILE *)malloc(sizeof(MUSIC_FILE));
     MUSIC_FILE *file2 = (MUSIC_FILE *)malloc(sizeof(MUSIC_FILE));
     if(!file1 || !file2 || readHeaderAndData(file1, filename1) == EXIT_FAILURE || readHeaderAndData(file2, filename2) == EXIT_FAILURE){
+        printf("Failed to read the audio files.\n");
         freeMusicFile(file1);
         freeMusicFile(file2);
         return EXIT_FAILURE;
     }
-    if (file1->fmtSub->numChannels == 1 || file2->fmtSub->numChannels == 1 || file1->fmtSub->bitsPerSample != file2->fmtSub->bitsPerSample){
+    if (file1->fmtSub->numChannels == 1 || file2->fmtSub->numChannels == 1){
+        printf("Audio files must be stereo.\n");
+        freeMusicFile(file1);
+        freeMusicFile(file2);
+        return EXIT_FAILURE;
+    }
+    if (file1->fmtSub->bitsPerSample != file2->fmtSub->bitsPerSample){
+        printf("Audio files must have the same Bits Per Sample.\n");
         freeMusicFile(file1);
         freeMusicFile(file2);
         return EXIT_FAILURE;
@@ -96,6 +104,7 @@ int mix(char const *filename1, char const *filename2)
     //Create new music file
     MUSIC_FILE *newFile = (MUSIC_FILE *)malloc(sizeof(MUSIC_FILE));
     if (!newFile){
+        printf("Failed to allocated memory for new music file.\n");
         freeMusicFile(file1);
         freeMusicFile(file2);
         return EXIT_FAILURE;
@@ -103,6 +112,7 @@ int mix(char const *filename1, char const *filename2)
     //Change Header
     if(file1->size < file2->size){
         if(copyHeader(file1, newFile) == EXIT_FAILURE){
+            printf("Failed to create new audio header.\n");
             freeMusicFile(file1);
             freeMusicFile(file2);
             freeMusicFile(newFile);
@@ -111,6 +121,7 @@ int mix(char const *filename1, char const *filename2)
     }
     else{
         if(copyHeader(file2, newFile) == EXIT_FAILURE){
+            printf("Failed to create new audio header.\n");
             freeMusicFile(file1);
             freeMusicFile(file2);
             freeMusicFile(newFile);
@@ -120,6 +131,7 @@ int mix(char const *filename1, char const *filename2)
     //Change Data
     newFile->data = (byte *)malloc(newFile->size);
     if (!newFile->data || changeMixedData(newFile, file1, file2) == EXIT_FAILURE){
+        printf("Failed to mix the two files.\n");
         freeMusicFile(file1);
         freeMusicFile(file2);
         freeMusicFile(newFile);
@@ -127,6 +139,7 @@ int mix(char const *filename1, char const *filename2)
     }
     //Save to file
     if(saveMixedFiles(newFile, filename1, filename2) == EXIT_FAILURE){
+        printf("Failed to create the new output file.\n");
         freeMusicFile(file1);
         freeMusicFile(file2);
         freeMusicFile(newFile);
